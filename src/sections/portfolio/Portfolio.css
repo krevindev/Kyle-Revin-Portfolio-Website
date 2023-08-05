@@ -1,0 +1,41 @@
+#portfolio-section {
+
+    max-height: fit-content;
+    min-height: fit-content;
+    max-width: 100%;
+    width: 100%;
+    background: var(--bgColor2);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+
+    border: 2px solid orange;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+}
+
+#projects-container {
+    background: black;
+    width: 95%;
+    max-width: 95%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.port {
+    border: 1px solid white;
+    width: 250px;
+    min-width: 200px;
+    height: 400px;
+    max-width: 90vw;
+
+    margin: 20px;
+
+    border-radius: 10px;
+}
