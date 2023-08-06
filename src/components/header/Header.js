@@ -5,15 +5,15 @@ import useWindowSize from '../../hooks/useWindowSize';
 import krLogo from '../../res/images/svg/kr-logo.svg';
 import navBtnIcon from '../../res/images/svg/nav-btn.svg';
 import { useEffect, useState } from 'react';
+import useIsElementVisible from '../../hooks/useIsElementVisible';
 
 export default function Header() {
 
     const [isModalNavVisible, setIsModalNavVisible] = useState(false);
-    const isMobile = useWindowSize().width <= 500;
+    const isMobile = useWindowSize().width <= 600;
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
-
 
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
@@ -21,7 +21,7 @@ export default function Header() {
         if (prevScrollPos > currentScrollPos) {
             setIsHeaderVisible(true);
         } else {
-            setIsHeaderVisible(false);
+            if (!isModalNavVisible) setIsHeaderVisible(false);
         }
 
         setPrevScrollPos(currentScrollPos);
@@ -34,6 +34,20 @@ export default function Header() {
         };
     }, [prevScrollPos]);
 
+    // Navlinks
+    const navlinksData = [
+        { name: 'Home', href: '#hero-section' },
+        { name: 'Skills', href: '#skills-section' },
+        { name: 'Portfolio', href: '#portolio-section' },
+        { name: 'About', href: '#about-section' },
+    ]
+    const navlinks = navlinksData.map((nLink => {
+        const handleClick = () => {
+            isMobile && setIsModalNavVisible(false);
+        }
+        return (<a href={nLink.href} onClick={handleClick}><li>{nLink.name}</li></a>)
+    }))
+
     return (
         <div id="header" className={isHeaderVisible ? "" : 'scroll-hide'}>
             {
@@ -42,9 +56,9 @@ export default function Header() {
                         <img src={krLogo} onClick={() => window.location.assign('/')} />
                     </div>
                     <div id='header-nav-container'>
-                        <a href='#skills-section'><li>Skills</li></a>
-                        <a href='#portfolio-section'><li>Portfolio</li></a>
-                        <a href='#about-section'><li>About Me</li></a>
+                        {
+                            navlinks
+                        }
                     </div>
                     <div id='header-contact-container'>
                         <button id='header-contact-btn' className='my-default-btn'>Contact</button>
@@ -62,7 +76,9 @@ export default function Header() {
             {
                 isMobile && isModalNavVisible && <div id='mobile-modal-nav-container' onClick={e => { if (e.target.id == 'mobile-modal-nav-container') setIsModalNavVisible(false) }}>
                     <div id='mobile-modal-nav-content'>
-
+                        {
+                            navlinks
+                        }
                     </div>
                 </div>
             }

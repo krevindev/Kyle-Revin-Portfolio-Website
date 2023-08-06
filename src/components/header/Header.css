@@ -17,7 +17,8 @@
 
     transition: all .5s ease-out;
 }
-#header.scroll-hide{
+
+#header.scroll-hide {
     transform: translateY(-100px);
 }
 
@@ -35,6 +36,7 @@
 #header-logo-container img {
     width: 70%;
     max-width: 30px;
+    cursor: pointer;
 }
 
 /* Header Navigation Bar */
@@ -93,8 +95,10 @@
 }
 
 #mobile-modal-nav-container {
-    background: rgba(17, 17, 17, 0.5);
+    background: rgba(17, 17, 17, 0.95);
     position: fixed;
+
+    top: 0;
     width: 100vw;
     height: 100vh;
     z-index: -1;
@@ -104,8 +108,29 @@
     justify-content: center;
 }
 
+#header.scroll-hide #mobile-modal-nav-container {
+    height: 120vh;
+}
+
 #mobile-modal-nav-content {
     width: 50vw;
     height: 50vh;
-    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#mobile-modal-nav-content li {
+    width: 100%;
+
+    font-size: 20px;
+
+    backdrop-filter: blur(10px);
+
+    padding: 10px;
+
+    color: white;
+    border-radius: 5px;
+    border: 1px solid var(--color1);
 }

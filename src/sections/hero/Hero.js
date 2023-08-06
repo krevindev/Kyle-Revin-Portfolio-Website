@@ -1,15 +1,62 @@
 import useWindowSize from '../../hooks/useWindowSize';
 import './Hero.css';
 
-export default function Hero() {
+import facebookLogo from '../../res/images/svg/socials/facebook-logo.svg'
+import githubLogo from '../../res/images/svg/socials/github-logo.svg'
+import instagramLogo from '../../res/images/svg/socials/instagram-logo.svg'
+import linkedInLogo from '../../res/images/svg/socials/linked-in-logo.svg'
+import behanceLogo from '../../res/images/svg/socials/behance-logo.svg'
+import { useEffect } from 'react';
+import FeaturedWorks from '../../components/featured_works/FeaturedWorks';
 
-    const isMobile = useWindowSize().width <= 500;
+export default function Hero({ ref }) {
+
+    let isMobile = useWindowSize().width <= 650;
+
+
+    const socialsData = [
+        {
+            imgSrc: githubLogo,
+            link: 'https://www.facebook.com'
+        },
+        {
+            imgSrc: linkedInLogo,
+            link: 'https://www.facebook.com'
+        },
+        {
+            imgSrc: behanceLogo,
+            link: 'https://www.facebook.com'
+        },
+        {
+            imgSrc: facebookLogo,
+            link: 'https://www.facebook.com'
+        },
+        {
+            imgSrc: instagramLogo,
+            link: 'https://www.facebook.com'
+        },
+    ]
+    const socials = socialsData.map(social => {
+        return (
+            <div className='social' onClick={() => window.open(social.link, '_blank')}>
+                <img src={social.imgSrc} />
+            </div >
+        )
+    })
 
     return (
-        <div id="hero-section" className='main-section'>
-            {!isMobile && <div id='socials-container'>
+        <div id="hero-section" className='main-section' ref={ref}>
 
+
+            {/* Social Logos Container */}
+            {!isMobile && <div id='socials-container'>
+                {
+                    socials
+                }
             </div>}
+
+
+            {/* Main Content Container */}
             <div id='hero-main-content-container'>
                 <div id='hero-name-container'>
                     <h1>Kyle Revin</h1>
@@ -21,9 +68,20 @@ export default function Hero() {
                 <div id='hero-cta-container'>
                     <button id='hero-cta-btn' className='my-default-btn'>Have a Project?</button>
                 </div>
+                {
+                    isMobile && <div id='hero-center-socials-container'>
+                        {
+                            socials
+                        }
+                    </div>
+                }
             </div>
+
+
+
+            {/* Featured Projects Container */}
             <div id='hero-featured-container'>
-                <div id='hero-featured-content' />
+                <FeaturedWorks />
             </div>
         </div>
     )
