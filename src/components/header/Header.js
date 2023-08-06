@@ -5,7 +5,6 @@ import useWindowSize from '../../hooks/useWindowSize';
 import krLogo from '../../res/images/svg/kr-logo.svg';
 import navBtnIcon from '../../res/images/svg/nav-btn.svg';
 import { useEffect, useState } from 'react';
-import useIsElementVisible from '../../hooks/useIsElementVisible';
 
 export default function Header() {
 
@@ -38,7 +37,7 @@ export default function Header() {
     const navlinksData = [
         { name: 'Home', href: '#hero-section' },
         { name: 'Skills', href: '#skills-section' },
-        { name: 'Portfolio', href: '#portolio-section' },
+        { name: 'Portfolio', href: '#portfolio-section' },
         { name: 'About', href: '#about-section' },
     ]
     const navlinks = navlinksData.map((nLink => {
@@ -65,7 +64,7 @@ export default function Header() {
                     </div></> :
                     <div id='mobile-header-container'>
                         <div id='header-logo-container'>
-                            <img src={krLogo} />
+                            <img src={krLogo} onClick={() => window.location.assign('/')} />
                         </div>
                         <div id='header-nav-btn-container'>
                             <img src={navBtnIcon} onClick={() => setIsModalNavVisible(!isModalNavVisible)} />

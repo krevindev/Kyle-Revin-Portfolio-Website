@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
-import Header from "./components/header/Header";
+
+import './App.css';
+
 import About from "./sections/about/About";
 import Hero from "./sections/hero/Hero";
 import Portfolio from "./sections/portfolio/Portfolio";
@@ -9,7 +11,6 @@ export default function App() {
 
   return (
     <div id="app">
-      <Header />
       <Hero />
       <Skills />
       <Portfolio />

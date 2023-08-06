@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   overflow-x: hidden;
-
   background: var(--bgColor1);
 }
 
@@ -28,9 +27,13 @@ code {
   scroll-behavior: smooth;
 }
 
+*::selection {
+  background: var(--color1);
+}
+
 :root {
   --bgColor1: #191919;
-  --bgColor2: #1F1F1F;
+  --bgColor2: #282828;
   --color1: #F10047;
 }
 
@@ -46,4 +49,23 @@ code {
   color: white;
 
   cursor: pointer;
+}
+
+.page-title-container {
+  border-bottom: 1px solid gray;
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 10px 50px;
+
+  position: sticky;
+  top: 10px
+}
+
+.page-title-container span {
+  margin: 5px 5vw;
+  color: white;
 }

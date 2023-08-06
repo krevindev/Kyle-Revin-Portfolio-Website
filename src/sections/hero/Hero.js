@@ -9,6 +9,7 @@ import behanceLogo from '../../res/images/svg/socials/behance-logo.svg'
 import { useEffect } from 'react';
 import FeaturedWorks from '../../components/featured_works/FeaturedWorks';
 
+
 export default function Hero({ ref }) {
 
     let isMobile = useWindowSize().width <= 650;

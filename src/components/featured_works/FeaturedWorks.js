@@ -36,6 +36,7 @@ export default function FeaturedWorks() {
     return (
         <div id="featured-works">
             <div id='featured-works-content'>
+                <h1>Featured Works</h1>
                 <div id='featured-current-container'>
                     {
                         featuredWorks
