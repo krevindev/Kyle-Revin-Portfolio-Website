@@ -9,7 +9,9 @@ export default function FeaturedWorks() {
 
     const featuredWorksData = [
         'Anony - Anonymous Messaging Web App',
-        'Notey-Fi - Google Classroom to Facebook Notification Chatbot'
+        'Notey-Fi - Google Classroom to Facebook Notification Chatbot',
+        'Live Video Text Censorship',
+        'FB-GPT - ChatGPT to Facebook Chatbot'
     ]
 
     const featuredWorks = featuredWorksData.map((work, index) => {
@@ -27,7 +29,7 @@ export default function FeaturedWorks() {
             setCurrentFeaturedIndex(prev => {
                 return currentFeaturedIndex + 1 >= featuredWorks.length ? 0 : prev += 1
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(changeFeaturedInterval);
     });

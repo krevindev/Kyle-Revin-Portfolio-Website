@@ -2,9 +2,10 @@
     --maxHeroHeight: 90vh;
     width: 100vw;
     min-height: fit-content;
-    max-height: fit-content;
 
-    background: var(--bgColor1);
+
+    /* background: linear-gradient(to top, rgb(18, 18, 18), var(--bgColor1)); */
+    background-attachment: fixed;
 
     display: flex;
     justify-content: space-around;
@@ -13,20 +14,44 @@
 
     box-sizing: border-box;
 
-    /* background: url(../../res/images/svg/grain-bg.svg); */
-    background-attachment: fixed;
+    position: relative;
+
+    animation: portfolioAnim .6s 2s;
+}
+
+@keyframes heroAnim {
+
+    0%,
+    100%,
+    9% {
+        opacity: 0;
+        filter: none;
+    }
+
+    10% {
+        filter: blur(10px);
+        opacity: 1;
+    }
+
 }
 
 #hero-section * {
     width: 100%;
     /* border: 1px solid green; */
+    z-index: 1;
 }
 
+#random-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 
 #socials-container {
     width: fit-content;
     max-width: 100px;
-    height: calc(var(--maxHeroHeight)-10px);
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -36,6 +61,7 @@
     justify-self: flex-start;
 
     padding: 25px;
+    margin-right: 15px;
 
     border-right: 1px solid white;
 }
@@ -54,6 +80,10 @@
     height: 100%;
 }
 
+#hero-section .social img:hover {
+    filter: brightness(200%);
+}
+
 #hero-main-content-container {
     min-height: var(--maxHeroHeight);
     width: 50%;
@@ -67,14 +97,43 @@
 #hero-name-container {
     margin-bottom: 40px;
     min-width: fit-content;
+
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 129.12%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    animation: heroNameAnim .5s forwards;
+    animation-delay: 1s;
+
+    opacity: 0;
+
+    user-select: none;
+
 }
 
 #hero-name-container h1 {
     font-size: calc(2vw + 40px);
 }
 
+@keyframes heroNameAnim {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #hero-p-container {
     max-width: 80%;
+
+    animation: heroNameAnim .5s forwards;
+    animation-delay: 0s;
 }
 
 #hero-cta-container {
@@ -85,8 +144,9 @@
 
 #hero-cta-container .my-default-btn {
     width: 40%;
-    max-width: 150px;
+    max-width: 130px;
     min-width: 100px;
+    min-height: fit-content;
     padding: 0;
 }
 
@@ -103,9 +163,8 @@
     justify-content: center;
 
     padding: 15px;
+
 }
-
-
 
 @media screen and (max-width: 600px) {
     #hero-section {
@@ -142,4 +201,9 @@
 
     display: flex;
     justify-content: space-evenly;
+}
+
+#test-poly {
+    background: green;
+    stroke: red;
 }

@@ -9,18 +9,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    opacity: 0;
+
+    animation: heroNameAnim .5s forwards;
+    animation-delay: 1.5s;
+
 }
-#featured-works *{
+
+#featured-works * {
     overflow: hidden;
 }
 
 #featured-works-content {
     overflow-y: hidden;
 }
-#featured-works-content h1{
+
+#featured-works-content h1 {
     color: white;
     font-size: calc(1vw + 20px);
     margin-bottom: 20px;
+    font-family: 'HOPE-HYPE', sans-serif;
+    min-width: fit-content;
+    width: fit-content;
 }
 
 #featured-current-container {
@@ -79,13 +90,14 @@
     }
 }
 
-#featured-button-container{
+#featured-button-container {
     padding: 10px 5px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #featured-button-container button {
     width: 50%;
     height: 30px;
@@ -102,7 +114,8 @@
 
     transition: all .5s;
 }
-#featured-button-container button:hover{
+
+#featured-button-container button:hover {
     background: white;
     color: var(--bgColor1);
 }

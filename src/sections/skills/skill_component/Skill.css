@@ -1,0 +1,299 @@
+#skills-section .skill {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+
+    margin: 15px;
+
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    cursor: pointer;
+
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all .2s ease-in-out;
+    user-select: none;
+
+    border: 1px solid var(--color1);
+
+    background: var(--holoBG);
+    background: rgb(30, 30, 30);
+    background-blend-mode: multiply;
+    /* clip-path: polygon(0 20%, 20% 0, 100% 0, 100% 100%, 0 100%); */
+
+    animation: portfolioAnim .5s forwards;
+}
+
+#skills-section .skill:hover {
+    border-color: white;
+}
+
+#skills-section .skill img {
+    max-width: 60%;
+    max-height: 60%;
+    z-index: 2;
+    position: relative;
+
+    /* transition: all .5s ease-in; */
+}
+
+#skills-section .skill:hover img {
+    opacity: .2;
+}
+
+#skills-section .skill h5 {
+    width: 100%;
+    height: 50%;
+    max-height: 50%;
+    color: white;
+    position: absolute;
+    bottom: 0%;
+    font-size: 15px;
+    text-align: center;
+
+    text-shadow: -5px 5px 5px rgba(21, 21, 21, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#skills-section .text-skill {
+    color: white;
+    font-size: 20px;
+    margin: 10px 50px;
+    padding: 5px 10px;
+    padding-right: 0;
+    border-radius: 3px;
+
+    user-select: none;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 200px;
+
+    transition: all .5s;
+
+    background: linear-gradient(to right, var(--holoBG), rgba(0, 0, 0, 0));
+}
+
+#skills-section .text-skill .line {
+    width: 4px;
+    height: 100%;
+
+    border-left: 1px solid var(--color1);
+    border-bottom: 0px solid rgb(197, 58, 116);
+
+    position: absolute;
+    left: 0;
+    transition: all 1s;
+    border-radius: 5px;
+}
+
+#skills-section .text-skill:hover .line {
+    width: 100%;
+    background: linear-gradient(to right, var(--holoBG), rgba(0, 0, 0, 0));
+}
+
+.skill .skill-level {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: flex-end;
+
+
+    width: 80%;
+    height: 2px;
+    background: var(--bgColor2);
+}
+
+.skill:hover .skill-level {
+    opacity: 0;
+}
+
+.skill .skill-level-fill {
+    height: 100%;
+    background: var(--color1);
+    background: turquoise;
+}
+
+.skill-categ-container {
+
+    width: 90%;
+
+    padding: 30px 50px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.skill-categ-container h4 {
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.skill-projector-dot {
+    top: 10%;
+    left: 10%;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+
+    background: white;
+
+}
+
+.skill .skill-preview-container {
+    bottom: 50%;
+
+    position: absolute;
+    background: rgba(55, 19, 109, 0.7);
+    background-blend-mode: difference;
+    box-shadow: 0px 0px 10px 10px var(--holoBG);
+
+    color: white;
+
+    border-radius: 20px;
+
+    width: 200px;
+    height: fit-content;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    transform: scale(0);
+}
+
+#skills-section .skill .skill-preview-container .skill-preview-header {
+    width: 100%;
+    height: 30%;
+    max-height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+#skills-section .skill .skill-preview-container .skill-preview-header img {
+    height: 30px;
+
+    opacity: 1;
+
+    animation: skillPreviewImgAnim 1s alternate infinite ease-in-out;
+}
+
+#skills-section .skill .skill-preview-container .skill-preview-body {
+    box-sizing: border-box;
+
+    padding: 10px;
+}
+
+#skills-section .skill .skill-preview-container .skill-preview-body p {
+    font-size: calc(1vmin + 5px);
+}
+
+
+
+/*  Skill Preview Animation */
+#skills-section .skill .skill-preview-container.out {
+    animation: skillPreviewOut .5s forwards;
+    pointer-events: none;
+}
+
+#skills-section .skill .skill-preview-container.in {
+    animation: skillPreviewIn .8s forwards .3s;
+}
+
+@keyframes skillPreviewIn {
+    0% {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    3% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        filter: hue-rotate(-190deg);
+    }
+
+    15% {
+        opacity: 1;
+        filter: hue-rotate(-190deg);
+    }
+
+    15% {
+        opacity: 1;
+        filter: hue-rotate(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes skillPreviewOut {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+@keyframes skillPreviewImgAnim {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(-1);
+    }
+}

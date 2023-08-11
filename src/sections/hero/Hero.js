@@ -8,9 +8,11 @@ import linkedInLogo from '../../res/images/svg/socials/linked-in-logo.svg'
 import behanceLogo from '../../res/images/svg/socials/behance-logo.svg'
 import { useEffect } from 'react';
 import FeaturedWorks from '../../components/featured_works/FeaturedWorks';
+import { Parallax } from '@react-spring/parallax';
+import VantaBackground from '../../components/VantaBackground';
+import BorderedPolygon from '../../components/BorderedPolygon';
 
-
-export default function Hero({ ref }) {
+export default function Hero({ setIsContactVisible }) {
 
     let isMobile = useWindowSize().width <= 650;
 
@@ -18,24 +20,24 @@ export default function Hero({ ref }) {
     const socialsData = [
         {
             imgSrc: githubLogo,
-            link: 'https://www.facebook.com'
+            link: 'https://github.com/krevindev'
         },
         {
             imgSrc: linkedInLogo,
-            link: 'https://www.facebook.com'
+            link: 'https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/'
         },
-        {
-            imgSrc: behanceLogo,
-            link: 'https://www.facebook.com'
-        },
+        // {
+        //     imgSrc: behanceLogo,
+        //     link: 'https://www.facebook.com'
+        // },
         {
             imgSrc: facebookLogo,
-            link: 'https://www.facebook.com'
+            link: 'https://www.facebook.com/kylerevin.alimpuangon'
         },
-        {
-            imgSrc: instagramLogo,
-            link: 'https://www.facebook.com'
-        },
+        // {
+        //     imgSrc: instagramLogo,
+        //     link: 'https://www.facebook.com'
+        // },
     ]
     const socials = socialsData.map(social => {
         return (
@@ -46,15 +48,17 @@ export default function Hero({ ref }) {
     })
 
     return (
-        <div id="hero-section" className='main-section' ref={ref}>
-
+        <div id="hero-section" className='main-section' >
+            <div className='section-indicator'></div>
 
             {/* Social Logos Container */}
-            {!isMobile && <div id='socials-container'>
-                {
-                    socials
-                }
-            </div>}
+            {
+                !isMobile && <div id='socials-container'>
+                    {
+                        socials
+                    }
+                </div>
+            }
 
 
             {/* Main Content Container */}
@@ -67,7 +71,9 @@ export default function Hero({ ref }) {
                     <p>Passionate and innovative developer with a flair for creating captivating digital experiences.</p>
                 </div>
                 <div id='hero-cta-container'>
-                    <button id='hero-cta-btn' className='my-default-btn'>Have a Project?</button>
+                    <button onClick={() => setIsContactVisible(true)} id='hero-cta-btn' className='my-default-btn'>
+                        Hire Me
+                    </button>
                 </div>
                 {
                     isMobile && <div id='hero-center-socials-container'>
@@ -83,7 +89,8 @@ export default function Hero({ ref }) {
             {/* Featured Projects Container */}
             <div id='hero-featured-container'>
                 <FeaturedWorks />
+
             </div>
-        </div>
+        </div >
     )
 }

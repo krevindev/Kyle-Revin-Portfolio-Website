@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import useIsElementVisible from '../../hooks/useIsElementVisible';
 import './Skills.css';
 
 import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
@@ -8,16 +7,29 @@ import html5Logo from '../../../src/res/images/svg/tech_stack/html5-logo.svg';
 import firebaseLogo from '../../../src/res/images/svg/tech_stack/firebase-logo.svg';
 import expressJsLogo from '../../../src/res/images/svg/tech_stack/expressjs-logo.svg';
 import javascriptLogo from '../../../src/res/images/svg/tech_stack/javascript-logo.svg';
-import cssLogo from '../../../src/res/images/svg/tech_stack/css-logo.svg';
+import css3Logo from '../../../src/res/images/svg/tech_stack/css-logo.svg';
 import pythonLogo from '../../../src/res/images/svg/tech_stack/python-logo.svg';
 import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
 import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
+import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
+import phpLogo from '../../../src/res/images/svg/tech_stack/php-logo.svg';
+import sqlLogo from '../../../src/res/images/svg/tech_stack/sqlLogo.svg';
+import npmLogo from '../../../src/res/images/svg/tech_stack/npm-logo.svg';
 
 import photoshopLogo from '../../../src/res/images/svg/tools/photoshop-logo.svg';
 import figmaLogo from '../../../src/res/images/svg/tools/figma-logo.svg';
 import postmanLogo from '../../../src/res/images/svg/tools/postman-logo.svg';
 import githubLogo from '../../../src/res/images/svg/tools/github-logo.svg';
+import gitLogo from '../../../src/res/images/svg/tools/git-logo.svg';
+import vercelLogo from '../../../src/res/images/svg/tools/vercel-logo.svg';
+import glitchLogo from '../../../src/res/images/svg/tools/glitch-logo.svg';
+import canvaLogo from '../../../src/res/images/svg/tools/canva-logo.svg';
+import netlifyLogo from '../../../src/res/images/svg/tools/netlify-logo.svg';
 
+import useIsElementVisible from '../../hooks/useIsElementVisible';
+
+import Skill from './skill_component/Skill';
+import SkillsContainer from './skills_container/SkillsContainer';
 
 import { motion } from 'framer-motion';
 
@@ -27,99 +39,190 @@ export default function Skills() {
         techStack: [
             {
                 skillName: 'HTML5',
-                imgSrc: html5Logo
+                imgSrc: html5Logo,
+                level: 80,
+                description: "HTML5 is the modern standard for structuring web content."
             },
             {
-                skillName: 'CSS',
-                imgSrc: cssLogo
+                skillName: 'CSS3',
+                imgSrc: css3Logo,
+                level: 80,
+                description: "CSS3 is the latest version of Cascading Style Sheets, bringing advanced styling and layout features to enhance web design."
             },
             {
                 skillName: 'JavaScript',
-                imgSrc: javascriptLogo
+                imgSrc: javascriptLogo,
+                level: 65,
+                description: "JavaScript is a versatile scripting language for web development, enabling interactive and dynamic website functionality."
             },
             {
                 skillName: 'ReactJS',
-                imgSrc: reactLogo
+                imgSrc: reactLogo,
+                level: 50,
+                description: "React is a free and open-source front-end JavaScript library for building user interfaces based on components."
             },
             {
                 skillName: 'NodeJS',
-                imgSrc: nodeJsLogo
+                imgSrc: nodeJsLogo,
+                level: 65,
+                description: "Runtime environment that lets you execute JavaScript on the server side, enabling dynamic web content."
             },
             {
                 skillName: 'MongoDB',
-                imgSrc: mongoDB
+                imgSrc: mongoDB,
+                level: 60,
+                description: "NoSQL database solution used to store, retrieve, and manage data in flexible, JSON-like documents."
             },
             {
                 skillName: 'Firebase',
-                imgSrc: firebaseLogo
+                imgSrc: firebaseLogo,
+                level: 60,
+                description: "Platform offering tools and services to develop high-quality web and mobile apps, including authentication, real-time databases, and hosting."
             },
             {
                 skillName: 'ExpressJS',
-                imgSrc: expressJsLogo
+                imgSrc: expressJsLogo,
+                level: 60,
+                description: " Minimalist web application framework for Node.js, simplifying the creation of server-side applications."
             },
             {
                 skillName: 'Python',
-                imgSrc: pythonLogo
+                imgSrc: pythonLogo,
+                level: 76,
+                description: " General-purpose programming language known for its readability and versatility, suitable for various applications, from web development to data analysis."
             },
             {
                 skillName: 'JQuery',
-                imgSrc: jQueryLogo
+                imgSrc: jQueryLogo,
+                level: 30,
+                description: "JavaScript library simplifying web development tasks and interactions."
+            }
+            ,
+            {
+                skillName: 'NextJS',
+                imgSrc: nextJs,
+                level: 20,
+                description: "React framework for building server-rendered and optimized web applications."
+            }
+            ,
+            {
+                skillName: 'PHP',
+                imgSrc: phpLogo,
+                level: 15,
+                description: "Server-side scripting language for dynamic web content and application development."
+            }
+            ,
+            {
+                skillName: 'SQL',
+                imgSrc: sqlLogo,
+                level: 40,
+                description: "Structured Query Language used for managing and querying relational databases."
             }
 
         ],
         tools: [
             {
                 skillName: 'Adobe Photoshop',
-                imgSrc: photoshopLogo
+                imgSrc: photoshopLogo,
+                level: 80,
+                description: " Industry-standard software for image editing and graphic design."
             },
             {
                 skillName: 'Figma',
-                imgSrc: figmaLogo
+                imgSrc: figmaLogo,
+                level: 70,
+                description: "Collaborative design tool used for creating user interfaces and prototypes."
             },
             {
                 skillName: 'Postman',
-                imgSrc: postmanLogo
+                imgSrc: postmanLogo,
+                level: 70,
+                description: " API development and testing platform for simplifying API interactions."
             }
             ,
             {
                 skillName: 'Github',
-                imgSrc: githubLogo
+                imgSrc: githubLogo,
+                level: 55,
+                description: "Web-based platform for version control and collaborative software development."
+            }
+            ,
+            {
+                skillName: 'Git',
+                imgSrc: gitLogo,
+                level: 40
+            }, {
+                skillName: 'Glitch',
+                imgSrc: glitchLogo,
+                level: 50,
+                description: "Online platform for building and deploying web applications collaboratively."
+            }, {
+                skillName: 'Canva',
+                imgSrc: canvaLogo,
+                level: 30,
+                description: "Graphic design tool offering templates for various visual content."
+            },
+            {
+                skillName: 'Vercel',
+                imgSrc: vercelLogo,
+                level: 30,
+                description: "Hosting platform for deploying and managing web applications."
+            }, {
+                skillName: 'Netlify',
+                imgSrc: netlifyLogo,
+                level: 30,
+                description: "Web hosting and serverless platform for modern development workflows."
+            },
+            {
+                skillName: 'NPM',
+                imgSrc: npmLogo,
+                level: 60,
+                description: "Node Package Manager, used for installing and managing JavaScript packages and libraries."
             }
         ]
     }
+
     const skills = {};
 
-    skills['techStack'] = skillsData.techStack.map((techSkill, i) => {
-        return (
-            <Skill key={i} i={i} skillName={techSkill.skillName} imgSrc={techSkill.imgSrc} />
-        )
-    })
+    // for every key in skillsData
+    Object.keys(skillsData).forEach(skillKey => {
 
-    skills['tools'] = skillsData.tools.map((techSkill, i) => {
-        return (
-            <Skill key={i} i={i} skillName={techSkill.skillName} imgSrc={techSkill.imgSrc} />
-        )
-    })
+        // map the skill data
+        skills[skillKey] = skillsData[skillKey].map((techSkill, i) => {
+            const delAdd = .2;
 
-    // for (let i = 0; i <= 20; i++) {
-    //     skills.push(<Skill key={i} i={i} name={'skill'} />);
-    // }
+            return (
+                <Skill
+                    index={i}
+                    skillName={techSkill.skillName}
+                    imgSrc={techSkill.imgSrc}
+                    overallStop={skillsData[skillKey].length * delAdd}
+                    delay={i * delAdd}
+                    level={techSkill.level}
+                    description={techSkill.description}
+                />
+            )
+        })
+    });
 
     const generalSkillsData = [
         'Full-Stack Web Development',
-        'Web Design',
+        'Front-End Web Development',
+        'Back-End Web Development',
+        'UI / UX Design and Prototype',
         'Web Scraping',
         'Digital Art',
         'Chatbot Development',
-        'Computer Vision'
+        'Computer Vision',
+        'API Utilization'
     ];
     const generalSkills = generalSkillsData.map((skill, index) => {
         return (
             <motion.li
                 className='text-skill'
-                initial={{ x: 200, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ type: 'tween', delay: index * .2 + 1.5 }}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: 'tween', delay: index * .2 + 1 }}
             >
                 <div className='line' /> {skill}
             </motion.li>
@@ -128,103 +231,30 @@ export default function Skills() {
 
     return (
         <div id="skills-section" className='main-section'>
-
-            <div className='page-signal' style={{ position: 'absolute' }} />
+            <div className='section-indicator'></div>
 
             <div className='page-title-container' >
-                <span>Skills</span>
+                <span>Skills Page</span>
             </div>
 
-            <SkillContainer headingText="Skills" >
+            <SkillsContainer headingText="Skills and Services" >
                 {
                     generalSkills
                 }
-            </SkillContainer>
+            </SkillsContainer>
 
-            <SkillContainer headingText="Tech Stack">
+            <SkillsContainer headingText="Tech Stack">
                 {
                     skills.techStack
                 }
-            </SkillContainer>
+            </SkillsContainer>
 
-            <SkillContainer headingText="Other Tools" >
+            <SkillsContainer headingText="Other Tools" >
                 {
                     skills.tools
                 }
-            </SkillContainer>
-
+            </SkillsContainer>
 
         </div>
-    )
-}
-
-function SkillContainer({ headingText, children, isText }) {
-
-    const skillContainerRef = useRef(null);
-    const skillContainerVisible = useIsElementVisible(skillContainerRef);
-
-    const [hasContainerLoaded, sethasContainerLoaded] = useState(false);
-
-
-    // TEST: If the page is loaded, disable animating again
-    useEffect(() => {
-        if (skillContainerVisible && !hasContainerLoaded) {
-            sethasContainerLoaded(true);
-        }
-    }, [skillContainerVisible, hasContainerLoaded]);
-
-    return (
-        <div className='skills-container-container' ref={skillContainerRef}>
-            <div className='indicator' />
-            {
-                (skillContainerVisible || hasContainerLoaded) && <>
-                    <div className={isText ? 'skill-categ-container text' : 'skill-categ-container'}>
-                        <motion.h4
-                            initial={{ left: -100 }}
-                            animate={{ left: 0 }}
-                            transition={{ delay: 1 }}
-                        >{headingText}
-                        </motion.h4>
-                    </div>
-
-                    <div className='skills-container'>
-                        {children}
-                    </div>
-                </>
-            }
-        </div>
-    )
-}
-
-
-// DEMO: Skill Component Sample
-function Skill({ skillName, i, imgSrc }) {
-
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <motion.div
-            className='skill'
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ type: 'spring', bounce: .5, delay: i * .1 + 1, duration: 2 }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={() => setIsHovered(!isHovered)}
-        >
-
-
-            <motion.img
-                src={imgSrc}
-                animate={isHovered ? { scale: 1.2, y: -30, x: 0 } : {}}
-                transition={{ type: 'spring', bounce: .4, duration: .5 }}
-            />
-
-            <motion.h5
-                initial={{ y: -30 }}
-                animate={isHovered ? { y: 0, opacity: 1 } : { y: -10, opacity: 0 }}
-                transition={{ type: 'spring', bounce: .3 }}
-            >{skillName}</motion.h5>
-        </motion.div >
     )
 }

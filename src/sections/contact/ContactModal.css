@@ -1,0 +1,21 @@
+#contact-modal{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+
+    z-index: 2000;
+
+    background: rgba(0,0,0,.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contact-content-container{
+    background: var(--bgColor1);
+    width: 50%;
+    height: 70%;
+}

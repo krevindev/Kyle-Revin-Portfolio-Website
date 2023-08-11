@@ -1,3 +1,11 @@
+@import url('https://fonts.cdnfonts.com/css/maria-2');
+@import url('https://fonts.cdnfonts.com/css/cyberpunk-is-not-dead');
+@import url('https://fonts.cdnfonts.com/css/r-spectr');
+@import url('https://fonts.cdnfonts.com/css/hope-hype');
+@import url('https://fonts.cdnfonts.com/css/monzane');
+@import url('https://fonts.cdnfonts.com/css/midnew');
+@import url('https://fonts.cdnfonts.com/css/teroxia-robotic-typeface');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   overflow-x: hidden;
-  background: var(--bgColor1);
 }
 
 code {
@@ -25,6 +32,19 @@ code {
   color: inherit;
 
   scroll-behavior: smooth;
+
+  -webkit-tap-highlight-color: transparent;
+
+  /* font-family: 'Maria', sans-serif;
+  font-family: 'Cyberpunk Is Not Dead', sans-serif;
+  font-family: 'R-Spectr', sans-serif;
+  font-family: 'HOPE-HYPE', sans-serif;
+  font-family: 'Midnew', sans-serif; */
+
+  font-family: 'Monzane', sans-serif;
+  /* font-family: 'Teroxia Demo', sans-serif; */
+
+  font-weight: 100;
 }
 
 *::selection {
@@ -34,25 +54,54 @@ code {
 :root {
   --bgColor1: #191919;
   --bgColor2: #282828;
+  /* --color1: #a500f1; */
   --color1: #F10047;
+
+  /* --holoBG: rgba(90, 0, 225, 0.1); */
+  --holoBG: rgba(37, 37, 39, 0.1);
+
 }
 
 .my-default-btn {
   width: fit-content;
   height: 40px;
   min-height: fit-content;
-  border-radius: 5px;
+  border-radius: 0px;
 
   padding: 3px 10%;
 
   background: var(--color1);
+
   color: white;
 
   cursor: pointer;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+
+  transition: all .2s ease-out;
+
+  border-right: 5px;
+  border-top: 5px;
+}
+
+.my-default-btn:hover {
+  transform: translate(5px, -5px);
+  border: none;
+
+  border-right: 5px solid #ba0a4e;
+}
+
+.my-default-btn:active {
+  filter: saturate(50%);
+  border-right: 5px solid #ba0a4e;
+  border-top: 5px solid #ba0a4e;
+  transform: translateY(0);
 }
 
 .page-title-container {
-  border-bottom: 1px solid gray;
+  background: rgb(53, 53, 53);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 25% 50%, 10% 50%, 5% 100%, 0 100%);
+
   width: 100%;
   height: fit-content;
 
@@ -61,11 +110,18 @@ code {
 
   padding: 10px 50px;
 
-  position: sticky;
-  top: 10px
+  position: absolute;
+  top: 0;
 }
 
 .page-title-container span {
   margin: 5px 5vw;
-  color: white;
+  color: #a6a6a6;
+}
+
+#portfolio-section .page-title-container {
+  background: #353535;
+
+  transform: translateY(-5px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 25% 50%, 10% 50%, 5% 100%, 0 100%);
 }
