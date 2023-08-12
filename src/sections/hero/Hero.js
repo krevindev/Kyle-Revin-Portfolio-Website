@@ -16,7 +16,6 @@ export default function Hero({ setIsContactVisible }) {
 
     let isMobile = useWindowSize().width <= 650;
 
-
     const socialsData = [
         {
             imgSrc: githubLogo,

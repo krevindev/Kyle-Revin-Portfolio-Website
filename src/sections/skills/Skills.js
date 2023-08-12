@@ -205,7 +205,6 @@ export default function Skills() {
     });
 
     const generalSkillsData = [
-        'Full-Stack Web Development',
         'Front-End Web Development',
         'Back-End Web Development',
         'UI / UX Design and Prototype',

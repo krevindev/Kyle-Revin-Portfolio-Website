@@ -1,13 +1,14 @@
 import './Header.css'
 
 import useWindowSize from '../../hooks/useWindowSize';
+import ContactModal from '../../sections/contact/ContactModal';
 
 import krLogo from '../../res/images/svg/kr-logo.svg';
 import navBtnIcon from '../../res/images/svg/nav-btn.svg';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Header({ isFlashScreen }) {
+export default function Header({ }) {
 
     const [isModalNavVisible, setIsModalNavVisible] = useState(false);
     const isMobile = useWindowSize().width <= 600;
@@ -18,7 +19,27 @@ export default function Header({ isFlashScreen }) {
     const sections = Array.from(document.querySelectorAll('.main-section')).map(element => element.id);
     const [activeSection, setActiveSection] = useState('hero-section');
 
+    const [isContactVisible, setIsContactVisible] = useState(false);
+
     const [isHero, setIsHero] = useState(true);
+
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+
+        if (sectionId == 'hero-section') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        } else {
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        }
+
+        if (isMobile) setIsModalNavVisible(false);
+    }
 
     useEffect(() => {
         if (activeSection != 'hero-section') {
@@ -87,7 +108,12 @@ export default function Header({ isFlashScreen }) {
         { name: 'Skills', href: '#skills-section' },
         { name: 'Portfolio', href: '#portfolio-section' },
         { name: 'About Me', href: '#about-section' },
-    ]
+    ];
+
+    useEffect(() => {
+        if (isMobile) navlinksData.push({ name: 'Contact', href: '#contact-btn' })
+    }, [isMobile]);
+
     const navlinks = navlinksData.map(((nLink, index) => {
         const handleClick = () => {
             isMobile && setIsModalNavVisible(false);
@@ -96,25 +122,31 @@ export default function Header({ isFlashScreen }) {
 
         return (
             <a
-                href={nLink.href}
-                onClick={handleClick}
+                // href={nLink.href}
+                // onClick={handleClick}
+                onClick={() => scrollToSection(m)}
                 className={activeSection == m && 'active'}
             >
                 <li
                     style={
                         {
                             animation: !isMobile ? 'headerLiAnim .5s forwards' : 'portfolioAnim .5s forwards',
-                            animationDelay: index * 0.1 + (isMobile ? 0 : 3) + 's',
+                            animationDelay: index * 0.1 + 's',
                         }
                     }
-                >{nLink.name}</li>
+                >{nLink.name}
+                </li>
             </a>
         )
     }));
 
     return (
         <div id="header" className={isHeaderVisible ? "" : 'scroll-hide'}
-            style={isHero ? { backdropFilter: !isMobile && 'blur(10px)', background: !isMobile ? 'rgba(17,17,17,0.3)' : 'rgba(17,17,17,0.9)' } : {}}
+            style={isHero ? {
+                backdropFilter: !isMobile && 'blur(10px)',
+                background: !isMobile ? 'rgba(17,17,17,0.3)' : 'rgba(17,17,17,0.9)',
+                borderBottom: '1px solid rgba(70, 70, 70, .5)'
+            } : {}}
         >
             {
                 !isMobile ? <>
@@ -127,7 +159,7 @@ export default function Header({ isFlashScreen }) {
                         }
                     </div>
                     <div id='header-contact-container'>
-                        <button id='header-contact-btn' className='my-default-btn'>Contact</button>
+                        <button id='header-contact-btn' className='my-default-btn' onClick={() => setIsContactVisible(true)}>Contact</button>
                     </div></> :
                     <div id='mobile-header-container'>
                         <div id='header-logo-container'>
@@ -145,8 +177,13 @@ export default function Header({ isFlashScreen }) {
                         {
                             navlinks
                         }
+
                     </div>
                 </div>
+            }
+
+            {
+                isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
             }
         </div>
     )

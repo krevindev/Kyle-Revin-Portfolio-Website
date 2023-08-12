@@ -45,7 +45,9 @@ export default function FeaturedWorks() {
                     }
                 </div>
                 <div id='featured-button-container'>
-                    <button onClick={() => window.location = '#portfolio-section'}>View Portfolio</button>
+                    <button onClick={() => {
+                        document.getElementById('portfolio-section').scrollIntoView({ block: 'start' })
+                    }}>View Portfolio</button>
                 </div>
             </div>
         </div>

@@ -17,38 +17,61 @@ import StatusMessage from "./components/status_message/StatusMessage";
 
 export default function App() {
 
-  const [isFlashScreen, setIsFlashScreen] = useState(true);
+  const [isSplashScreen, setisSplashScreen] = useState(true);
   const isMobile = useWindowSize().width <= 600;
 
   const [isContactVisible, setIsContactVisible] = useState(false);
 
+  const heroRef = useRef(null);
+  const skillsRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const aboutRef = useRef(null);
+
   useEffect(() => {
     const flashScreenTimeout = setTimeout(() => {
-      setIsFlashScreen(false);
+      setisSplashScreen(false);
     }, 2000);
 
     return () => clearTimeout(flashScreenTimeout);
-
   }, []);
 
 
   return (
     <div id="app">
-      {
-        isFlashScreen ? <SplashScreen /> : <>
-          <Hero setIsContactVisible={setIsContactVisible} isFlashScreen={isFlashScreen} />
-          <Skills />
-          <Portfolio />
-          <About setIsContactVisible={setIsContactVisible} />
-        </>
-      }
+
+      {/* HERO SECTION*/}
+      <Hero
+        ref={heroRef}
+        setIsContactVisible={setIsContactVisible}
+        isSplashScreen={isSplashScreen}
+      />
+
+      {/* SKILLS SECTION */}
+      <Skills ref={skillsRef} />
+
+      {/* PORTFOLIO SECTION */}
+      <Portfolio ref={portfolioRef} />
+
+      {/* ABOUT SECTION */}
+      <About
+        ref={aboutRef}
+        setIsContactVisible={setIsContactVisible}
+      />
+      <div id='about-contact-container'>
+        <span>LET'S BRING YOUR VISION TO LIFE</span>
+        <h5>Turn your concepts into a distinctive and impactful brand.</h5>
+        <button className='my-default-btn' onClick={() => setIsContactVisible(true)}>Let's Talk</button>
+      </div>
       {
         !isMobile && <CustomCursor />
       }
       {
         isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
       }
-      {/* <StatusMessage /> */}
+
+      {
+        isContactVisible && <div id="warning-message">This Feature is still under development</div>
+      }
     </div>
   )
 }

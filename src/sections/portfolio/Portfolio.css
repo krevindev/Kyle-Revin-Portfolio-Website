@@ -36,7 +36,7 @@
 }
 
 #projects-container {
-    width: 95%;
+    width: 100%;
 
     display: flex;
     flex-wrap: wrap;
@@ -58,8 +58,6 @@
 
     padding: 20px;
     box-sizing: border-box;
-
-    cursor: pointer;
 
     color: #c9c9c9;
     opacity: 0;
@@ -143,19 +141,19 @@
     clip-path: polygon(0% 0%, 0 0, 100% 0, 100% 100%, 100% 100%, 0% 100%);
 }
 
-.portfolio-status-container {
+.portfolio-notice-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
 }
 
-.portfolio-status-container h5 {
+.portfolio-notice-container h5 {
     font-family: 'Maria', sans-serif;
     font-size: 10px;
 }
 
-.portfolio-status-container p {
+.portfolio-notice-container p {
     display: flex;
 }
 
@@ -171,7 +169,7 @@
     background-blend-mode: multiply;
 
     position: absolute;
-    opacity: .5;
+    opacity: .2;
     transition: all .5s;
 }
 
@@ -240,8 +238,6 @@
 
     background: black;
     color: white;
-
-    cursor: progress;
 }
 
 .portfolio-btns-container {
@@ -278,4 +274,36 @@
 
 .portfolio-btns-container button:hover {
     background: var(--color1);
+}
+
+.portfolio-btns-container button.invalid-link {
+    filter: saturate(30%);
+    cursor: not-allowed;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.portfolio-item.glitching-portfolio {
+    animation: glitchingPortfolioAnim 4s infinite;
+}
+
+@keyframes glitchingPortfolioAnim {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: hue-rotate(-90deg);
+    }
+
+    1%,
+    97% {
+        opacity: 0.8;
+        filter: none;
+        transform: translate(0, 0);
+    }
+
+    99% {
+        opacity: 0.8;
+        filter: none;
+    }
 }

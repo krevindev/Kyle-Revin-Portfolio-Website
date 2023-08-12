@@ -4,30 +4,34 @@ import {
     MDBCol,
     MDBRow,
     MDBCheckbox,
-    MDBBtn
+    MDBBtn,
+    MDBTextArea
 } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 
 import './ContactModal.css';
+import BorderedPolygon from '../../components/BorderedPolygon';
 
 export default function ContactModal({ setIsContactVisible }) {
     return (
         <div id="contact-modal" onClick={e => { if (e.target.id == 'contact-modal') setIsContactVisible(false) }}>
-
             <div id='contact-content-container'>
+                <div className='half-border' />
+                <div className='half-border' />
                 <h2>Get In Touch</h2>
                 <div id='contact-content'>
-                    <form>
-                        <MDBInput type='text' label='Name' />
+                    <form onSubmit={e => e.preventDefault()}>
+                        <MDBInput type='text' label='Name' required />
                         <MDBInput type='email' className='mdmd' label='Email address' />
-                        <MDBInput type='password' label='Password' />
+                        <MDBInput type='text' label='Company/Organization' />
+                        <MDBInput type='text' label='Additional Details' />
+                        <MDBTextArea type='text' label='Message' className='input-message' />
                         <MDBBtn type='submit' block>
                             Sign in
                         </MDBBtn>
                     </form>
                 </div>
             </div>
-
         </div>
     )
 }

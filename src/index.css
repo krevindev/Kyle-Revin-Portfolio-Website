@@ -69,8 +69,7 @@ p {
   --color1: #F10047;
 
   /* --holoBG: rgba(90, 0, 225, 0.1); */
-  --holoBG: rgba(37, 37, 39, 0.1);
-
+  --holoBG: rgba(34, 34, 86, 0.1);
 }
 
 .my-default-btn {

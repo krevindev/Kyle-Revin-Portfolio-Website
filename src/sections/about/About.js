@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
 import myPic from '../../res/images/screenshots/my-picture.jpg';
+import pdfLink from '../../res/files/Kyle-Revin-Alimpuangon-Resume.pdf';
+
 import './About.css';
 import { motion } from 'framer-motion';
 
@@ -9,8 +11,12 @@ export default function About() {
     const aboutRef = useRef(null);
     const isVisible = useIsElementVisible(aboutRef);
 
+    const rightContainerRef = useRef(null);
+    const isRightContainerVisible = useIsElementVisible(rightContainerRef);
+
     return (
         <div id="about-section" className="main-section" ref={aboutRef}>
+            <div className='mid' ref={rightContainerRef} />
             <div className='section-indicator'></div>
 
             {
@@ -26,8 +32,9 @@ export default function About() {
                             <div className='half-border' />
                             <div className='half-border' />
                         </div>
-                        <div id='about-me-info-container'>
-                            <div className='about-info'>
+
+                        <div id='about-me-info-container' >
+                            <div className='about-info' style={{ animationDelay: '1s' }}>
                                 <span className='about-info-categ'>Education:</span>
                                 <div className='about-info-container'>
                                     <li><span className='about-info-key'>Degree: </span><p>Bachelor of Science in Computer Science</p></li>
@@ -35,12 +42,15 @@ export default function About() {
                                     <li><span className='about-info-key'>YEAR: </span><p>2019-2023</p></li>
                                 </div>
                             </div>
-                            <div className='about-info'>
+                            <div className='about-info' style={{ animationDelay: '1.5s' }}>
                                 <span className='about-info-categ'>Experience:</span>
                                 <div className='about-info-container'>
-                                    <li><span className='about-info-key'>Intern: </span><p>Front-End Developer Intern at Prometheus - Marketing Agency</p></li>
+                                    <li><span className='about-info-key'>Intern: </span><p>Front-End Web Developer Intern at Prometheus - Marketing Agency</p></li>
                                     <li><span className='about-info-key'>YEAR: </span><p>2023</p></li>
                                 </div>
+                            </div>
+                            <div id='download-cv-container' onClick={() => window.open(pdfLink, '_blank')}> 
+                                <button id='download-cv-btn'>Download Resume</button>
                             </div>
                         </div>
                     </div>
@@ -60,6 +70,7 @@ export default function About() {
                             <h3>About Me</h3>
                         </motion.div>
                         <motion.div
+
                             id='about-me-details-container'
                             initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -69,19 +80,26 @@ export default function About() {
                             <h1>Kyle Revin</h1>
                             <h1> Alimpuangon</h1>
                             <p>
-                                I'm an enthusiastic <span className='underline'>Full-Stack Web Developer</span> with a creative mindset and a strong passion for crafting digital experiences that leave a lasting impression. As a computer science graduate, I've honed my skills and cultivated a unique approach to web development that seamlessly blends the technical with the artistic.
+                                I'm an aspiring <div className='underline'>Full-Stack Web Developer</div> with a creative edge, proficient in both front-end and back-end development. My skills also encompass UI/UX design and digital art, lending a unique touch to my projects. I thrive on creating captivating and innovative applications that engage users.
+                            </p>
+                            <p>
+                                I work with Node.js, React.js, Express.js, and REST APIs, crafting dynamic and interactive experiences. My expertise extends to Python, and I utilize SQL, MongoDB, and Firebase for robust databases. Quick to grasp new technologies, I'm eager to contribute more to your projects.
+
+                                <br></br>
+                                <br></br>
+                                <div className='underline'>
+                                    Let's collaborate and bring your ideas to life while exploring new possibilities together.
+                                </div>
                             </p>
                         </motion.div>
 
                     </motion.div>
+
+
                 </div>
             }
 
-            <div id='about-contact-container'>
-                <span>Have a Project in Mind?</span>
-                <h5>You're on your way to building a standout brand!</h5>
-                <button className='my-default-btn'>Let's Talk</button>
-            </div>
+
         </div>
     )
 }

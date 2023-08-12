@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './Portfolio.css';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
 
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 
 import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
 import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
@@ -23,6 +23,7 @@ import converterSS from '../../../src/res/images/screenshots/converter-ss.PNG';
 import noteyFiSS from '../../../src/res/images/screenshots/notey-fi-ss.PNG';
 import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
 import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
+import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
 
 
 const techSkills = [
@@ -96,70 +97,73 @@ export default function Portfolio() {
             thumbNailSrc: noteyFiSS,
             details: "A Facebook Chatbot: Get Google Classroom updates, activity alerts, assignments, and set task reminders effortlessly.",
             techUsed: [2, 4, 5, 7],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Private',
-            statusColor: 'red',
+            sourceCodeLink: 'https://github.com/krevindev/NOTEY-FI',
+            previewLink: null,
+            notice: 'Private',
+            noticeColor: 'orange',
         },
         {
             title: 'Anony - Anonymous Messaging App',
             thumbNailSrc: anonySS,
             details: 'An anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
             techUsed: [0, 1, 2, 3, 4, 6],
-            sourceCodeLink: '',
+            sourceCodeLink: 'https://github.com/krevindev/Anony',
             previewLink: 'https://anony-post.netlify.app',
-            status: 'Live'
+            notice: '',
+            noticeColor: ''
         },
         {
             title: 'Live Video Text Censorship',
             thumbNailSrc: censorshipSS,
             details: 'My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.',
             techUsed: [8],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Downloadable'
+            sourceCodeLink: 'https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract',
+            previewLink: null,
+            notice: ''
         },
         {
             title: 'FB GPT',
             thumbNailSrc: fbGPTSS,
             details: "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
             techUsed: [2, 4, 7],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Request Limit Reached'
+            sourceCodeLink: 'https://github.com/krevindev/FB-GPT',
+            previewLink: null,
+            notice: 'Request Limit Reached',
+            noticeColor: 'red'
         },
         {
             title: 'E-Commerce Front-End',
             thumbNailSrc: eCommerceSS,
             details: "I developed a one-page E-commerce website for a school project using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
             techUsed: [0, 1, 2],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Non-Responsive'
+            sourceCodeLink: null,
+            previewLink: 'https://batchy-bot.github.io/REV-Game-Store/',
+            notice: 'Non-Responsive',
+            noticeColor: 'orange'
         }, {
             title: 'Unit Converter',
             thumbNailSrc: converterSS,
             details: "I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
             techUsed: [0, 1, 2],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Live'
+            sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
+            previewLink: 'https://batchy-bot.github.io/unitconverter1/',
+            notice: ''
         }, {
             title: 'Personal Vocabulary Builder',
             thumbNailSrc: vocabSS,
             details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
             techUsed: [8],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Downloadable'
+            sourceCodeLink: 'https://drive.google.com/drive/folders/1n5Df_B8cvR9VorFfR-u-7orrvQ5W0WkQ',
+            previewLink: null,
+            notice: ''
         }, {
             title: 'Personal Voice Assistant',
-            thumbNailSrc: vocabSS,
+            thumbNailSrc: voiceSS,
             details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
             techUsed: [8],
-            sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app',
-            status: 'Downloadable'
+            sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
+            previewLink: null,
+            notice: ''
         }
     ]
 
@@ -173,8 +177,8 @@ export default function Portfolio() {
                 techUsed={port.techUsed}
                 sourceCodeLink={port.sourceCodeLink}
                 previewLink={port.previewLink}
-                status={port.status}
-                statusColor={port.statusColor}
+                notice={port.notice}
+                noticeColor={port.noticeColor}
             />
         )
     })
@@ -196,18 +200,41 @@ export default function Portfolio() {
 
 function PortfolioItem(props) {
 
-    const handleBtnClick = () => {
-        window.open(props.previewLink, '_blank');
+    const isSourceLinkValid = !['', null, undefined].includes(props.sourceCodeLink);
+    const isPreviewLinkValid = !['', null, undefined].includes(props.previewLink);
+    const isNoticeValid = !['', null, undefined].includes(props.notice);
+
+    const colorValue = {
+        orange: '#CD5A07',
+        red: '#E3031E'
     }
+
+    const noticeColor = colorValue[props.noticeColor];
+
+    const handleBtnClick = passedLink => {
+        window.open(passedLink, '_blank');
+    };
 
     return (
         <motion.div
-            className='portfolio-item'
+            className={isNoticeValid ? 'portfolio-item glitching-portfolio':'portfolio-item'}
             style={{ animationDelay: props.i * 0.2 + 1 + 's' }}
         >
             <div className='portfolio-upper-container'>
-                <div className='portfolio-status-container'>
-                    <h5>Status:</h5><p className='portfolio-status'>{props.status}</p>
+                <div className='portfolio-notice-container'>
+
+                    {
+                        isNoticeValid && <>
+                            <h5>Notice:</h5>
+                            <p style={{
+                                background: noticeColor,
+                                borderRadius: '5px',
+                                padding: '2px 5px',
+                                color: 'white',
+                                fontSize: '10px'
+                            }} className='portfolio-notice'>{props.notice}</p>
+                        </>
+                    }
                 </div>
                 <div className='portfolio-img-container'
                     style={{
@@ -238,8 +265,21 @@ function PortfolioItem(props) {
 
 
             <div className='portfolio-btns-container'>
-                <button onClick={() => handleBtnClick(props.sourceCodeLink)}>Source Code</button>
-                <button onClick={() => handleBtnClick(props.previewLink)}>Preview</button>
+
+                <button
+                    className={!isSourceLinkValid && 'invalid-link'}
+                    onClick={() => isSourceLinkValid && handleBtnClick(props.sourceCodeLink)}
+                >
+                    Source Code
+                </button>
+
+                <button
+                    className={!isPreviewLinkValid && 'invalid-link'}
+                    onClick={() => isPreviewLinkValid && handleBtnClick(props.previewLink)}
+                >
+                    Preview
+                </button>
+
             </div>
 
         </motion.div >
