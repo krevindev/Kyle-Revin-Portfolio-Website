@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from 'framer-motion';
 import './Skill.css';
 
@@ -6,6 +6,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
 
     const [isHovered, setIsHovered] = useState(false);
     const [hasSlammed, setHasSlammed] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const slamTimeout = setTimeout(() => {
@@ -21,10 +22,11 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
         <div
             className='skill'
             style={{
-                animationDelay: delay + 's'
+                animationDelay: delay * .5 + 's',
+                border: !hasSlammed && 'none'
             }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={() => hasSlammed && setIsHovered(true)}
+            onMouseLeave={() => hasSlammed && setIsHovered(false)}
         >
             {
                 isHovered && < div className="skill-projector-dot" />
@@ -38,11 +40,11 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
                 />
             </div>
 
-            <motion.img
+            <img
                 src={imgSrc}
-                initial={{ y: -20 }}
-                animate={{ y: 0 }}
-                transition={{ delay: overallStop, type: 'spring', bounce: .4, duration: .4 }}
+                style={{
+                    transform: !hasSlammed ? "translateY(-50%) scale(1.2)" : "translateY(0) scale(1)",
+                }}
             />
 
             {

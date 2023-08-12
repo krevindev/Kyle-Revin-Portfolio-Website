@@ -52,8 +52,7 @@
     /* max-width: 80%; */
     min-width: 80%;
     max-width: 70%;
-    min-height: 300px;
-    min-height: fit-content;
+    min-height: 200px;
 
     display: flex;
     flex-wrap: wrap;

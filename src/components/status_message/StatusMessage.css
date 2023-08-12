@@ -1,0 +1,23 @@
+#status-message {
+    position: fixed;
+    left: 0;
+    top: 20vh;
+
+    padding: 5px;
+    background: yellow;
+    color: black;
+    width: fit-content;
+    height: 5vh;
+
+    z-index: 3000;
+
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#status-message h3 {
+    font-size: calc(1vw + 5px);
+}

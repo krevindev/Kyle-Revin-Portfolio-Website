@@ -78,6 +78,9 @@
     transition: all .2s ease-out;
 
     opacity: 0;
+
+    min-width: fit-content;
+
 }
 
 @keyframes headerLiAnim {
@@ -99,6 +102,7 @@
     padding: 0 20px;
     height: 100%;
     width: 100%;
+    min-width: fit-content;
 
     color: #c5c5c5;
 
@@ -180,7 +184,7 @@
 }
 
 #mobile-modal-nav-content {
-    width: 50vw;
+    width: 70vw;
     height: 50vh;
 
     display: flex;
@@ -198,6 +202,7 @@
     color: white;
     border-radius: 5px;
     border: 1px solid var(--color1);
+    opacity: 0;
 }
 
 #mobile-modal-nav-content a.active li {

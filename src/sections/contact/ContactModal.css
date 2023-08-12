@@ -1,4 +1,4 @@
-#contact-modal{
+#contact-modal {
     top: 0;
     left: 0;
     position: fixed;
@@ -8,14 +8,49 @@
 
     z-index: 2000;
 
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#contact-content-container{
+
+#contact-content-container {
     background: var(--bgColor1);
     width: 50%;
+    min-width: 300px;
     height: 70%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: portfolioAnim .5s forwards;
+}
+
+
+#contact-content {
+    color: white;
+    width: 90%;
+    height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-content form {
+    width: 100%;
+    height: 100%;
+}
+
+#contact-content form input {
+    color: white;
+
+    margin: 10px;
+}
+
+#contact-content form .form-label {
+    color: var(--color1);
 }

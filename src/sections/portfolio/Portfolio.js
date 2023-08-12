@@ -94,56 +94,72 @@ export default function Portfolio() {
         {
             title: 'Notey-Fi',
             thumbNailSrc: noteyFiSS,
-            details: "A Facebook Chatbot designed to keep users informed about updates in their Google Classroom accounts. Receive notifications about new activities and assignments seamlessly. Additionally, users have the convenience of setting reminders for specific tasks.",
+            details: "A Facebook Chatbot: Get Google Classroom updates, activity alerts, assignments, and set task reminders effortlessly.",
             techUsed: [2, 4, 5, 7],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Private',
+            statusColor: 'red',
         },
         {
             title: 'Anony - Anonymous Messaging App',
             thumbNailSrc: anonySS,
-            details: 'Introducing my anonymous messaging web app. Create chat channels, share them, and chat without revealing your identity. Join discussions on diverse topics while keeping your privacy intact.',
+            details: 'An anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
             techUsed: [0, 1, 2, 3, 4, 6],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Live'
         },
         {
             title: 'Live Video Text Censorship',
             thumbNailSrc: censorshipSS,
-            details: 'My Python program that uses Optical Character Recognition (OCR) to automatically censor inappropriate words in live video feeds.',
+            details: 'My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.',
             techUsed: [8],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Downloadable'
         },
         {
             title: 'FB GPT',
             thumbNailSrc: fbGPTSS,
             details: "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
-            techUsed: [2, 4],
+            techUsed: [2, 4, 7],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Request Limit Reached'
         },
         {
             title: 'E-Commerce Front-End',
             thumbNailSrc: eCommerceSS,
-            details: "A school activity where we had to create a single-page front-end E-commerce website. Made using HTML, CSS and Vanilla Javascript. This front-end design may look very familiar since it was based and copied from the design of EPIC Games' Official website.",
+            details: "I developed a one-page E-commerce website for a school project using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
             techUsed: [0, 1, 2],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Non-Responsive'
         }, {
             title: 'Unit Converter',
             thumbNailSrc: converterSS,
-            details: "A Unit Converter page I've created to practice may Javascript DOM skills. This converter currently has 5 available units, the weight, time, area, volume and length.",
+            details: "I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
             techUsed: [0, 1, 2],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Live'
         }, {
             title: 'Personal Vocabulary Builder',
             thumbNailSrc: vocabSS,
-            details: `I've built a Python voice assistant using libraries like "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
+            details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
             techUsed: [8],
             sourceCodeLink: '',
-            previewLink: 'https://anony-post.netlify.app'
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Downloadable'
+        }, {
+            title: 'Personal Voice Assistant',
+            thumbNailSrc: vocabSS,
+            details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
+            techUsed: [8],
+            sourceCodeLink: '',
+            previewLink: 'https://anony-post.netlify.app',
+            status: 'Downloadable'
         }
     ]
 
@@ -157,6 +173,8 @@ export default function Portfolio() {
                 techUsed={port.techUsed}
                 sourceCodeLink={port.sourceCodeLink}
                 previewLink={port.previewLink}
+                status={port.status}
+                statusColor={port.statusColor}
             />
         )
     })
@@ -176,36 +194,40 @@ export default function Portfolio() {
     )
 }
 
-function PortfolioItem({ i, title, thumbNailSrc, details, techUsed, sourceCodeLink, previewLink }) {
+function PortfolioItem(props) {
 
     const handleBtnClick = () => {
-        window.open(previewLink, '_blank');
+        window.open(props.previewLink, '_blank');
     }
 
     return (
         <motion.div
             className='portfolio-item'
-            style={{ animationDelay: i * 0.2 + 1 + 's' }}
+            style={{ animationDelay: props.i * 0.2 + 1 + 's' }}
         >
             <div className='portfolio-upper-container'>
-
+                <div className='portfolio-status-container'>
+                    <h5>Status:</h5><p className='portfolio-status'>{props.status}</p>
+                </div>
                 <div className='portfolio-img-container'
                     style={{
-                        backgroundImage: `url(${thumbNailSrc})`,
+                        backgroundImage: `url(${props.thumbNailSrc})`,
                     }}
                 >
                     <div className='cover' />
                 </div>
+
                 <div className='portfolio-name-container'>
-                    <h3>{title}</h3>
+                    <h3>{props.title}</h3>
                 </div>
+
                 <div className='portfolio-details-container'>
-                    <p>{details}</p>
+                    <p>{props.details}</p>
                 </div>
                 <div className='portfolio-stack-container'>
                     <span>Built with:</span>
                     {
-                        techUsed.map(techIndex => {
+                        props.techUsed.map(techIndex => {
                             return (
                                 <PortfolioTechUsed src={techSkills[techIndex].imgSrc} name={techSkills[techIndex].techName} />
                             )
@@ -216,8 +238,8 @@ function PortfolioItem({ i, title, thumbNailSrc, details, techUsed, sourceCodeLi
 
 
             <div className='portfolio-btns-container'>
-                <button onClick={() => handleBtnClick(sourceCodeLink)}>Source Code</button>
-                <button onClick={() => handleBtnClick(previewLink)}>Preview</button>
+                <button onClick={() => handleBtnClick(props.sourceCodeLink)}>Source Code</button>
+                <button onClick={() => handleBtnClick(props.previewLink)}>Preview</button>
             </div>
 
         </motion.div >

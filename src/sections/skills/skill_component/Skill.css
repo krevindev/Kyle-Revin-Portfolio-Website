@@ -9,7 +9,6 @@
     border-radius: 11px;
     cursor: pointer;
 
-    opacity: 0;
 
     display: flex;
     justify-content: center;
@@ -25,7 +24,38 @@
     background-blend-mode: multiply;
     /* clip-path: polygon(0 20%, 20% 0, 100% 0, 100% 100%, 0 100%); */
 
-    animation: portfolioAnim .5s forwards;
+    opacity: 0;
+    animation: skillGlitch .5s forwards;
+    transition: all .5s ease-in;
+}
+
+@keyframes skillGlitch {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateX(-10px);
+    }
+
+    32% {
+        opacity: 0;
+        transform: translateY(10px) translateX(20px);
+        filter: hue-rotate(-90deg);
+        z-index: 2;
+    }
+
+    40% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 2;
+    }
 }
 
 #skills-section .skill:hover {
@@ -38,7 +68,7 @@
     z-index: 2;
     position: relative;
 
-    /* transition: all .5s ease-in; */
+    transition: all .5s ease-in;
 }
 
 #skills-section .skill:hover img {
@@ -130,7 +160,6 @@
 }
 
 .skill-categ-container {
-
     width: 90%;
 
     padding: 30px 50px;
@@ -160,6 +189,7 @@
 
 .skill .skill-preview-container {
     bottom: 50%;
+    right: -30%;
 
     position: absolute;
     background: rgba(55, 19, 109, 0.7);
@@ -170,10 +200,10 @@
 
     border-radius: 20px;
 
-    width: 200px;
+    width: 190%;
     height: fit-content;
 
-    z-index: 5;
+    z-index: 100;
 
     display: flex;
     flex-direction: column;
@@ -182,9 +212,12 @@
 
     box-sizing: border-box;
 
+    padding: 5px;
+
     opacity: 0;
 
     transform: scale(0);
+    z-index: 10;
 }
 
 #skills-section .skill .skill-preview-container .skill-preview-header {
@@ -197,6 +230,7 @@
     align-items: center;
 
     padding: 10px;
+    margin: 5px;
 
     box-sizing: border-box;
 }
@@ -212,7 +246,11 @@
 #skills-section .skill .skill-preview-container .skill-preview-body {
     box-sizing: border-box;
 
-    padding: 10px;
+    padding: 3px;
+}
+
+#skills-section .skill .skill-preview-container  h3 {
+    font-size: calc(1vmin + 10px);
 }
 
 #skills-section .skill .skill-preview-container .skill-preview-body p {
@@ -283,7 +321,7 @@
 
     100% {
         opacity: 0;
-        transform: scale(0);
+        transform: scale(0) translateY(200px);
     }
 }
 

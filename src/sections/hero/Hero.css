@@ -133,13 +133,22 @@
     max-width: 80%;
 
     animation: heroNameAnim .5s forwards;
-    animation-delay: 0s;
+    animation-delay: 1.1s;
+    opacity: 0;
+}
+
+#hero-p-container p {
+    font-family: 'Maria', sans-serif;
 }
 
 #hero-cta-container {
+    opacity: 0;
     display: flex;
 
     margin-top: 30px;
+    animation: heroNameAnim .5s forwards;
+    animation-delay: 1.2s;
+
 }
 
 #hero-cta-container .my-default-btn {

@@ -13,6 +13,7 @@ import CustomCursor from "./components/custom_cursor/CustomCursor";
 import retroFilter from './res/images/svg/retro-filter.svg';
 import useWindowSize from "./hooks/useWindowSize";
 import ContactModal from "./sections/contact/ContactModal";
+import StatusMessage from "./components/status_message/StatusMessage";
 
 export default function App() {
 
@@ -24,7 +25,7 @@ export default function App() {
   useEffect(() => {
     const flashScreenTimeout = setTimeout(() => {
       setIsFlashScreen(false);
-    }, 4500);
+    }, 2000);
 
     return () => clearTimeout(flashScreenTimeout);
 
@@ -35,7 +36,7 @@ export default function App() {
     <div id="app">
       {
         isFlashScreen ? <SplashScreen /> : <>
-          <Hero setIsContactVisible={setIsContactVisible} />
+          <Hero setIsContactVisible={setIsContactVisible} isFlashScreen={isFlashScreen} />
           <Skills />
           <Portfolio />
           <About setIsContactVisible={setIsContactVisible} />
@@ -47,7 +48,7 @@ export default function App() {
       {
         isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
       }
-
+      {/* <StatusMessage /> */}
     </div>
   )
 }

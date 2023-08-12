@@ -26,8 +26,6 @@ import glitchLogo from '../../../src/res/images/svg/tools/glitch-logo.svg';
 import canvaLogo from '../../../src/res/images/svg/tools/canva-logo.svg';
 import netlifyLogo from '../../../src/res/images/svg/tools/netlify-logo.svg';
 
-import useIsElementVisible from '../../hooks/useIsElementVisible';
-
 import Skill from './skill_component/Skill';
 import SkillsContainer from './skills_container/SkillsContainer';
 
@@ -150,7 +148,8 @@ export default function Skills() {
             {
                 skillName: 'Git',
                 imgSrc: gitLogo,
-                level: 40
+                level: 40,
+                description: " Distributed version control system widely used for tracking changes in code, enabling collaboration, and managing software development workflows."
             }, {
                 skillName: 'Glitch',
                 imgSrc: glitchLogo,

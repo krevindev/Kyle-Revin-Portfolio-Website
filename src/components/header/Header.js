@@ -7,7 +7,7 @@ import navBtnIcon from '../../res/images/svg/nav-btn.svg';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Header() {
+export default function Header({ isFlashScreen }) {
 
     const [isModalNavVisible, setIsModalNavVisible] = useState(false);
     const isMobile = useWindowSize().width <= 600;
@@ -68,7 +68,7 @@ export default function Header() {
             setIsHeaderVisible(true);
         }
         else {
-            if (!isModalNavVisible) setIsHeaderVisible(false);
+            if (!isModalNavVisible & !isMobile) setIsHeaderVisible(false);
         }
 
         setPrevScrollPos(currentScrollPos);
@@ -86,7 +86,7 @@ export default function Header() {
         { name: 'Home', href: '#hero-section' },
         { name: 'Skills', href: '#skills-section' },
         { name: 'Portfolio', href: '#portfolio-section' },
-        { name: 'About', href: '#about-section' },
+        { name: 'About Me', href: '#about-section' },
     ]
     const navlinks = navlinksData.map(((nLink, index) => {
         const handleClick = () => {
@@ -101,7 +101,12 @@ export default function Header() {
                 className={activeSection == m && 'active'}
             >
                 <li
-                    style={{ animation: 'headerLiAnim 1s forwards', animationDelay: index * 0.2 + 's' }}
+                    style={
+                        {
+                            animation: !isMobile ? 'headerLiAnim .5s forwards' : 'portfolioAnim .5s forwards',
+                            animationDelay: index * 0.1 + (isMobile ? 0 : 3) + 's',
+                        }
+                    }
                 >{nLink.name}</li>
             </a>
         )

@@ -20,7 +20,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level }) {
         <motion.div
             className='skill'
             initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1, transform: isHovered && 'scale(2.2)' }}
             transition={{ type: 'spring', bounce: .5, delay: delay, duration: 2 }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
