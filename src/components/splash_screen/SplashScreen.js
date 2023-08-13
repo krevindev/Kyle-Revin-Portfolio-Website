@@ -33,6 +33,22 @@ import glitchLogo from '../../../src/res/images/svg/tools/glitch-logo.svg';
 import canvaLogo from '../../../src/res/images/svg/tools/canva-logo.svg';
 import netlifyLogo from '../../../src/res/images/svg/tools/netlify-logo.svg';
 
+
+import facebookLogo from '../../res/images/svg/socials/facebook-logo.svg'
+import githubLogoHero from '../../res/images/svg/socials/github-logo.svg'
+import instagramLogo from '../../res/images/svg/socials/instagram-logo.svg'
+import linkedInLogo from '../../res/images/svg/socials/linked-in-logo.svg'
+import behanceLogo from '../../res/images/svg/socials/behance-logo.svg'
+
+import anonySS from '../../../src/res/images/screenshots/anony-ss.PNG';
+import censorshipSS from '../../../src/res/images/screenshots/censorship-ss.PNG';
+import eCommerceSS from '../../../src/res/images/screenshots/e-commerce-ss.PNG';
+import converterSS from '../../../src/res/images/screenshots/converter-ss.PNG';
+import noteyFiSS from '../../../src/res/images/screenshots/notey-fi-ss.PNG';
+import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
+import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
+import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
+
 import myPic from '../../res/images/screenshots/my-picture.jpg';
 
 export default function SplashScreen() {
@@ -63,22 +79,39 @@ export default function SplashScreen() {
         glitchLogo,
         canvaLogo,
         netlifyLogo,
-        myPic
+        myPic,
+        anonySS,
+        censorshipSS,
+        eCommerceSS,
+        converterSS,
+        noteyFiSS,
+        fbGPTSS,
+        vocabSS,
+        voiceSS,
+        'https://i.pinimg.com/736x/6f/0a/3b/6f0a3b527f0e7612b2f8299f5c8d08b1.jpg'
     ];
 
     const [isLoading, setIsLoading] = useState(false);
+    const [showLoadingText, setShowLoadingText] = useState(false);
+    const percentageLoaded = useImagePreloader(imagesToPreload, isLoading);
 
-    const isLoaded = useImagePreloader(imagesToPreload);
+    useEffect(() => {
+        const showLoadingTimeout = setTimeout(() => {
+            setShowLoadingText(true);
+        }, 800);
+
+        return () => clearTimeout(showLoadingTimeout);
+    }, []);
 
     useEffect(() => {
         const loadingTimeout = setTimeout(() => {
             setIsLoading(true);
-        }, 5000);
+        }, 2000);
 
         return () => clearTimeout(loadingTimeout);
     }, []);
 
-    if (isLoading && isLoaded) {
+    if (isLoading && percentageLoaded >= 100) {
         return (
             <>
                 <Header />
@@ -89,11 +122,27 @@ export default function SplashScreen() {
         return (
             <div id="splash-screen">
 
-                {/* <VantaDotsBackground /> */}
-                <img id='splash-kr-logo' src={krLogo} />
+                <div id='splash-content-container'>
+                    {/* <VantaDotsBackground /> */}
+                    <div id='splash-img-container'>
+                        <img id='splash-kr-logo' src={krLogo} />
 
-                <img id='splash-loading-circle' src={loadingCircle} />
+                        <img id='splash-loading-circle' src={loadingCircle} />
 
+                        {
+                            showLoadingText &&
+                            <span id='splash-loading-text'>
+                                <h5>Loading Images Please Wait... </h5>
+                                <div id='splash-loading-bar'>
+                                    <div id='splash-loading-bar-fill' style={{ width: percentageLoaded + '%' }} />
+                                </div>
+                                <p>{percentageLoaded}%</p>
+                            </span>
+                        }
+                    </div>
+
+
+                </div>
             </div>
         )
     }
