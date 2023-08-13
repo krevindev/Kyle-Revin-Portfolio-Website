@@ -20,13 +20,6 @@ export default function Header() {
 
     const [isContactVisible, setIsContactVisible] = useState(false);
 
-    const [isHero, setIsHero] = useState(true);
-
-
-    useEffect(() => {
-        console.log(activeSection)
-    }, [activeSection]);
-
     // Checks if a section is visible in the viewport and set the section as the active section
     useEffect(() => {
         const observerOptions = {
@@ -106,9 +99,10 @@ export default function Header() {
         <header id="header" className={isHeaderVisible ? "" : 'scroll-hide'}
             style={activeSection != 'hero-section' ? {
                 backdropFilter: !isMobile && 'blur(10px)',
-                background: !isMobile ? 'rgba(17,17,17,0.3)' : 'rgba(17,17,17,0.9)',
+                background: 'rgba(17,17,17,.8)',
                 borderBottom: '1px solid rgba(70, 70, 70, .5)'
-            } : {}}
+            } : {
+            }}
         >
             {
                 !isMobile ? <>
