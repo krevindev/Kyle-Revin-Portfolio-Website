@@ -32,6 +32,8 @@ export default function ContactModal({ setIsContactVisible }) {
                     </form>
                 </div>
             </div>
+
+            <div id="warning-message">This Feature is still under development</div>
         </div>
     )
 }

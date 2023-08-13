@@ -211,7 +211,6 @@ export default function Skills() {
         'Web Scraping',
         'Digital Art',
         'Chatbot Development',
-        'Computer Vision',
         'API Utilization'
     ];
     const generalSkills = generalSkillsData.map((skill, index) => {

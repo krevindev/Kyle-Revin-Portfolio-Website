@@ -60,9 +60,6 @@ export default function App() {
         isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
       }
 
-      {
-        isContactVisible && <div id="warning-message">This Feature is still under development</div>
-      }
     </div>
   )
 }
