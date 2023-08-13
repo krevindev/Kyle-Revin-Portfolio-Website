@@ -27,15 +27,6 @@ export default function App() {
   const portfolioRef = useRef(null);
   const aboutRef = useRef(null);
 
-  useEffect(() => {
-    const flashScreenTimeout = setTimeout(() => {
-      setisSplashScreen(false);
-    }, 2000);
-
-    return () => clearTimeout(flashScreenTimeout);
-  }, []);
-
-
   return (
     <div id="app">
 

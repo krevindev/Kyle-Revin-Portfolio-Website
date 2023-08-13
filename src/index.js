@@ -13,18 +13,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <VantaDotsBackground />
-    <App />
-    <SplashScreen/>
+    <SplashScreen />
   </React.StrictMode>
 );
-
-
-setTimeout(() => {
-  root.render(
-    <React.StrictMode>
-      <VantaDotsBackground />
-      <Header />
-      <App />
-    </React.StrictMode>
-  )
-}, 2000);

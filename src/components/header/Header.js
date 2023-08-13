@@ -24,11 +24,7 @@ export default function Header() {
 
 
     useEffect(() => {
-        if (activeSection != 'hero-section') {
-            setIsHero(true);
-        } else {
-            setIsHero(false);
-        }
+        console.log(activeSection)
     }, [activeSection]);
 
     // Checks if a section is visible in the viewport and set the section as the active section
@@ -73,7 +69,9 @@ export default function Header() {
             setIsHeaderVisible(true);
         }
         else {
-            if (!isModalNavVisible & !isMobile) setIsHeaderVisible(false);
+            if (!isModalNavVisible && !isModalNavVisible) {
+                setIsHeaderVisible(false);
+            };
         }
 
         setPrevScrollPos(currentScrollPos);
@@ -106,7 +104,7 @@ export default function Header() {
 
     return (
         <header id="header" className={isHeaderVisible ? "" : 'scroll-hide'}
-            style={isHero ? {
+            style={activeSection != 'hero-section' ? {
                 backdropFilter: !isMobile && 'blur(10px)',
                 background: !isMobile ? 'rgba(17,17,17,0.3)' : 'rgba(17,17,17,0.9)',
                 borderBottom: '1px solid rgba(70, 70, 70, .5)'

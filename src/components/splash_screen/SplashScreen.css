@@ -22,12 +22,30 @@
     position: fixed;
 }
 
+@keyframes splashImgAnim {
+    0% {
+        opacity: 0;
+        filter: brightness(40%);
+    }
+
+    100% {
+        opacity: 1;
+        filter: brightness(100%);
+    }
+}
+
 #splash-kr-logo {
     width: 50px;
+
+    animation: splashImgAnim 1s forwards ease-out;
+
 }
 
 #splash-loading-circle {
     width: 200px;
+    animation-delay: .5s;
+    animation: splashImgAnim 5s forwards ease-out;
+    filter: brightness(.5);
 }
 
 .vanta-container {
