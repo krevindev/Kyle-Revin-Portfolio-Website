@@ -1,3 +1,4 @@
+/*  Header */
 #header {
     height: 10vh;
     width: 100vw;
@@ -103,7 +104,6 @@
 }
 
 #header-nav-container a.active {
-    /* background: rgba(32, 32, 32, 0.95); */
     border-bottom: 3px solid var(--color1);
     color: white;
     text-shadow: 0px 0px 5px rgb(128, 128, 128);
@@ -114,7 +114,6 @@
     text-shadow: 0px 0px 3px rgba(255, 255, 255, .3);
 }
 
-
 /* Contact Button */
 #header-contact-container {
     width: 20%;
@@ -124,8 +123,6 @@
     align-items: center;
     justify-content: center;
 }
-
-#header-contact-container button {}
 
 /*  Mobile Header */
 #mobile-header-container {

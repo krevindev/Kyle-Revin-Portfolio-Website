@@ -6,9 +6,8 @@ import ContactModal from '../../sections/contact/ContactModal';
 import krLogo from '../../res/images/svg/kr-logo.svg';
 import navBtnIcon from '../../res/images/svg/nav-btn.svg';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
-export default function Header({ }) {
+export default function Header() {
 
     const [isModalNavVisible, setIsModalNavVisible] = useState(false);
     const isMobile = useWindowSize().width <= 600;
@@ -23,23 +22,6 @@ export default function Header({ }) {
 
     const [isHero, setIsHero] = useState(true);
 
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-
-        if (sectionId == 'hero-section') {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        } else {
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            })
-        }
-
-        if (isMobile) setIsModalNavVisible(false);
-    }
 
     useEffect(() => {
         if (activeSection != 'hero-section') {
@@ -49,6 +31,7 @@ export default function Header({ }) {
         }
     }, [activeSection]);
 
+    // Checks if a section is visible in the viewport and set the section as the active section
     useEffect(() => {
         const observerOptions = {
             root: null,
@@ -82,6 +65,7 @@ export default function Header({ }) {
 
     });
 
+    // Hide the header on scroll down and reappear on scroll up
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
 
@@ -102,46 +86,26 @@ export default function Header({ }) {
         };
     }, [prevScrollPos]);
 
-    // Navlinks
+    // Navlinks Data
     const navlinksData = [
-        { name: 'Home', href: '#hero-section' },
-        { name: 'Skills', href: '#skills-section' },
-        { name: 'Portfolio', href: '#portfolio-section' },
-        { name: 'About Me', href: '#about-section' },
+        { name: 'Home', targetID: 'hero-section' },
+        { name: 'Skills', targetID: 'skills-section' },
+        { name: 'Portfolio', targetID: 'portfolio-section' },
+        { name: 'About Me', targetID: 'about-section' },
     ];
-
-    useEffect(() => {
-        if (isMobile) navlinksData.push({ name: 'Contact', href: '#contact-btn' })
-    }, [isMobile]);
-
-    const navlinks = navlinksData.map(((nLink, index) => {
-        const handleClick = () => {
-            isMobile && setIsModalNavVisible(false);
-        }
-        const m = nLink.href.substring(1, nLink.href.length);
-
-        return (
-            <a
-                // href={nLink.href}
-                // onClick={handleClick}
-                onClick={() => scrollToSection(m)}
-                className={activeSection == m && 'active'}
-            >
-                <li
-                    style={
-                        {
-                            animation: !isMobile ? 'headerLiAnim .5s forwards' : 'portfolioAnim .5s forwards',
-                            animationDelay: index * 0.1 + 's',
-                        }
-                    }
-                >{nLink.name}
-                </li>
-            </a>
-        )
-    }));
+    const navlinks = navlinksData.map((nLink, index) => (
+        <NavLink
+            index={index}
+            name={nLink.name}
+            isMobile={isMobile}
+            targetID={nLink.targetID}
+            setIsModalNavVisible={setIsModalNavVisible}
+            activeSection={activeSection}
+        />
+    ));
 
     return (
-        <div id="header" className={isHeaderVisible ? "" : 'scroll-hide'}
+        <header id="header" className={isHeaderVisible ? "" : 'scroll-hide'}
             style={isHero ? {
                 backdropFilter: !isMobile && 'blur(10px)',
                 background: !isMobile ? 'rgba(17,17,17,0.3)' : 'rgba(17,17,17,0.9)',
@@ -153,11 +117,11 @@ export default function Header({ }) {
                     <div id='header-logo-container'>
                         <img src={krLogo} onClick={() => window.location.assign('/')} />
                     </div>
-                    <div id='header-nav-container'>
+                    <nav id='header-nav-container'>
                         {
                             navlinks
                         }
-                    </div>
+                    </nav>
                     <div id='header-contact-container'>
                         <button id='header-contact-btn' className='my-default-btn' onClick={() => setIsContactVisible(true)}>Contact</button>
                     </div></> :
@@ -173,18 +137,59 @@ export default function Header({ }) {
 
             {
                 isMobile && isModalNavVisible && <div id='mobile-modal-nav-container' onClick={e => { if (e.target.id == 'mobile-modal-nav-container') setIsModalNavVisible(false) }}>
-                    <div id='mobile-modal-nav-content'>
+                    <nav id='mobile-modal-nav-content'>
                         {
                             navlinks
                         }
-
-                    </div>
+                        <button>Contact</button>
+                    </nav>
                 </div>
             }
 
             {
                 isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
             }
-        </div>
+        </header>
+    )
+}
+
+
+// Helper function to scroll to sections
+function scrollToSection(sectionId, isMobile, setIsModalNavVisible) {
+    const section = document.getElementById(sectionId);
+
+    if (sectionId === 'hero-section') {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    if (isMobile) setIsModalNavVisible(false);
+}
+
+
+function NavLink({ index, name, isMobile, targetID, setIsModalNavVisible, activeSection }) {
+    return (
+        <a
+            onClick={() => scrollToSection(targetID, isMobile, setIsModalNavVisible)}
+            className={activeSection === targetID ? 'active' : ''}
+        >
+            <li
+                style={
+                    {
+                        animation: !isMobile ? 'headerLiAnim .5s forwards' : 'portfolioAnim .5s forwards',
+                        animationDelay: index * 0.1 + 's',
+                    }
+                }
+            >
+                {name}
+            </li>
+        </a>
     )
 }
