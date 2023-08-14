@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import './Skills.css';
+import './SkillsSection.css';
 
 import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
 import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';

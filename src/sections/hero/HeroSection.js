@@ -1,5 +1,5 @@
 import useWindowSize from '../../hooks/useWindowSize';
-import './Hero.css';
+import './HeroSection.css';
 
 import facebookLogo from '../../res/images/svg/socials/facebook-logo.svg'
 import githubLogo from '../../res/images/svg/socials/github-logo.svg'

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import './Portfolio.css';
+import './PortfolioSection.css';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
 import useWindowSize from '../../hooks/useWindowSize';
 

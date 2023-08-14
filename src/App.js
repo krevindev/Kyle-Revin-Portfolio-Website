@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 import './App.css';
 
-import About from "./sections/about/About";
-import Hero from "./sections/hero/Hero";
-import Portfolio from "./sections/portfolio/Portfolio";
-import Skills from "./sections/skills/Skills";
+import About from "./sections/about/AboutSection";
+import Hero from "./sections/hero/HeroSection";
+import Portfolio from "./sections/portfolio/PortfolioSection";
+import Skills from "./sections/skills/SkillsSection";
 import VantaDotsBackground from "./components/VantaBackground";
 import SplashScreen from "./components/splash_screen/SplashScreen";
 import CustomCursor from "./components/custom_cursor/CustomCursor";

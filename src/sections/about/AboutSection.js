@@ -3,7 +3,7 @@ import useIsElementVisible from '../../hooks/useIsElementVisible';
 import myPic from '../../res/images/screenshots/my-picture.jpg';
 import pdfLink from '../../res/files/Kyle-Revin-Alimpuangon-Resume.pdf';
 
-import './About.css';
+import './AboutSection.css';
 import { motion } from 'framer-motion';
 
 export default function About() {
