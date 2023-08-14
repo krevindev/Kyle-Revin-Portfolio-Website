@@ -70,7 +70,7 @@
     background: var(--holoBG);
     background-size: 90%;
 
-    clip-path: polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+    /* clip-path: polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%); */
     transition: all .5s;
 }
 
@@ -103,7 +103,7 @@
 .portfolio-item:hover {
     border: 1px solid var(--color1);
 
-    clip-path: polygon(0% 0%, 0 0, 100% 0, 100% 100%, 100% 100%, 0% 100%);
+    /* clip-path: polygon(0% 0%, 0 0, 100% 0, 100% 100%, 100% 100%, 0% 100%); */
     color: white;
 }
 
@@ -124,31 +124,35 @@
 
     border-radius: 7px;
 
-    clip-path: polygon(0 30%, 11% 0, 100% 0, 100% 70%, 88% 100%, 0 100%);
+    /* clip-path: polygon(0 30%, 11% 0, 100% 0, 100% 70%, 88% 100%, 0 100%); */
+
 
     position: relative;
 
-    background-size: 150%;
-    background-position: left;
+    background-repeat: no-repeat;
+    /* background-size: 150%; */
+    background-position: center;
+    background-size: 120% auto;
 
     transition: all .5s ease-out;
 
-    box-shadow: 0px 0px 30px 5px rgba(90, 90, 247, .5) inset;
+    box-shadow: 0px 0px 50px 5px rgba(90, 90, 247, .3) inset;
 }
 
 .portfolio-item:hover .portfolio-img-container {
-    background-size: 170%;
-    clip-path: polygon(0% 0%, 0 0, 100% 0, 100% 100%, 100% 100%, 0% 100%);
+    background-size: 110% auto;
+    /* clip-path: polygon(0% 0%, 0 0, 100% 0, 100% 100%, 100% 100%, 0% 100%); */
 }
 
 .portfolio-notice-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.portfolio-notice-container h5 {
+.portfolio-notice-container .portfolio-notice {
     font-family: 'Maria', sans-serif;
     font-size: 10px;
 }
@@ -284,7 +288,7 @@
 }
 
 .portfolio-item.glitching-portfolio {
-    animation: glitchingPortfolioAnim 4s infinite;
+    /* animation: glitchingPortfolioAnim 4s infinite; */
 }
 
 @keyframes glitchingPortfolioAnim {

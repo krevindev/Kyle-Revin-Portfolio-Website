@@ -11,7 +11,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
     useEffect(() => {
         const slamTimeout = setTimeout(() => {
             setHasSlammed(true);
-        }, overallStop * 1000);
+        }, overallStop * 500);
 
         return () => clearTimeout(slamTimeout);
     }, []);

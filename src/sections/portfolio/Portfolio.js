@@ -24,6 +24,7 @@ import noteyFiSS from '../../../src/res/images/screenshots/notey-fi-ss.PNG';
 import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
 import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
 import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
+import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
 
 
 const techSkills = [
@@ -132,6 +133,16 @@ export default function Portfolio() {
             noticeColor: 'red'
         },
         {
+            title: 'IDK - Anonymous Posting',
+            thumbNailSrc: idkSS,
+            details: `Simple anonymous posting website.`,
+            techUsed: [0, 1, 2, 3, 4, 5, 7],
+            sourceCodeLink: 'https://github.com/krevindev/IDK---Posting',
+            previewLink: 'https://idk-posting.netlify.app/',
+            notice: 'Unfinished',
+            noticeColor: 'orange'
+        },
+        {
             title: 'E-Commerce Front-End',
             thumbNailSrc: eCommerceSS,
             details: "I developed a one-page E-commerce website for a school project using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
@@ -217,25 +228,11 @@ function PortfolioItem(props) {
 
     return (
         <motion.div
-            className={isNoticeValid ? 'portfolio-item glitching-portfolio':'portfolio-item'}
+            className={isNoticeValid ? 'portfolio-item glitching-portfolio' : 'portfolio-item'}
             style={{ animationDelay: props.i * 0.2 + 1 + 's' }}
         >
             <div className='portfolio-upper-container'>
-                <div className='portfolio-notice-container'>
 
-                    {
-                        isNoticeValid && <>
-                            <h5>Notice:</h5>
-                            <p style={{
-                                background: noticeColor,
-                                borderRadius: '5px',
-                                padding: '2px 5px',
-                                color: 'white',
-                                fontSize: '10px'
-                            }} className='portfolio-notice'>{props.notice}</p>
-                        </>
-                    }
-                </div>
                 <div className='portfolio-img-container'
                     style={{
                         backgroundImage: `url(${props.thumbNailSrc})`,
@@ -246,6 +243,20 @@ function PortfolioItem(props) {
 
                 <div className='portfolio-name-container'>
                     <h3>{props.title}</h3>
+                </div>
+                <div className='portfolio-notice-container'>
+                    {
+                        isNoticeValid && <>
+                            <h5 className='portfolio-notice'>Notice:</h5>
+                            <p style={{
+                                background: noticeColor,
+                                borderRadius: '5px',
+                                padding: '2px 5px',
+                                color: 'white',
+                                fontSize: '10px'
+                            }} className='portfolio-notice'>{props.notice}</p>
+                        </>
+                    }
                 </div>
 
                 <div className='portfolio-details-container'>

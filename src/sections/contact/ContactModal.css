@@ -101,6 +101,7 @@
     color: white;
     margin: 10px;
     min-height: fit-content;
+    font-family: 'Maria', sans-serif;
 }
 
 #contact-content form button {

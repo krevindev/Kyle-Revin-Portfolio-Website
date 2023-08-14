@@ -8,11 +8,42 @@ import {
     MDBTextArea
 } from 'mdb-react-ui-kit';
 import { useState } from 'react';
+import axios from 'axios';
 
 import './ContactModal.css';
-import BorderedPolygon from '../../components/BorderedPolygon';
 
 export default function ContactModal({ setIsContactVisible }) {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = {};
+
+        const formElements = e.target.elements;
+
+        Array.from(formElements).forEach(elem => {
+            if (['INPUT', 'TEXTAREA'].includes(elem.tagName)) {
+                formData[elem.name] = elem.value;
+            }
+        })
+
+        try {
+            // const response = axios.post('https://rev-mailer.glitch.me/send-mail', formData
+            axios.post('localhost:4000/eh', formData)
+                .then(res => {
+                    console.log('Email Sent Successfully!', res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                ;
+        } catch (error) {
+            console.log(error);
+        }
+
+    };
+
+
     return (
         <div id="contact-modal" onClick={e => { if (e.target.id == 'contact-modal') setIsContactVisible(false) }}>
             <div id='contact-content-container'>
@@ -20,12 +51,12 @@ export default function ContactModal({ setIsContactVisible }) {
                 <div className='half-border' />
                 <h2>Get In Touch</h2>
                 <div id='contact-content'>
-                    <form onSubmit={e => e.preventDefault()}>
-                        <MDBInput type='text' label='Name' required />
-                        <MDBInput type='email' className='mdmd' label='Email address' />
-                        <MDBInput type='text' label='Company/Organization' />
-                        <MDBInput type='text' label='Additional Details' />
-                        <MDBTextArea type='text' label='Message' className='input-message' />
+                    <form onSubmit={e => handleSubmit(e)}>
+                        <MDBInput name='name' type='text' label='Name' required />
+                        <MDBInput name='email' type='email' className='mdmd' label='Email address' />
+                        <MDBInput name='company' type='text' label='Company/Organization' />
+                        <MDBInput name='details' type='text' label='Additional Details' />
+                        <MDBTextArea name='message' type='text' label='Message' className='input-message' />
                         <MDBBtn type='submit' block>
                             Sign in
                         </MDBBtn>
