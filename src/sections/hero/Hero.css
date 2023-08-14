@@ -1,6 +1,8 @@
 #hero-section {
     --maxHeroHeight: 90vh;
     width: 100vw;
+    max-width: 100vw;
+    height: 90vh;
     min-height: fit-content;
 
 
@@ -9,7 +11,7 @@
 
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
 
     box-sizing: border-box;
@@ -17,6 +19,9 @@
     position: relative;
 
     animation: portfolioAnim .6s 2s;
+    font-size: calc(3vw + 4vh);
+
+    padding-right: 5%;
 }
 
 @keyframes heroAnim {
@@ -35,49 +40,40 @@
 
 }
 
-#hero-section * {
-    width: 100%;
-    /* border: 1px solid green; */
-    z-index: 1;
-}
-
-#random-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
 #socials-container {
     width: fit-content;
-    max-width: 100px;
-    height: 100%;
+    min-width: 5%;
+    height: 60%;
+
+    align-self: center;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
-
-    justify-self: flex-start;
 
     padding: 25px;
-    margin-right: 15px;
+    margin-right: 50px;
 
-    border-right: 1px solid white;
+    border-right: 1px solid rgba(255, 255, 255, .3);
 }
 
 #hero-section .social {
     width: 20px;
     height: 20px;
 
-    margin: 20px 0;
+    margin: 20px 0px;
 
     cursor: pointer;
+
+    position: relative;
 }
 
 #hero-section .social img {
     width: 100%;
     height: 100%;
+
+    position: absolute;
 }
 
 #hero-section .social img:hover {
@@ -85,13 +81,19 @@
 }
 
 #hero-main-content-container {
-    min-height: var(--maxHeroHeight);
+    /* min-height: var(--maxHeroHeight); */
+
+    height: 90vh;
+
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
 
     color: white;
+
+    box-sizing: border-box;
 }
 
 #hero-name-container {
@@ -110,11 +112,10 @@
     opacity: 0;
 
     user-select: none;
-
 }
 
 #hero-name-container h1 {
-    font-size: calc(2vw + 40px);
+    font-size: 1em;
 }
 
 @keyframes heroNameAnim {
@@ -139,34 +140,41 @@
 
 #hero-p-container p {
     font-family: 'Maria', sans-serif;
+    font-size: .3em;
 }
 
 #hero-cta-container {
+    width: 100%;
+    min-height: 30px;
+
     opacity: 0;
     display: flex;
 
     margin-top: 30px;
     animation: heroNameAnim .5s forwards;
     animation-delay: 1.2s;
-
 }
 
 #hero-cta-container .my-default-btn {
-    width: 40%;
-    max-width: 130px;
-    min-width: 100px;
+    height: fit-content;
+    width: 20%;
+    max-height: 100%;
     min-height: fit-content;
-    padding: 0;
+    min-width: 100px;
+    padding: 5px;
+
+    font-size: .3em;
 }
 
 #hero-featured-container {
-    height: 100%;
     width: 100%;
-    min-width: fit-content;
-    min-height: fit-content;
-    max-width: fit-content;
-    min-width: 30%;
+    height: 40%;
 
+    min-width: fit-content;
+    max-width: fit-content;
+
+
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,14 +213,8 @@
 /* Mobile */
 #hero-center-socials-container {
     margin-top: 50px;
-    width: 50%;
     height: fit-content;
 
     display: flex;
     justify-content: space-evenly;
-}
-
-#test-poly {
-    background: green;
-    stroke: red;
 }

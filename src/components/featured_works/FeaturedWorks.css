@@ -1,12 +1,6 @@
 #featured-works {
-    height: 60%;
-    width: 60%;
-    max-height: 100px;
-    max-width: 200px;
-    min-height: 200px;
-    min-width: 300px;
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -15,6 +9,7 @@
     animation: heroNameAnim .5s forwards;
     animation-delay: 2s;
 
+    font-size: 1em;
 }
 
 #featured-works * {
@@ -23,20 +18,24 @@
 
 #featured-works-content {
     overflow-y: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
 #featured-works-content h1 {
+    min-width: fit-content;
+
     color: white;
-    font-size: calc(1vw + 20px);
     margin-bottom: 20px;
     font-family: 'HOPE-HYPE', sans-serif;
-    min-width: fit-content;
-    width: fit-content;
+
+    font-size: .5em;
 }
 
 #featured-current-container {
-    width: 100%;
-    height: 50px;
+    height: 100px;
     min-height: fit-content;
     position: relative;
 
@@ -44,7 +43,6 @@
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid white;
-
 }
 
 #featured-works h5 {
@@ -53,7 +51,7 @@
 
     text-align: center;
 
-    font-size: 15px;
+    font-size: .3em;
 
     opacity: 0;
 }
@@ -99,8 +97,7 @@
 }
 
 #featured-button-container button {
-    width: 50%;
-    height: 30px;
+    padding: 5px 15px;
 
     background: none;
     border: 1px solid white;
@@ -113,6 +110,8 @@
     margin-top: 20px;
 
     transition: all .5s;
+
+    font-size: .2em;
 }
 
 #featured-button-container button:hover {

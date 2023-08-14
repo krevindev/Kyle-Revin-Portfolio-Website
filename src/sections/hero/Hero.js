@@ -88,7 +88,6 @@ export default function Hero({ setIsContactVisible }) {
             {/* Featured Projects Container */}
             <div id='hero-featured-container'>
                 <FeaturedWorks />
-
             </div>
         </div >
     )

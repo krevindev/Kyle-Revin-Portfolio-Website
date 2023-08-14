@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './Portfolio.css';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
+import useWindowSize from '../../hooks/useWindowSize';
 
 import { color, motion } from 'framer-motion';
 
@@ -85,6 +86,8 @@ export default function Portfolio() {
         threshold: 0.5
     });
     const [hasLoaded, setHasLoaded] = useState(false);
+
+    const isMobile = useWindowSize().width <= 600;
 
     useEffect(() => {
         if (isVisible && !hasLoaded) {
@@ -190,6 +193,7 @@ export default function Portfolio() {
                 previewLink={port.previewLink}
                 notice={port.notice}
                 noticeColor={port.noticeColor}
+                isMobile={isMobile}
             />
         )
     })
@@ -229,7 +233,7 @@ function PortfolioItem(props) {
     return (
         <motion.div
             className={isNoticeValid ? 'portfolio-item glitching-portfolio' : 'portfolio-item'}
-            style={{ animationDelay: props.i * 0.2 + 1 + 's' }}
+            style={{ animationDelay: props.i * 0.2 + 1 + 's', backdropFilter: !props.isMobile && 'blur(10px)' }}
         >
             <div className='portfolio-upper-container'>
 

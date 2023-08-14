@@ -73,9 +73,6 @@ p {
 }
 
 .my-default-btn {
-  width: fit-content;
-  height: 40px;
-  min-height: fit-content;
   border-radius: 0px;
 
   padding: 3px 10%;
