@@ -25,10 +25,35 @@
     /* clip-path: polygon(0 20%, 20% 0, 100% 0, 100% 100%, 0 100%); */
 
     opacity: 0;
-    animation: skillGlitch .5s forwards;
+    /* animation: skillGlitch .5s forwards; */
+    animation: skillAnimIn .5s forwards;
     transition: all .5s ease-in;
 }
+@keyframes skillAnimIn {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
 
+    30% {
+        opacity: 1;
+    }
+
+    32% {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    40% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 2;
+    }
+}
 @keyframes skillGlitch {
     0% {
         opacity: 1;
