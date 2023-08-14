@@ -36,7 +36,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
                     className='skill-level-fill'
                     initial={{ width: 0 }}
                     animate={{ width: level + '%' }}
-                    transition={{ delay: overallStop, duration: .8 }}
+                    transition={{ delay: overallStop - .5, duration: .8 }}
                 />
             </div>
 
