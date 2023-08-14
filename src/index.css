@@ -70,6 +70,8 @@ p {
 
   /* --holoBG: rgba(90, 0, 225, 0.1); */
   --holoBG: rgba(34, 34, 86, 0.1);
+
+  /* font-size: calc(3vw + 4vh); */
 }
 
 .my-default-btn {
