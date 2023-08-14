@@ -212,6 +212,7 @@
 
 /* Mobile */
 #hero-center-socials-container {
+    width: 100%;
     margin-top: 50px;
     height: fit-content;
 
