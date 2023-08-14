@@ -208,7 +208,8 @@
     #hero-center-socials-container {
         align-self: center;
     }
-    .skills-container.text{
+
+    .skills-container.text {
         display: flex;
         flex-direction: row;
         align-items: center;
