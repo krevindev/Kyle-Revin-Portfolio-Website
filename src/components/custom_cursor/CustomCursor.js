@@ -7,13 +7,13 @@ const CustomCursor = () => {
   const [hoveredElement, setHoveredElement] = useState(<span></span>);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // useEffect(() => {
-  //   if (['LI', 'IMG', 'A'].includes(hoveredElement.tagName)) {
-  //     setIsExpanded(true);
-  //   } else {
-  //     setIsExpanded(false);
-  //   }
-  // }, [hoveredElement]);
+  useEffect(() => {
+    if (['IMG', 'A', 'BUTTON'].includes(hoveredElement.tagName)) {
+      setIsExpanded(true);
+    } else {
+      setIsExpanded(false);
+    }
+  }, [hoveredElement]);
 
   const handleMouseMove = (event) => {
     setCursorX(event.clientX);

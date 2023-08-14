@@ -17,7 +17,7 @@
     transition: all .2s ease-in-out;
     user-select: none;
 
-    border: 1px solid var(--color1);
+    border: 1px solid rgb(64, 64, 64);
 
     background: var(--holoBG);
     background: rgb(30, 30, 30);
@@ -150,13 +150,33 @@
 }
 
 .skill:hover .skill-level {
-    opacity: 0;
+    opacity: .5;
 }
 
 .skill .skill-level-fill {
     height: 100%;
     background: var(--color1);
-    background: turquoise;
+
+    animation: skillLevelFillAnim .5s forwards;
+    animation-delay: .5s;
+
+    opacity: 0;
+}
+
+@keyframes skillLevelFillAnim {
+    0% {
+        filter: brightness(100%);
+        opacity: 0;
+    }
+
+    80% {
+        filter: brightness(200%);
+    }
+
+    100% {
+        filter: brightness(100%);
+        opacity: 1;
+    }
 }
 
 .skill-categ-container {

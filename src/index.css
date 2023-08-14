@@ -23,6 +23,18 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+
+body::-webkit-scrollbar {
+  background: rgba(0, 0, 0, .3);
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(62, 62, 62);
+  border-radius: 50px;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

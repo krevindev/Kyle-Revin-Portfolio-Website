@@ -230,11 +230,11 @@ export default function Skills() {
         <div id="skills-section" className='main-section'>
             <div className='section-indicator'></div>
 
-            <div className='page-title-container' >
+            <div className='page-title-container'>
                 <span>Skills Page</span>
             </div>
 
-            <SkillsContainer headingText="Skills and Services" >
+            <SkillsContainer headingText="Skills and Services" isText={true}>
                 {
                     generalSkills
                 }

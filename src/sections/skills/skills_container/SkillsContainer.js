@@ -30,7 +30,7 @@ export default function SkillContainer({ headingText, children, isText }) {
                     </motion.h4>
                 </div>
 
-                <div className='skills-container'>
+                <div className={isText ? 'skills-container text' : 'skills-container'}>
                     {
                         (skillContainerVisible || hasContainerLoaded) &&
                         children
