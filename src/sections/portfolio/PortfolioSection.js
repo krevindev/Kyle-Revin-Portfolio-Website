@@ -26,6 +26,7 @@ import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
 import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
 import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
 import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
+import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
 
 
 const techSkills = [
@@ -134,6 +135,13 @@ export default function Portfolio() {
             previewLink: null,
             notice: 'Request Limit Reached',
             noticeColor: 'red'
+        }, {
+            title: 'UI Design Kit Store',
+            thumbNailSrc: uiKitSS,
+            details: "A simple landing page from a Ari Shakur's website design template.",
+            techUsed: [0, 1, 2, 3, 4],
+            sourceCodeLink: 'https://github.com/krevindev/UI-Design-Kit---Landing-Page',
+            previewLink: 'https://ui-design-kit.vercel.app/',
         },
         {
             title: 'IDK - Anonymous Posting',
