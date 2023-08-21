@@ -49,7 +49,7 @@ export default function About() {
                                     <li><span className='about-info-key'>YEAR: </span><p>2023</p></li>
                                 </div>
                             </div>
-                            <div id='download-cv-container' onClick={() => window.open(pdfLink, '_blank')}> 
+                            <div id='download-cv-container' onClick={() => window.open(pdfLink, '_blank')}>
                                 <button id='download-cv-btn'>Download Resume</button>
                             </div>
                         </div>
@@ -80,11 +80,10 @@ export default function About() {
                             <h1>Kyle Revin</h1>
                             <h1> Alimpuangon</h1>
                             <p>
-                                I'm an aspiring <div className='underline'>Full-Stack Web Developer</div> with a creative edge, proficient in both front-end and back-end development. My skills also encompass UI/UX design and digital art, lending a unique touch to my projects. I thrive on creating captivating and innovative applications that engage users.
+                                I'm a <div className='underline'>Full-Stack Web Developer</div> with a creative edge. Proficient in both front-end and back-end development. My skills also encompass UI/UX design and digital art, lending a unique touch to my projects.
                             </p>
                             <p>
-                                I work with Node.js, React.js, Express.js, and REST APIs, crafting dynamic and interactive experiences. My expertise extends to Python, and I utilize SQL, MongoDB, and Firebase for robust databases. Quick to grasp new technologies, I'm eager to contribute more to your projects.
-
+                                I work with REST APIs and various javascript libaries, crafting dynamic and interactive experiences. Quick to grasp new technologies and I'm eager to contribute more to your projects.
                                 <br></br>
                                 <br></br>
                                 <div className='underline'>

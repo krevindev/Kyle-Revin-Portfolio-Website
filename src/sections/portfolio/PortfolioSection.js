@@ -27,6 +27,7 @@ import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
 import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
 import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
 import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
+import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
 
 
 const techSkills = [
@@ -136,6 +137,16 @@ export default function Portfolio() {
             notice: 'Request Limit Reached',
             noticeColor: 'red'
         }, {
+            title: 'MNTN',
+            thumbNailSrc: mntnSS,
+            details: "A hiking guide website from a web design template",
+            techUsed: [0, 1, 2, 3, 4],
+            sourceCodeLink: 'https://github.com/krevindev/MNTN---Website',
+            previewLink: 'https://mntn-website.vercel.app/',
+            notice: 'Unfinished',
+            noticeColor: 'orange'
+        },
+        {
             title: 'UI Design Kit Store',
             thumbNailSrc: uiKitSS,
             details: "A simple landing page from a Ari Shakur's website design template.",

@@ -7,6 +7,7 @@ const CustomCursor = () => {
   const [hoveredElement, setHoveredElement] = useState(<span></span>);
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // expand the cursor if these conditions are met
   useEffect(() => {
     if (['IMG', 'A', 'BUTTON'].includes(hoveredElement.tagName)) {
       setIsExpanded(true);
@@ -15,6 +16,7 @@ const CustomCursor = () => {
     }
   }, [hoveredElement]);
 
+  // 
   const handleMouseMove = (event) => {
     setCursorX(event.clientX);
     setCursorY(event.clientY);
