@@ -3,7 +3,7 @@ import './PortfolioSection.css';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
 import useWindowSize from '../../hooks/useWindowSize';
 
-import { color, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
 import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
@@ -111,7 +111,7 @@ export default function Portfolio() {
         {
             title: 'Anony - Anonymous Messaging App',
             thumbNailSrc: anonySS,
-            details: 'An anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
+            details: 'A simple anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
             techUsed: [0, 1, 2, 3, 4, 6],
             sourceCodeLink: 'https://github.com/krevindev/Anony',
             previewLink: 'https://anony-post.netlify.app',
@@ -251,6 +251,7 @@ function PortfolioItem(props) {
 
     return (
         <motion.div
+            key={props.index}
             className={isNoticeValid ? 'portfolio-item glitching-portfolio' : 'portfolio-item'}
             style={{ animationDelay: props.i * 0.2 + 1 + 's', backdropFilter: !props.isMobile && 'blur(10px)' }}
         >
@@ -286,7 +287,6 @@ function PortfolioItem(props) {
                     <p>{props.details}</p>
                 </div>
                 <div className='portfolio-stack-container'>
-                    <span>Built with:</span>
                     {
                         props.techUsed.map(techIndex => {
                             return (
@@ -311,7 +311,7 @@ function PortfolioItem(props) {
                     className={!isPreviewLinkValid && 'invalid-link'}
                     onClick={() => isPreviewLinkValid && handleBtnClick(props.previewLink)}
                 >
-                    Preview
+                    Live Demo
                 </button>
 
             </div>

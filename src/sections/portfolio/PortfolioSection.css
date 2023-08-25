@@ -193,6 +193,16 @@
 
 .portfolio-notice-container p {
     display: flex;
+
+    animation: noticeAnim .5s infinite alternate;
+}
+
+@keyframes noticeAnim {
+    from{
+        filter: brightness(50%);
+    }to{
+        filter: brightness(150%);
+    }
 }
 
 .portfolio-item:hover .cover {
@@ -321,7 +331,7 @@
 }
 
 .portfolio-btns-container button.invalid-link {
-    filter: saturate(30%);
+    filter: saturate(0%);
     cursor: not-allowed;
     text-decoration: line-through;
     color: black;

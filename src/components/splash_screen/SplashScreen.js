@@ -132,9 +132,11 @@ export default function SplashScreen() {
                         {
                             showLoadingText &&
                             <span id='splash-loading-text'>
-                                <h5>Loading Essential Images Please Wait... </h5>
+                                <h5>Loading Essential Images...</h5>
                                 <div id='splash-loading-bar'>
-                                    <div id='splash-loading-bar-fill' style={{ width: percentageLoaded + '%' }} />
+                                    <div id='splash-loading-bar-fill'
+                                    style={{ width: percentageLoaded + '%' }}
+                                    />
                                 </div>
                                 <p>{percentageLoaded}%</p>
                             </span>

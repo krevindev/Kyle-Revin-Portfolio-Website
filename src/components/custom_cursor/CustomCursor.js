@@ -9,7 +9,7 @@ const CustomCursor = () => {
 
   // expand the cursor if these conditions are met
   useEffect(() => {
-    if (['IMG', 'A', 'BUTTON'].includes(hoveredElement.tagName)) {
+    if (['IMG', 'A', 'BUTTON'].includes(hoveredElement.tagName) && !Array.from(hoveredElement.classList).includes('invalid-link')) {
       setIsExpanded(true);
     } else {
       setIsExpanded(false);

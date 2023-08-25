@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import './SkillsSection.css';
 
 import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
@@ -15,6 +14,7 @@ import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
 import phpLogo from '../../../src/res/images/svg/tech_stack/php-logo.svg';
 import sqlLogo from '../../../src/res/images/svg/tech_stack/sqlLogo.svg';
 import npmLogo from '../../../src/res/images/svg/tech_stack/npm-logo.svg';
+import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
 
 import photoshopLogo from '../../../src/res/images/svg/tools/photoshop-logo.svg';
 import figmaLogo from '../../../src/res/images/svg/tools/figma-logo.svg';
@@ -50,8 +50,14 @@ export default function Skills() {
             {
                 skillName: 'JavaScript',
                 imgSrc: javascriptLogo,
-                level: 65,
+                level: 75,
                 description: "JavaScript is a versatile scripting language for web development, enabling interactive and dynamic website functionality."
+            },
+            {
+                skillName: 'TypeScript',
+                imgSrc: typescriptLogo,
+                level: 60,
+                description: "A powerful superset of JavaScript that brings static typing, enhanced tooling, and improved scalability to your web development projects."
             },
             {
                 skillName: 'ReactJS',
@@ -99,7 +105,7 @@ export default function Skills() {
             {
                 skillName: 'NextJS',
                 imgSrc: nextJs,
-                level: 20,
+                level: 30,
                 description: "React framework for building server-rendered and optimized web applications."
             }
             ,
@@ -209,13 +215,14 @@ export default function Skills() {
         'Back-End Web Development',
         'UI / UX Design and Prototype',
         'Web Scraping',
-        'Digital Art',
+        // 'Digital Art',
         'Chatbot Development',
         'API Utilization'
     ];
     const generalSkills = generalSkillsData.map((skill, index) => {
         return (
             <motion.li
+                key={index}
                 className='text-skill'
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

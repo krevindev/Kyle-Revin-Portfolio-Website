@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 import './Skill.css';
 
@@ -6,7 +6,6 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
 
     const [isHovered, setIsHovered] = useState(false);
     const [hasSlammed, setHasSlammed] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const slamTimeout = setTimeout(() => {

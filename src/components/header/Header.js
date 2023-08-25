@@ -20,6 +20,10 @@ export default function Header() {
 
     const [isContactVisible, setIsContactVisible] = useState(false);
 
+    useEffect(() => {
+        if(!isMobile) setIsModalNavVisible(false);
+    }, [isMobile]);
+
     // Checks if a section is visible in the viewport and set the section as the active section
     useEffect(() => {
         const observerOptions = {
@@ -86,6 +90,7 @@ export default function Header() {
     ];
     const navlinks = navlinksData.map((nLink, index) => (
         <NavLink
+            key={index}
             index={index}
             name={nLink.name}
             isMobile={isMobile}
@@ -133,7 +138,7 @@ export default function Header() {
                         {
                             navlinks
                         }
-                        <button>Contact</button>
+                        <button id='header-contact-btn' className='my-default-btn' onClick={() => setIsContactVisible(true)}>Contact</button>
                     </nav>
                 </div>
             }
@@ -166,9 +171,10 @@ function scrollToSection(sectionId, isMobile, setIsModalNavVisible) {
 }
 
 
-function NavLink({ index, name, isMobile, targetID, setIsModalNavVisible, activeSection }) {
+function NavLink({ key, index, name, isMobile, targetID, setIsModalNavVisible, activeSection }) {
     return (
         <a
+            key={key}
             onClick={() => scrollToSection(targetID, isMobile, setIsModalNavVisible)}
             className={activeSection === targetID ? 'active' : ''}
         >

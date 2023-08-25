@@ -19,8 +19,8 @@
 }
 
 #splash-content-container {
-    width: 50vw;
-    height: 50vh;
+    width: 10vw;
+    height: 10vh;
 
     display: flex;
     flex-direction: column;
@@ -51,7 +51,8 @@
     transform: translateX(-50%);
 
     width: fit-content;
-    min-width: 100%;
+    max-width: 50vw;
+    min-width: 120%;
 
     display: flex;
     flex-direction: column;
@@ -70,7 +71,7 @@
 }
 
 #splash-img-container #splash-loading-text * {
-    font-size: 10px;
+    font-size: 8px;
     color: var(--color1);
 }
 
@@ -87,29 +88,21 @@
 }
 
 #splash-kr-logo {
-    width: 50px;
+    height: 30%;
 
     animation: splashImgAnim 1s forwards ease-out;
 
 }
 
 #splash-loading-circle {
-    width: 200px;
+    width: 160px;
     animation-delay: .5s;
     animation: splashImgAnim 5s forwards ease-out;
     filter: brightness(.5);
 }
 
-.vanta-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-}
-
 #splash-loading-bar {
-    width: 100%;
+    width: 70%;
     height: 5px;
     border: 1px solid var(--color1);
     margin-top: 10px;
@@ -121,4 +114,13 @@
     height: 100%;
 
     transition: width .5s easin;
+}
+
+/* Vanta Style */
+.vanta-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
