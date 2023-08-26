@@ -1,0 +1,14 @@
+#main-footer{
+    background: rgba(19, 19, 19, .8);
+    width: 100vw;
+    height: 10vh;
+    max-width: 100vw;
+
+    display: flex;
+}
+
+#main-footer p{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}

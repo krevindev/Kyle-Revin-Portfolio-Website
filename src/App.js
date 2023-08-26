@@ -14,6 +14,8 @@ import retroFilter from './res/images/svg/retro-filter.svg';
 import useWindowSize from "./hooks/useWindowSize";
 import ContactModal from "./sections/contact/ContactModal";
 import StatusMessage from "./components/status_message/StatusMessage";
+import Footer from "./components/footer/Footer";
+import AboutContactContainer from "./components/about_contact/AboutContactContainer";
 
 export default function App() {
 
@@ -48,18 +50,14 @@ export default function App() {
         ref={aboutRef}
         setIsContactVisible={setIsContactVisible}
       />
-      <div id='about-contact-container'>
-        <span>LET'S BRING YOUR VISION TO LIFE</span>
-        <h5>Turn your concepts into a distinctive and impactful brand.</h5>
-        <button className='my-default-btn' onClick={() => setIsContactVisible(true)}>Let's Talk</button>
-      </div>
+      <AboutContactContainer setIsContactVisible={setIsContactVisible} />
       {
         !isMobile && <CustomCursor />
       }
       {
         isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
       }
-
+      <Footer />
     </div>
   )
 }
