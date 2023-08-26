@@ -16,6 +16,7 @@ import pythonLogo from '../../../src/res/images/svg/tech_stack/python-logo.svg';
 import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
 import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
 import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
+import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
 
 import anonySS from '../../../src/res/images/screenshots/anony-ss.PNG';
 import censorshipSS from '../../../src/res/images/screenshots/censorship-ss.PNG';
@@ -28,6 +29,7 @@ import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
 import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
 import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
 import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
+import krUISS from '../../../src/res/images/screenshots/kr-ui-ss.PNG';
 
 
 const techSkills = [
@@ -75,6 +77,9 @@ const techSkills = [
     {
         techName: 'NextJS',
         imgSrc: nextJs
+    }, {
+        techName: 'TypeScript',
+        imgSrc: typescriptLogo
     }
 
 ]
@@ -163,6 +168,24 @@ export default function Portfolio() {
             previewLink: 'https://idk-posting.netlify.app/',
             notice: 'Unfinished',
             noticeColor: 'orange'
+        }, {
+            title: 'KR React Components Kit',
+            thumbNailSrc: krUISS,
+            details: `A planned React UI Components Kit website created as part of my TypeScript practice.`,
+            techUsed: [0, 1, 2, 3, 4, 11],
+            sourceCodeLink: 'https://github.com/krevindev/KR-UI-Kit',
+            previewLink: 'https://kr-ui.vercel.app/',
+            notice: 'Unfinished',
+            noticeColor: 'orange'
+        },
+        {
+            title: 'Unit Converter',
+            thumbNailSrc: converterSS,
+            details: "I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
+            techUsed: [0, 1, 2],
+            sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
+            previewLink: 'https://batchy-bot.github.io/unitconverter1/',
+            notice: ''
         },
         {
             title: 'E-Commerce Front-End',
@@ -173,15 +196,8 @@ export default function Portfolio() {
             previewLink: 'https://batchy-bot.github.io/REV-Game-Store/',
             notice: 'Non-Responsive',
             noticeColor: 'orange'
-        }, {
-            title: 'Unit Converter',
-            thumbNailSrc: converterSS,
-            details: "I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
-            techUsed: [0, 1, 2],
-            sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
-            previewLink: 'https://batchy-bot.github.io/unitconverter1/',
-            notice: ''
-        }, {
+        },
+        {
             title: 'Personal Vocabulary Builder',
             thumbNailSrc: vocabSS,
             details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
@@ -197,7 +213,9 @@ export default function Portfolio() {
             sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
             previewLink: null,
             notice: ''
-        }]
+        }
+
+    ]
 
     const portfolioItems = portfolioData.map((port, index) => {
         return (
