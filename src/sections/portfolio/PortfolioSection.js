@@ -197,8 +197,7 @@ export default function Portfolio() {
             sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
             previewLink: null,
             notice: ''
-        }
-    ]
+        }]
 
     const portfolioItems = portfolioData.map((port, index) => {
         return (

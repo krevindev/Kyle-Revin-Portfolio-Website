@@ -58,7 +58,7 @@ export default function ContactModal({ setIsContactVisible }) {
                         <MDBInput name='details' type='text' label='Additional Details' />
                         <MDBTextArea name='message' type='text' label='Message' className='input-message' />
                         <MDBBtn type='submit' block>
-                            Sign in
+                            Send
                         </MDBBtn>
                     </form>
                 </div>

@@ -4,8 +4,7 @@
     width: 100vw;
     min-height: fit-content;
 
-    border: 1px solid var(--color1);
-    border-bottom: none;
+    border-top: 1px solid var(--color1);
     background: var(--bgColor1);
 
     color: white;
@@ -32,7 +31,7 @@
 
 
 #about-contact-container h5 {
-    font-size: 1.5em;
+    font-size: 1.7em;
     margin: 20px 0;
 }
 
