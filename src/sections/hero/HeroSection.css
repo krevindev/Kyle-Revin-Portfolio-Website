@@ -116,6 +116,7 @@
 
 #hero-name-container h1 {
     font-size: 1em;
+    margin: 0;
 }
 
 @keyframes heroNameAnim {

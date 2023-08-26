@@ -105,7 +105,7 @@ export default function Skills() {
             {
                 skillName: 'NextJS',
                 imgSrc: nextJs,
-                level: 30,
+                level: 20,
                 description: "React framework for building server-rendered and optimized web applications."
             }
             ,
