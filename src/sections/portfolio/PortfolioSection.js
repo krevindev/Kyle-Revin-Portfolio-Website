@@ -167,7 +167,7 @@ export default function Portfolio() {
         {
             title: 'E-Commerce Front-End',
             thumbNailSrc: eCommerceSS,
-            details: "I developed a one-page E-commerce website for a school project using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
+            details: "I developed a one-page E-commerce website for a school activy using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
             techUsed: [0, 1, 2],
             sourceCodeLink: null,
             previewLink: 'https://batchy-bot.github.io/REV-Game-Store/',

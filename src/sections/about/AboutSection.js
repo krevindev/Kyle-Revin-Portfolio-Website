@@ -34,6 +34,7 @@ export default function About() {
                         </div>
 
                         <div id='about-me-info-container' >
+                            {/* Will clean this soon */}
                             <div className='about-info' style={{ animationDelay: '1s' }}>
                                 <span className='about-info-categ'>Education:</span>
                                 <div className='about-info-container'>
@@ -42,10 +43,12 @@ export default function About() {
                                     <li><span className='about-info-key'>YEAR: </span><p>2019-2023</p></li>
                                 </div>
                             </div>
+
                             <div className='about-info' style={{ animationDelay: '1.5s' }}>
                                 <span className='about-info-categ'>Experience:</span>
                                 <div className='about-info-container'>
-                                    <li><span className='about-info-key'>Intern: </span><p>Front-End Web Developer Intern at Prometheus - Marketing Agency</p></li>
+                                    <li><span className='about-info-key'>Position: </span><p>Front-End Web Developer Intern</p></li>
+                                    <li><span className='about-info-key'>Company: </span><p>Prometheus - Full-Service PR and Marketing Agency</p></li>
                                     <li><span className='about-info-key'>YEAR: </span><p>2023</p></li>
                                 </div>
                             </div>
@@ -80,10 +83,10 @@ export default function About() {
                             <h1>Kyle Revin</h1>
                             <h1> Alimpuangon</h1>
                             <p>
-                                I'm a <div className='underline'>Full-Stack Web Developer</div> with a creative edge. Proficient in both front-end and back-end development. My skills also encompass UI/UX design and digital art, lending a unique touch to my projects.
+                                I'm a <span className='underline'>Full-Stack Web Developer</span> with a creative flair. I excel in both front-end and back-end development, and I also bring expertise in UI/UX design and digital art to add a distinctive touch to my projects.
                             </p>
                             <p>
-                                I work with REST APIs and various javascript libaries, crafting dynamic and interactive experiences. Quick to grasp new technologies and I'm eager to contribute more to your projects.
+                                My skills involve working with APIs to create dynamic and interactive experiences using various JavaScript libraries. Adapting to new technologies is second nature to me, and I'm enthusiastic about making meaningful contributions to your projects.
                                 <br></br>
                                 <br></br>
                                 <div className='underline'>
