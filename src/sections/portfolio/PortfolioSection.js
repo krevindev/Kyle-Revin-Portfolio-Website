@@ -171,7 +171,7 @@ export default function Portfolio() {
         }, {
             title: 'KR React Components Kit',
             thumbNailSrc: krUISS,
-            details: `A planned React UI Components Kit website created as part of my TypeScript practice.`,
+            details: `A planned open-source React UI Components Kit website created as part of my TypeScript practice.`,
             techUsed: [0, 1, 2, 3, 4, 11],
             sourceCodeLink: 'https://github.com/krevindev/KR-UI-Kit',
             previewLink: 'https://kr-ui.vercel.app/',
