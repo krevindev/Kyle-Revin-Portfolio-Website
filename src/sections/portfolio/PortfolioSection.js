@@ -181,7 +181,7 @@ export default function Portfolio() {
         {
             title: 'Unit Converter',
             thumbNailSrc: converterSS,
-            details: "I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
+            details: "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
             techUsed: [0, 1, 2],
             sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
             previewLink: 'https://batchy-bot.github.io/unitconverter1/',
