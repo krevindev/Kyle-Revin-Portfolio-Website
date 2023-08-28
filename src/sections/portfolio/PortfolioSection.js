@@ -120,8 +120,8 @@ export default function Portfolio() {
             techUsed: [0, 1, 2, 3, 4, 6],
             sourceCodeLink: 'https://github.com/krevindev/Anony',
             previewLink: 'https://anony-post.netlify.app',
-            notice: 'Prototype',
-            noticeColor: 'orange'
+            notice: '',
+            noticeColor: ''
         },
         {
             title: 'Live Video Text Censorship',
