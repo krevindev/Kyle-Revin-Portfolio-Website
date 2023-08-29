@@ -17,6 +17,7 @@ import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
 import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
 import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
 import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
+import tailwindLogo from '../../../src/res/images/svg/tech_stack/tailwind-logo.svg';
 
 import anonySS from '../../../src/res/images/screenshots/anony-ss.PNG';
 import censorshipSS from '../../../src/res/images/screenshots/censorship-ss.PNG';
@@ -30,6 +31,7 @@ import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
 import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
 import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
 import krUISS from '../../../src/res/images/screenshots/kr-ui-ss.PNG';
+import trailwiseSS from '../../../src/res/images/screenshots/trailwise-ss.PNG';
 
 
 const techSkills = [
@@ -80,6 +82,9 @@ const techSkills = [
     }, {
         techName: 'TypeScript',
         imgSrc: typescriptLogo
+    }, {
+        techName: 'Tailwind CSS',
+        imgSrc: tailwindLogo
     }
 
 ]
@@ -167,6 +172,15 @@ export default function Portfolio() {
             sourceCodeLink: 'https://github.com/krevindev/IDK---Posting',
             previewLink: 'https://idk-posting.netlify.app/',
             notice: 'Unfinished',
+            noticeColor: 'orange'
+        }, {
+            title: 'TrailWise',
+            thumbNailSrc: trailwiseSS,
+            details: `Find passenger vehicles to get to a target destination. (Prototype)`,
+            techUsed: [0, 1, 2, 3, 4, 11, 12],
+            sourceCodeLink: 'https://github.com/krevindev/TrailWise',
+            previewLink: 'https://trail-wise.vercel.app',
+            notice: 'Prototype',
             noticeColor: 'orange'
         }, {
             title: 'KR React Components Kit',

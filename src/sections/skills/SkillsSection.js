@@ -15,6 +15,7 @@ import phpLogo from '../../../src/res/images/svg/tech_stack/php-logo.svg';
 import sqlLogo from '../../../src/res/images/svg/tech_stack/sqlLogo.svg';
 import npmLogo from '../../../src/res/images/svg/tech_stack/npm-logo.svg';
 import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
+import tailwindLogo from '../../../src/res/images/svg/tech_stack/tailwind-logo.svg';
 
 import photoshopLogo from '../../../src/res/images/svg/tools/photoshop-logo.svg';
 import figmaLogo from '../../../src/res/images/svg/tools/figma-logo.svg';
@@ -121,6 +122,12 @@ export default function Skills() {
                 imgSrc: sqlLogo,
                 level: 40,
                 description: "Structured Query Language used for managing and querying relational databases."
+            },
+            {
+                skillName: 'Tailwind CSS',
+                imgSrc: tailwindLogo,
+                level: 20,
+                description: "Tailwind CSS is a utility-first CSS framework utilized for efficiently styling web interfaces."
             }
 
         ],
