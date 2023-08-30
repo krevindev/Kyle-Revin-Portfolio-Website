@@ -57,13 +57,13 @@ export default function Skills() {
             {
                 skillName: 'TypeScript',
                 imgSrc: typescriptLogo,
-                level: 60,
+                level: 40,
                 description: "A powerful superset of JavaScript that brings static typing, enhanced tooling, and improved scalability to your web development projects."
             },
             {
                 skillName: 'ReactJS',
                 imgSrc: reactLogo,
-                level: 50,
+                level: 60,
                 description: "React is a free and open-source front-end JavaScript library for building user interfaces based on components."
             },
             {
@@ -81,7 +81,7 @@ export default function Skills() {
             {
                 skillName: 'Firebase',
                 imgSrc: firebaseLogo,
-                level: 60,
+                level: 35,
                 description: "Platform offering tools and services to develop high-quality web and mobile apps, including authentication, real-time databases, and hosting."
             },
             {

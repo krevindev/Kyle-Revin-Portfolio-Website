@@ -140,6 +140,9 @@
 
     animation: aboutMeImgContainerAnim .6s forwards 1s ease-in;
     opacity: 0;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
 @keyframes aboutMeImgContainerAnim {
@@ -176,7 +179,7 @@
     border: 5px solid var(--color1);
 
     transition: all .5s ease-out;
-
+    transform: translateZ(20px);
 
 }
 
@@ -224,7 +227,7 @@
 }
 
 #about-me-img-container:hover .half-border {
-    transform: scale(1.1) translate(-5px, 5px);
+    transform: scale(1.1) translate(-5px, 5px) translateZ(20px);
 }
 
 #about-me-img-container .cover {

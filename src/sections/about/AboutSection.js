@@ -1,7 +1,9 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
 import myPic from '../../res/images/screenshots/my-picture.jpg';
 import pdfLink from '../../res/files/Kyle-Revin-Alimpuangon-Resume.pdf';
+
+import VanillaTilt from 'vanilla-tilt';
 
 import './AboutSection.css';
 import { motion } from 'framer-motion';
@@ -11,8 +13,25 @@ export default function About() {
     const aboutRef = useRef(null);
     const isVisible = useIsElementVisible(aboutRef);
 
+    const tiltRef = useRef(null);
+
     const rightContainerRef = useRef(null);
     const isRightContainerVisible = useIsElementVisible(rightContainerRef);
+
+    useEffect(() => {
+        VanillaTilt.init(tiltRef.current, {
+            max: 20,
+            speed: 20,
+            glare: true,
+            reverse: true,
+            'max-glare': 0.1,
+            perspective: 1000
+        });
+
+        // return () => {
+        //     if (tiltRef) tiltRef.current.vanillaTilt.destroy();
+        // };
+    });
 
     return (
         <div id="about-section" className="main-section" ref={aboutRef}>
@@ -22,12 +41,17 @@ export default function About() {
             {
                 isVisible && <div id='about-me-container'>
                     <div id='about-me-left'>
+
                         <div
+                        data-tilt
+                        data-tilt-full-page-listening
+                        data-tilt-axis="x"
+                            ref={tiltRef}
                             id='about-me-img-container'
                             style={{ backgroundImage: 'url(' + myPic + ')' }}
                         >
                             <div className='cover' />
-                            <div className='half-border' />
+                            <div className='half-border'/>
                             <div className='half-border' />
                             <div className='half-border' />
                             <div className='half-border' />
