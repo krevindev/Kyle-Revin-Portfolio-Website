@@ -25,11 +25,11 @@ export default function ContactModal({ setIsContactVisible }) {
             if (['INPUT', 'TEXTAREA'].includes(elem.tagName)) {
                 formData[elem.name] = elem.value;
             }
-        })
+        });
 
+        // send the post request to my callback url
         try {
-            // const response = axios.post('https://rev-mailer.glitch.me/send-mail', formData
-            axios.post('localhost:4000/eh', formData)
+            axios.post('https://rev-mailer.glitch.me/send-email', formData)
                 .then(res => {
                     console.log('Email Sent Successfully!', res.data);
                 })

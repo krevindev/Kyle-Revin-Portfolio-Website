@@ -31,6 +31,9 @@
     position: relative;
 
     opacity: 0;
+
+    height: 70%;
+    width: 50%;
 }
 
 #contact-content-container h2 {
@@ -43,8 +46,6 @@
 @keyframes contactModalAnim {
     0% {
         opacity: 0;
-        height: 0;
-        width: 0;
     }
 
     10% {
@@ -72,8 +73,7 @@
 
     100% {
         opacity: 1;
-        height: 70%;
-        width: 50%;
+       
     }
 }
 
