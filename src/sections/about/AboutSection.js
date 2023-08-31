@@ -19,18 +19,16 @@ export default function About() {
     const isRightContainerVisible = useIsElementVisible(rightContainerRef);
 
     useEffect(() => {
-        VanillaTilt.init(tiltRef.current, {
-            max: 20,
-            speed: 20,
-            glare: true,
-            reverse: true,
-            'max-glare': 0.1,
-            perspective: 1000
-        });
-
-        // return () => {
-        //     if (tiltRef) tiltRef.current.vanillaTilt.destroy();
-        // };
+        if (tiltRef.current) {
+            VanillaTilt.init(tiltRef.current, {
+                max: 20,
+                speed: 20,
+                glare: true,
+                reverse: true,
+                'max-glare': 0.1,
+                perspective: 1000
+            });
+        }
     });
 
     return (
@@ -43,15 +41,15 @@ export default function About() {
                     <div id='about-me-left'>
 
                         <div
-                        data-tilt
-                        data-tilt-full-page-listening
-                        data-tilt-axis="x"
+                            data-tilt
+                            data-tilt-full-page-listening
+                            data-tilt-axis="x"
                             ref={tiltRef}
                             id='about-me-img-container'
                             style={{ backgroundImage: 'url(' + myPic + ')' }}
                         >
                             <div className='cover' />
-                            <div className='half-border'/>
+                            <div className='half-border' />
                             <div className='half-border' />
                             <div className='half-border' />
                             <div className='half-border' />
