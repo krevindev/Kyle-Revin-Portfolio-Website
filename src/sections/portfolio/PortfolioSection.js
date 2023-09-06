@@ -211,23 +211,23 @@ export default function Portfolio() {
             notice: 'Non-Responsive',
             noticeColor: 'orange'
         },
-        {
-            title: 'Personal Vocabulary Builder',
-            thumbNailSrc: vocabSS,
-            details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
-            techUsed: [8],
-            sourceCodeLink: 'https://drive.google.com/drive/folders/1n5Df_B8cvR9VorFfR-u-7orrvQ5W0WkQ',
-            previewLink: null,
-            notice: ''
-        }, {
-            title: 'Personal Voice Assistant',
-            thumbNailSrc: voiceSS,
-            details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
-            techUsed: [8],
-            sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
-            previewLink: null,
-            notice: ''
-        }
+        // {
+        //     title: 'Personal Vocabulary Builder',
+        //     thumbNailSrc: vocabSS,
+        //     details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
+        //     techUsed: [8],
+        //     sourceCodeLink: 'https://drive.google.com/drive/folders/1n5Df_B8cvR9VorFfR-u-7orrvQ5W0WkQ',
+        //     previewLink: null,
+        //     notice: ''
+        // }, {
+        //     title: 'Personal Voice Assistant',
+        //     thumbNailSrc: voiceSS,
+        //     details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
+        //     techUsed: [8],
+        //     sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
+        //     previewLink: null,
+        //     notice: ''
+        // }
 
     ]
 
