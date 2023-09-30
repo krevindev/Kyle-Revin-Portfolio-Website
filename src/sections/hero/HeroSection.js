@@ -1,11 +1,12 @@
 import useWindowSize from '../../hooks/useWindowSize';
 import './HeroSection.css';
 
-import facebookLogo from '../../res/images/svg/socials/facebook-logo.svg'
-import githubLogo from '../../res/images/svg/socials/github-logo.svg'
-import instagramLogo from '../../res/images/svg/socials/instagram-logo.svg'
-import linkedInLogo from '../../res/images/svg/socials/linked-in-logo.svg'
-import behanceLogo from '../../res/images/svg/socials/behance-logo.svg'
+import facebookLogo from '../../res/images/svg/socials/facebook-logo.svg';
+import dribbleLogo from '../../res/images/svg/socials/dribble-logo.svg';
+import githubLogo from '../../res/images/svg/socials/github-logo.svg';
+import instagramLogo from '../../res/images/svg/socials/instagram-logo.svg';
+import linkedInLogo from '../../res/images/svg/socials/linked-in-logo.svg';
+import behanceLogo from '../../res/images/svg/socials/behance-logo.svg';
 import { useEffect } from 'react';
 import FeaturedWorks from '../../components/featured_works/FeaturedWorks';
 import { Parallax } from '@react-spring/parallax';
@@ -32,6 +33,10 @@ export default function Hero({ setIsContactVisible }) {
         {
             imgSrc: facebookLogo,
             link: 'https://www.facebook.com/kylerevin.alimpuangon'
+        },
+        {
+            imgSrc: dribbleLogo,
+            link: 'https://dribbble.com/revin-dev'
         },
         // {
         //     imgSrc: instagramLogo,
