@@ -26,18 +26,18 @@ export default function Hero({ setIsContactVisible }) {
             imgSrc: linkedInLogo,
             link: 'https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/'
         },
-        // {
-        //     imgSrc: behanceLogo,
-        //     link: 'https://www.facebook.com'
-        // },
+        {
+            imgSrc: behanceLogo,
+            link: 'https://www.behance.net/kylerealimpua1/projects'
+        },
         {
             imgSrc: facebookLogo,
             link: 'https://www.facebook.com/kylerevin.alimpuangon'
         },
-        {
-            imgSrc: dribbleLogo,
-            link: 'https://dribbble.com/revin-dev'
-        },
+        // {
+        //     imgSrc: dribbleLogo,
+        //     link: 'https://dribbble.com/revin-dev'
+        // },
         // {
         //     imgSrc: instagramLogo,
         //     link: 'https://www.facebook.com'
