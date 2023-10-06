@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
-import myPic from '../../res/images/screenshots/my-picture.jpg';
-import pdfLink from '../../res/files/Kyle-Revin-Alimpuangon-Resume.pdf';
+// import myPic from '../../res/images/screenshots/my-picture.jpg';
+// import pdfLink from '../../res/files/Kyle-Revin-Alimpuangon-Resume.pdf';
 
 import VanillaTilt from 'vanilla-tilt';
 
@@ -46,7 +46,7 @@ export default function About() {
                             data-tilt-axis="x"
                             ref={tiltRef}
                             id='about-me-img-container'
-                            style={{ backgroundImage: 'url(' + myPic + ')' }}
+                            style={{ backgroundImage: 'url(' + `/res/images/screenshots/my-picture.jpg` + ')' }}
                         >
                             <div className='cover' />
                             <div className='half-border' />
@@ -74,7 +74,7 @@ export default function About() {
                                     <li><span className='about-info-key'>YEAR: </span><p>2023</p></li>
                                 </div>
                             </div>
-                            <div id='download-cv-container' onClick={() => window.open(pdfLink, '_blank')}>
+                            <div id='download-cv-container' onClick={() => window.open('/res/files/Kyle-Revin-Alimpuangon-Resume.pdf', '_blank')}>
                                 <button id='download-cv-btn'>Download Resume</button>
                             </div>
                         </div>

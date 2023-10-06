@@ -3,8 +3,6 @@ import './Header.css'
 import useWindowSize from '../../hooks/useWindowSize';
 import ContactModal from '../../sections/contact/ContactModal';
 
-import krLogo from '../../res/images/svg/kr-logo.svg';
-import navBtnIcon from '../../res/images/svg/nav-btn.svg';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
@@ -112,7 +110,7 @@ export default function Header() {
             {
                 !isMobile ? <>
                     <div id='header-logo-container'>
-                        <img src={krLogo} onClick={() => window.location.assign('/')} />
+                        <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} />
                     </div>
                     <nav id='header-nav-container'>
                         {
@@ -124,10 +122,10 @@ export default function Header() {
                     </div></> :
                     <div id='mobile-header-container'>
                         <div id='header-logo-container'>
-                            <img src={krLogo} onClick={() => window.location.assign('/')} />
+                            <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} />
                         </div>
                         <div id='header-nav-btn-container'>
-                            <img src={navBtnIcon} onClick={() => setIsModalNavVisible(!isModalNavVisible)} />
+                            <img src='/res/images/svg/nav-btn.svg' onClick={() => setIsModalNavVisible(!isModalNavVisible)} />
                         </div>
                     </div>
             }
