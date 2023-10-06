@@ -128,7 +128,7 @@ export default function Portfolio() {
     const portfolioData = [
         {
             title: 'Notey-Fi',
-            thumbNailSrc: noteyFiSS,
+            thumbNailSrc: '',
             details: "A Facebook Chatbot: Get Google Classroom updates, activity alerts, assignments, and set task reminders effortlessly.",
             techUsed: [2, 4, 5, 7],
             sourceCodeLink: 'https://github.com/krevindev/NOTEY-FI',
@@ -138,7 +138,7 @@ export default function Portfolio() {
         },
         {
             title: 'Anony - Anonymous Messaging App',
-            thumbNailSrc: anonySS,
+            thumbNailSrc: '',
             details: 'A simple anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
             techUsed: [0, 1, 2, 3, 4, 6],
             sourceCodeLink: 'https://github.com/krevindev/Anony',
@@ -148,7 +148,7 @@ export default function Portfolio() {
         },
         {
             title: 'Live Video Text Censorship',
-            thumbNailSrc: censorshipSS,
+            thumbNailSrc: '',
             details: 'My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.',
             techUsed: [8],
             sourceCodeLink: 'https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract',
@@ -157,7 +157,7 @@ export default function Portfolio() {
         },
         {
             title: 'FB GPT',
-            thumbNailSrc: fbGPTSS,
+            thumbNailSrc: '',
             details: "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
             techUsed: [2, 4, 7],
             sourceCodeLink: 'https://github.com/krevindev/FB-GPT',
@@ -166,7 +166,7 @@ export default function Portfolio() {
             noticeColor: 'red'
         }, {
             title: 'MNTN',
-            thumbNailSrc: mntnSS,
+            thumbNailSrc: '',
             details: "A hiking guide website from a web design template",
             techUsed: [0, 1, 2, 3, 4],
             sourceCodeLink: 'https://github.com/krevindev/MNTN---Website',
@@ -176,7 +176,7 @@ export default function Portfolio() {
         },
         {
             title: 'UI Design Kit Store',
-            thumbNailSrc: uiKitSS,
+            thumbNailSrc: '',
             details: "A simple landing page from a Ari Shakur's website design template.",
             techUsed: [0, 1, 2, 3, 4],
             sourceCodeLink: 'https://github.com/krevindev/UI-Design-Kit---Landing-Page',
@@ -184,7 +184,7 @@ export default function Portfolio() {
         },
         {
             title: 'IDK - Anonymous Posting',
-            thumbNailSrc: idkSS,
+            thumbNailSrc: '',
             details: `Simple anonymous posting website.`,
             techUsed: [0, 1, 2, 3, 4, 5, 7],
             sourceCodeLink: 'https://github.com/krevindev/IDK---Posting',
@@ -193,7 +193,7 @@ export default function Portfolio() {
             noticeColor: 'orange'
         }, {
             title: 'TrailWise',
-            thumbNailSrc: trailwiseSS,
+            thumbNailSrc: '',
             details: `Find passenger vehicles to get to a target destination. (Prototype)`,
             techUsed: [0, 1, 2, 3, 4, 11, 12],
             sourceCodeLink: 'https://github.com/krevindev/TrailWise',
@@ -202,7 +202,7 @@ export default function Portfolio() {
             noticeColor: 'orange'
         }, {
             title: 'KR React Components Kit',
-            thumbNailSrc: krUISS,
+            thumbNailSrc: '',
             details: `A planned open-source React UI Components Kit website created as part of my TypeScript practice.`,
             techUsed: [0, 1, 2, 3, 4, 11],
             sourceCodeLink: 'https://github.com/krevindev/KR-UI-Kit',
@@ -212,7 +212,7 @@ export default function Portfolio() {
         },
         {
             title: 'Unit Converter',
-            thumbNailSrc: converterSS,
+            thumbNailSrc: '',
             details: "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
             techUsed: [0, 1, 2],
             sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
@@ -221,7 +221,7 @@ export default function Portfolio() {
         },
         {
             title: 'E-Commerce Front-End',
-            thumbNailSrc: eCommerceSS,
+            thumbNailSrc: '',
             details: "I developed a one-page E-commerce website for a school activy using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
             techUsed: [0, 1, 2],
             sourceCodeLink: null,
@@ -231,7 +231,7 @@ export default function Portfolio() {
         },
         {
             title: 'Personal Vocabulary Builder',
-            thumbNailSrc: vocabSS,
+            thumbNailSrc: '',
             details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
             techUsed: [8],
             sourceCodeLink: 'https://drive.google.com/drive/folders/1n5Df_B8cvR9VorFfR-u-7orrvQ5W0WkQ',
@@ -239,7 +239,7 @@ export default function Portfolio() {
             notice: ''
         }, {
             title: 'Personal Voice Assistant',
-            thumbNailSrc: voiceSS,
+            thumbNailSrc: '',
             details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
             techUsed: [8],
             sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
