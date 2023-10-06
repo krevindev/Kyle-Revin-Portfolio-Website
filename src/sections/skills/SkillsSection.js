@@ -1,36 +1,11 @@
 import './SkillsSection.css';
-
-import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
-import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
-import html5Logo from '../../../src/res/images/svg/tech_stack/html5-logo.svg';
-import firebaseLogo from '../../../src/res/images/svg/tech_stack/firebase-logo.svg';
-import expressJsLogo from '../../../src/res/images/svg/tech_stack/expressjs-logo.svg';
-import javascriptLogo from '../../../src/res/images/svg/tech_stack/javascript-logo.svg';
-import css3Logo from '../../../src/res/images/svg/tech_stack/css-logo.svg';
-import pythonLogo from '../../../src/res/images/svg/tech_stack/python-logo.svg';
-import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
-import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
-import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
-import phpLogo from '../../../src/res/images/svg/tech_stack/php-logo.svg';
-import sqlLogo from '../../../src/res/images/svg/tech_stack/sqlLogo.svg';
-import npmLogo from '../../../src/res/images/svg/tech_stack/npm-logo.svg';
-import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
-import tailwindLogo from '../../../src/res/images/svg/tech_stack/tailwind-logo.svg';
-
-import photoshopLogo from '../../../src/res/images/svg/tools/photoshop-logo.svg';
-import figmaLogo from '../../../src/res/images/svg/tools/figma-logo.svg';
-import postmanLogo from '../../../src/res/images/svg/tools/postman-logo.svg';
-import githubLogo from '../../../src/res/images/svg/tools/github-logo.svg';
-import gitLogo from '../../../src/res/images/svg/tools/git-logo.svg';
-import vercelLogo from '../../../src/res/images/svg/tools/vercel-logo.svg';
-import glitchLogo from '../../../src/res/images/svg/tools/glitch-logo.svg';
-import canvaLogo from '../../../src/res/images/svg/tools/canva-logo.svg';
-import netlifyLogo from '../../../src/res/images/svg/tools/netlify-logo.svg';
-
 import Skill from './skill_component/Skill';
 import SkillsContainer from './skills_container/SkillsContainer';
 
 import { motion } from 'framer-motion';
+
+const techPath = '/res/images/svg/tech_stack/';
+const toolPath = '/res/images/svg/tools/';
 
 export default function Skills() {
 
@@ -38,94 +13,94 @@ export default function Skills() {
         techStack: [
             {
                 skillName: 'HTML5',
-                imgSrc: html5Logo,
+                imgFilename: 'html5-logo.svg',
                 level: 80,
                 description: "HTML5 is the modern standard for structuring web content."
             },
             {
                 skillName: 'CSS3',
-                imgSrc: css3Logo,
+                imgFilename: 'css-logo.svg',
                 level: 80,
                 description: "CSS3 is the latest version of Cascading Style Sheets, bringing advanced styling and layout features to enhance web design."
             },
             {
                 skillName: 'JavaScript',
-                imgSrc: javascriptLogo,
+                imgFilename: 'javascript-logo.svg',
                 level: 75,
                 description: "JavaScript is a versatile scripting language for web development, enabling interactive and dynamic website functionality."
             },
             {
                 skillName: 'TypeScript',
-                imgSrc: typescriptLogo,
+                imgFilename: 'typescript-logo.svg',
                 level: 40,
                 description: "A powerful superset of JavaScript that brings static typing, enhanced tooling, and improved scalability to your web development projects."
             },
             {
                 skillName: 'ReactJS',
-                imgSrc: reactLogo,
+                imgFilename: 'react-logo.svg',
                 level: 60,
                 description: "React is a free and open-source front-end JavaScript library for building user interfaces based on components."
             },
             {
                 skillName: 'NodeJS',
-                imgSrc: nodeJsLogo,
+                imgFilename: 'nodejs-logo.svg',
                 level: 65,
                 description: "Runtime environment that lets you execute JavaScript on the server side, enabling dynamic web content."
             },
             {
                 skillName: 'MongoDB',
-                imgSrc: mongoDB,
+                imgFilename: 'mongoDB-logo.svg',
                 level: 60,
                 description: "NoSQL database solution used to store, retrieve, and manage data in flexible, JSON-like documents."
             },
             {
                 skillName: 'Firebase',
-                imgSrc: firebaseLogo,
+                imgFilename: 'firebase-logo.svg',
                 level: 35,
                 description: "Platform offering tools and services to develop high-quality web and mobile apps, including authentication, real-time databases, and hosting."
             },
             {
                 skillName: 'ExpressJS',
-                imgSrc: expressJsLogo,
+                imgFilename: 'expressJS-logo.svg',
                 level: 60,
                 description: " Minimalist web application framework for Node.js, simplifying the creation of server-side applications."
             },
             {
                 skillName: 'Python',
-                imgSrc: pythonLogo,
+                imgFilename: 'python-logo.svg',
                 level: 76,
                 description: " General-purpose programming language known for its readability and versatility, suitable for various applications, from web development to data analysis."
             },
             {
                 skillName: 'JQuery',
-                imgSrc: jQueryLogo,
+                imgFilename: 'jquery-logo.svg',
                 level: 30,
                 description: "JavaScript library simplifying web development tasks and interactions."
             }
             ,
             {
                 skillName: 'NextJS',
-                imgSrc: nextJs,
+                imgFilename: 'nextJS-logo.svg',
                 level: 20,
                 description: "React framework for building server-rendered and optimized web applications."
             }
             ,
             {
                 skillName: 'PHP',
-                imgSrc: phpLogo,
+                imgFilename: 'php-logo.svg',
                 level: 15,
                 description: "Server-side scripting language for dynamic web content and application development."
             }
             ,
             {
                 skillName: 'SQL',
-                imgSrc: sqlLogo,
+                imgFilename: 'sqlLogo.svg',
                 level: 40,
                 description: "Structured Query Language used for managing and querying relational databases."
             },
             {
                 skillName: 'Tailwind CSS',
-                imgSrc: tailwindLogo,
+                imgFilename: 'tailwind-logo.svg',
                 level: 20,
                 description: "Tailwind CSS is a utility-first CSS framework utilized for efficiently styling web interfaces."
             }
@@ -134,60 +109,60 @@ export default function Skills() {
         tools: [
             {
                 skillName: 'Adobe Photoshop',
-                imgSrc: photoshopLogo,
+                imgFilename: 'photoshop-logo.svg',
                 level: 80,
                 description: " Industry-standard software for image editing and graphic design."
             },
             {
                 skillName: 'Figma',
-                imgSrc: figmaLogo,
+                imgFilename: 'figma-logo.svg',
                 level: 70,
                 description: "Collaborative design tool used for creating user interfaces and prototypes."
             },
             {
                 skillName: 'Postman',
-                imgSrc: postmanLogo,
+                imgFilename: 'postman-logo.svg',
                 level: 70,
                 description: " API development and testing platform for simplifying API interactions."
             }
             ,
             {
                 skillName: 'Github',
-                imgSrc: githubLogo,
+                imgFilename: 'github-logo.svg',
                 level: 55,
                 description: "Web-based platform for version control and collaborative software development."
             }
             ,
             {
                 skillName: 'Git',
-                imgSrc: gitLogo,
+                imgFilename: 'git-logo.svg',
                 level: 40,
                 description: " Distributed version control system widely used for tracking changes in code, enabling collaboration, and managing software development workflows."
             }, {
                 skillName: 'Glitch',
-                imgSrc: glitchLogo,
+                imgFilename: 'glitch-logo.svg',
                 level: 50,
                 description: "Online platform for building and deploying web applications collaboratively."
             }, {
                 skillName: 'Canva',
-                imgSrc: canvaLogo,
+                imgFilename: 'canva-logo.svg',
                 level: 30,
                 description: "Graphic design tool offering templates for various visual content."
             },
             {
                 skillName: 'Vercel',
-                imgSrc: vercelLogo,
+                imgFilename: 'vercel-logo.svg',
                 level: 30,
                 description: "Hosting platform for deploying and managing web applications."
             }, {
                 skillName: 'Netlify',
-                imgSrc: netlifyLogo,
+                imgFilename: 'netlify-logo.svg',
                 level: 30,
                 description: "Web hosting and serverless platform for modern development workflows."
             },
             {
                 skillName: 'NPM',
-                imgSrc: npmLogo,
+                imgFilename: 'npm-logo.svg',
                 level: 60,
                 description: "Node Package Manager, used for installing and managing JavaScript packages and libraries."
             }
@@ -196,10 +171,8 @@ export default function Skills() {
 
     const skills = {};
 
-    // for every key in skillsData
     Object.keys(skillsData).forEach(skillKey => {
 
-        // map the skill data
         skills[skillKey] = skillsData[skillKey].map((techSkill, i) => {
             const delAdd = .2;
 
@@ -207,7 +180,7 @@ export default function Skills() {
                 <Skill
                     index={i}
                     skillName={techSkill.skillName}
-                    imgSrc={techSkill.imgSrc}
+                    imgSrc={(skillKey == 'tools' ? toolPath : techPath) + techSkill.imgFilename}
                     overallStop={skillsData[skillKey].length * delAdd}
                     delay={i * delAdd}
                     level={techSkill.level}
