@@ -51,35 +51,42 @@ import useImagePreloader from '../../hooks/useImagePreloader';
 
 // import myPic from '../../res/images/screenshots/my-picture.jpg';
 
-const techStackPath = '/src/res/images/svg/tools/';
+const techStackPath = '/res/images/svg/tech_stack/';
 const screenshotsPath = '/src/res/images/screenshots/';
 
 const techStacks = [
     'react-logo.svg',
-    'nodejs-logo.svg',
-    'html5-logo.svg',
-    'firebase-logo.svg',
-    'expressjs-logo.svg',
-    'javascript-logo.svg',
-    'css-logo.svg',
-    'python-logo.svg',
-    'jquery-logo.svg',
-    'mongoDB-logo.svg',
-    'nextjs-logo.svg',
-    'php-logo.svg',
-    'sqlLogo.svg',
-    'npm-logo.svg',
-    'photoshop-logo.svg',
-    'figma-logo.svg',
-    'postman-logo.svg',
-    'github-logo.svg',
-    'git-logo.svg',
-    'vercel-logo.svg',
-    'glitch-logo.svg',
-    'canva-logo.svg',
-    'netlify-logo.svg',
-  ];
-  
+    // 'nodejs-logo.svg',
+    // 'html5-logo.svg',
+    // 'firebase-logo.svg',
+    // 'expressjs-logo.svg',
+    // 'javascript-logo.svg',
+    // 'css-logo.svg',
+    // 'python-logo.svg',
+    // 'jquery-logo.svg',
+    // 'mongoDB-logo.svg',
+    // 'nextjs-logo.svg',
+    // 'php-logo.svg',
+    // 'sqlLogo.svg',
+    // 'npm-logo.svg',
+    // 'photoshop-logo.svg',
+    // 'figma-logo.svg',
+    // 'postman-logo.svg',
+    // 'github-logo.svg',
+    // 'git-logo.svg',
+    // 'vercel-logo.svg',
+    // 'glitch-logo.svg',
+    // 'canva-logo.svg',
+    // 'netlify-logo.svg',
+];
+
+// const imagesToPreload = techStacks.map(stack => {
+//     const image = new Image();
+//     image.src = techStackPath + stack;
+//     return image;
+// })
+
+const imagesToPreload = [];
 export default function SplashScreen() {
 
     // const imagesToPreload = [
@@ -118,8 +125,6 @@ export default function SplashScreen() {
     //     // 'https://i.pinimg.com/736x/6f/0a/3b/6f0a3b527f0e7612b2f8299f5c8d08b1.jpg'
     // ];
 
-    const imagesToPreload = techStacks.map(stack => new Image().src(techStackPath+stack))
-
     const [isLoading, setIsLoading] = useState(false);
     const [showLoadingText, setShowLoadingText] = useState(false);
     const percentageLoaded = useImagePreloader(imagesToPreload, isLoading);
@@ -140,7 +145,7 @@ export default function SplashScreen() {
         return () => clearTimeout(loadingTimeout);
     }, []);
 
-    if (isLoading && percentageLoaded >= 100) {
+    if (isLoading && percentageLoaded >= 0) {
         return (
             <>
                 <Header />
@@ -164,7 +169,7 @@ export default function SplashScreen() {
                                 <h5>Loading Essential Images...</h5>
                                 <div id='splash-loading-bar'>
                                     <div id='splash-loading-bar-fill'
-                                    style={{ width: percentageLoaded + '%' }}
+                                        style={{ width: percentageLoaded + '%' }}
                                     />
                                 </div>
                                 <p>{percentageLoaded}%</p>
