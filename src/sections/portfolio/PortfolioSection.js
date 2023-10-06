@@ -128,7 +128,7 @@ export default function Portfolio() {
     const portfolioData = [
         {
             title: 'Notey-Fi',
-            thumbNailSrc: '',
+            thumbNailSrc: 'notey-fi-ss.PNG',
             details: "A Facebook Chatbot: Get Google Classroom updates, activity alerts, assignments, and set task reminders effortlessly.",
             techUsed: [2, 4, 5, 7],
             sourceCodeLink: 'https://github.com/krevindev/NOTEY-FI',
