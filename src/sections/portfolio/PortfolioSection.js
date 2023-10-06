@@ -5,89 +5,107 @@ import useWindowSize from '../../hooks/useWindowSize';
 
 import { motion } from 'framer-motion';
 
-import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
-import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
-import html5Logo from '../../../src/res/images/svg/tech_stack/html5-logo.svg';
-import firebaseLogo from '../../../src/res/images/svg/tech_stack/firebase-logo.svg';
-import expressJsLogo from '../../../src/res/images/svg/tech_stack/expressjs-logo.svg';
-import javascriptLogo from '../../../src/res/images/svg/tech_stack/javascript-logo.svg';
-import css3Logo from '../../../src/res/images/svg/tech_stack/css-logo.svg';
-import pythonLogo from '../../../src/res/images/svg/tech_stack/python-logo.svg';
-import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
-import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
-import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
-import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
-import tailwindLogo from '../../../src/res/images/svg/tech_stack/tailwind-logo.svg';
+// import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
+// import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
+// import html5Logo from '../../../src/res/images/svg/tech_stack/html5-logo.svg';
+// import firebaseLogo from '../../../src/res/images/svg/tech_stack/firebase-logo.svg';
+// import expressJsLogo from '../../../src/res/images/svg/tech_stack/expressjs-logo.svg';
+// import javascriptLogo from '../../../src/res/images/svg/tech_stack/javascript-logo.svg';
+// import css3Logo from '../../../src/res/images/svg/tech_stack/css-logo.svg';
+// import pythonLogo from '../../../src/res/images/svg/tech_stack/python-logo.svg';
+// import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
+// import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
+// import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
+// import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
+// import tailwindLogo from '../../../src/res/images/svg/tech_stack/tailwind-logo.svg';
 
-import anonySS from '../../../src/res/images/screenshots/anony-ss.PNG';
-import censorshipSS from '../../../src/res/images/screenshots/censorship-ss.PNG';
-import eCommerceSS from '../../../src/res/images/screenshots/e-commerce-ss.PNG';
-import converterSS from '../../../src/res/images/screenshots/converter-ss.PNG';
-import noteyFiSS from '../../../src/res/images/screenshots/notey-fi-ss.PNG';
-import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
-import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
-import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
-import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
-import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
-import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
-import krUISS from '../../../src/res/images/screenshots/kr-ui-ss.PNG';
-import trailwiseSS from '../../../src/res/images/screenshots/trailwise-ss.PNG';
+// import anonySS from '../../../src/res/images/screenshots/anony-ss.PNG';
+// import censorshipSS from '../../../src/res/images/screenshots/censorship-ss.PNG';
+// import eCommerceSS from '../../../src/res/images/screenshots/e-commerce-ss.PNG';
+// import converterSS from '../../../src/res/images/screenshots/converter-ss.PNG';
+// import noteyFiSS from '../../../src/res/images/screenshots/notey-fi-ss.PNG';
+// import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
+// import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
+// import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
+// import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
+// import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
+// import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
+// import krUISS from '../../../src/res/images/screenshots/kr-ui-ss.PNG';
+// import trailwiseSS from '../../../src/res/images/screenshots/trailwise-ss.PNG';
 
+const techPath = '/src/res/images/svg/tech_stack/';
+const ssPath = '/src/res/images/screenshots/';
 
 const techSkills = [
-    {
-        techName: 'HTML5',
-        imgSrc: html5Logo
-    },
-    {
-        techName: 'CSS3',
-        imgSrc: css3Logo
-    },
-    {
-        techName: 'JavaScript',
-        imgSrc: javascriptLogo
-    },
-    {
-        techName: 'ReactJS',
-        imgSrc: reactLogo
-    },
-    {
-        techName: 'NodeJS',
-        imgSrc: nodeJsLogo
-    },
-    {
-        techName: 'MongoDB',
-        imgSrc: mongoDB
-    },
-    {
-        techName: 'Firebase',
-        imgSrc: firebaseLogo
-    },
-    {
-        techName: 'ExpressJS',
-        imgSrc: expressJsLogo
-    },
-    {
-        techName: 'Python',
-        imgSrc: pythonLogo
-    },
-    {
-        techName: 'JQuery',
-        imgSrc: jQueryLogo
-    }
-    ,
-    {
-        techName: 'NextJS',
-        imgSrc: nextJs
-    }, {
-        techName: 'TypeScript',
-        imgSrc: typescriptLogo
-    }, {
-        techName: 'Tailwind CSS',
-        imgSrc: tailwindLogo
-    }
+    { imgSrc: techPath + 'react-logo.svg', techName: 'ReactJS' },
+    { imgSrc: techPath + 'nodejs-logo.svg', techName: 'NodeJS' },
+    { imgSrc: techPath + 'html5-logo.svg', techName: 'HTML5' },
+    { imgSrc: techPath + 'firebase-logo.svg', techName: 'Firebase' },
+    { imgSrc: techPath + 'expressjs-logo.svg', techName: 'ExpressJS' },
+    { imgSrc: techPath + 'javascript-logo.svg', techName: 'JavaScript' },
+    { imgSrc: techPath + 'css-logo.svg', techName: 'CSS3' },
+    { imgSrc: techPath + 'python-logo.svg', techName: 'Python' },
+    { imgSrc: techPath + 'jquery-logo.svg', techName: 'JQuery' },
+    { imgSrc: techPath + 'mongoDB-logo.svg', techName: 'MongoDB' },
+    { imgSrc: techPath + 'nextjs-logo.svg', techName: 'NextJS' },
+    { imgSrc: techPath + 'typescript-logo.svg', techName: 'TypeScript' },
+    { imgSrc: techPath + 'tailwind-logo.svg', techName: 'Tailwind CSS' },
+];
 
-]
+// const techSkills = [
+//     {
+//         techName: 'HTML5',
+//         imgSrc: html5Logo
+//     },
+//     {
+//         techName: 'CSS3',
+//         imgSrc: css3Logo
+//     },
+//     {
+//         techName: 'JavaScript',
+//         imgSrc: javascriptLogo
+//     },
+//     {
+//         techName: 'ReactJS',
+//         imgSrc: reactLogo
+//     },
+//     {
+//         techName: 'NodeJS',
+//         imgSrc: nodeJsLogo
+//     },
+//     {
+//         techName: 'MongoDB',
+//         imgSrc: mongoDB
+//     },
+//     {
+//         techName: 'Firebase',
+//         imgSrc: firebaseLogo
+//     },
+//     {
+//         techName: 'ExpressJS',
+//         imgSrc: expressJsLogo
+//     },
+//     {
+//         techName: 'Python',
+//         imgSrc: pythonLogo
+//     },
+//     {
+//         techName: 'JQuery',
+//         imgSrc: jQueryLogo
+//     }
+//     ,
+//     {
+//         techName: 'NextJS',
+//         imgSrc: nextJs
+//     }, {
+//         techName: 'TypeScript',
+//         imgSrc: typescriptLogo
+//     }, {
+//         techName: 'Tailwind CSS',
+//         imgSrc: tailwindLogo
+//     }
+
+// ]
 
 export default function Portfolio() {
 
