@@ -10,7 +10,6 @@ import VantaDotsBackground from "./components/VantaBackground";
 import SplashScreen from "./components/splash_screen/SplashScreen";
 import CustomCursor from "./components/custom_cursor/CustomCursor";
 
-import retroFilter from './res/images/svg/retro-filter.svg';
 import useWindowSize from "./hooks/useWindowSize";
 import ContactModal from "./sections/contact/ContactModal";
 import StatusMessage from "./components/status_message/StatusMessage";
