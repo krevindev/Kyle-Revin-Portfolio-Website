@@ -1,13 +1,6 @@
 import useWindowSize from '../../hooks/useWindowSize';
 import './HeroSection.css';
 
-// import facebookLogo from '/res/images/svg/socials/facebook-logo.svg';
-// import dribbleLogo from '/res/images/svg/socials/dribble-logo.svg';
-// import githubLogo from '/res/images/svg/socials/github-logo.svg';
-// import instagramLogo from '/res/images/svg/socials/instagram-logo.svg';
-// import linkedInLogo from '/res/images/svg/socials/linked-in-logo.svg';
-// import behanceLogo from '/res/images/svg/socials/behance-logo.svg';
-
 import { useEffect } from 'react';
 import FeaturedWorks from '../../components/featured_works/FeaturedWorks';
 import { Parallax } from '@react-spring/parallax';
@@ -22,25 +15,25 @@ export default function Hero({ setIsContactVisible }) {
 
     const socialsData = [
         {
-            imgSrc: socialsPath + 'github-logo.svg',
+            imgSrc: 'github-logo.svg',
             link: 'https://github.com/krevindev'
         },
         {
-            imgSrc: socialsPath + 'linked-in-logo.svg',
+            imgSrc: 'linked-in-logo.svg',
             link: 'https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/'
         },
         {
-            imgSrc: socialsPath + 'behance-logo.svg',
+            imgSrc: 'behance-logo.svg',
             link: 'https://www.behance.net/kylerealimpua1/projects'
         },
         {
-            imgSrc: socialsPath + 'facebook-logo.svg',
+            imgSrc: 'facebook-logo.svg',
             link: 'https://www.facebook.com/kylerevin.alimpuangon'
         },
-        // {
-        //     imgSrc: dribbleLogo,
-        //     link: 'https://dribbble.com/revin-dev'
-        // },
+        {
+            imgSrc: 'dribble-logo.svg',
+            link: 'https://dribbble.com/revin-dev'
+        },
         // {
         //     imgSrc: instagramLogo,
         //     link: 'https://www.facebook.com'
@@ -49,7 +42,7 @@ export default function Hero({ setIsContactVisible }) {
     const socials = socialsData.map(social => {
         return (
             <div className='social' onClick={() => window.open(social.link, '_blank')}>
-                <img src={social.imgSrc} />
+                <img src={socialsPath + social.imgSrc} />
             </div >
         )
     })
