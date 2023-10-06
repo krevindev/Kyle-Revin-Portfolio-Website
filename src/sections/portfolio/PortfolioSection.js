@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import './PortfolioSection.css';
 import useIsElementVisible from '../../hooks/useIsElementVisible';
 import useWindowSize from '../../hooks/useWindowSize';
+import PortfolioItem from './PortfolioItem';
 
-import { motion } from 'framer-motion';
 
 // import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
 // import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
@@ -32,25 +32,6 @@ import { motion } from 'framer-motion';
 // import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
 // import krUISS from '../../../src/res/images/screenshots/kr-ui-ss.PNG';
 // import trailwiseSS from '../../../src/res/images/screenshots/trailwise-ss.PNG';
-
-const techPath = '/src/res/images/svg/tech_stack/';
-const ssPath = '/src/res/images/screenshots/';
-
-const techSkills = [
-    { imgSrc: techPath + 'react-logo.svg', techName: 'ReactJS' },
-    { imgSrc: techPath + 'nodejs-logo.svg', techName: 'NodeJS' },
-    { imgSrc: techPath + 'html5-logo.svg', techName: 'HTML5' },
-    { imgSrc: techPath + 'firebase-logo.svg', techName: 'Firebase' },
-    { imgSrc: techPath + 'expressjs-logo.svg', techName: 'ExpressJS' },
-    { imgSrc: techPath + 'javascript-logo.svg', techName: 'JavaScript' },
-    { imgSrc: techPath + 'css-logo.svg', techName: 'CSS3' },
-    { imgSrc: techPath + 'python-logo.svg', techName: 'Python' },
-    { imgSrc: techPath + 'jquery-logo.svg', techName: 'JQuery' },
-    { imgSrc: techPath + 'mongoDB-logo.svg', techName: 'MongoDB' },
-    { imgSrc: techPath + 'nextjs-logo.svg', techName: 'NextJS' },
-    { imgSrc: techPath + 'typescript-logo.svg', techName: 'TypeScript' },
-    { imgSrc: techPath + 'tailwind-logo.svg', techName: 'Tailwind CSS' },
-];
 
 // const techSkills = [
 //     {
@@ -128,7 +109,7 @@ export default function Portfolio() {
     const portfolioData = [
         {
             title: 'Notey-Fi',
-            thumbNailSrc: 'notey-fi-ss.PNG',
+            thumbnailFile: 'notey-fi-ss.PNG',
             details: "A Facebook Chatbot: Get Google Classroom updates, activity alerts, assignments, and set task reminders effortlessly.",
             techUsed: [2, 4, 5, 7],
             sourceCodeLink: 'https://github.com/krevindev/NOTEY-FI',
@@ -138,7 +119,7 @@ export default function Portfolio() {
         },
         {
             title: 'Anony - Anonymous Messaging App',
-            thumbNailSrc: '',
+            thumbnailFile: 'anony-ss.PNG',
             details: 'A simple anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
             techUsed: [0, 1, 2, 3, 4, 6],
             sourceCodeLink: 'https://github.com/krevindev/Anony',
@@ -148,7 +129,7 @@ export default function Portfolio() {
         },
         {
             title: 'Live Video Text Censorship',
-            thumbNailSrc: '',
+            thumbnailFile: 'censorship-ss.PNG',
             details: 'My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.',
             techUsed: [8],
             sourceCodeLink: 'https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract',
@@ -157,7 +138,7 @@ export default function Portfolio() {
         },
         {
             title: 'FB GPT',
-            thumbNailSrc: '',
+            thumbnailFile: 'fb-gpt-ss.PNG',
             details: "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
             techUsed: [2, 4, 7],
             sourceCodeLink: 'https://github.com/krevindev/FB-GPT',
@@ -166,7 +147,7 @@ export default function Portfolio() {
             noticeColor: 'red'
         }, {
             title: 'MNTN',
-            thumbNailSrc: '',
+            thumbnailFile: 'mntn-ss.PNG',
             details: "A hiking guide website from a web design template",
             techUsed: [0, 1, 2, 3, 4],
             sourceCodeLink: 'https://github.com/krevindev/MNTN---Website',
@@ -176,7 +157,7 @@ export default function Portfolio() {
         },
         {
             title: 'UI Design Kit Store',
-            thumbNailSrc: '',
+            thumbnailFile: 'ui-kit-ss.PNG',
             details: "A simple landing page from a Ari Shakur's website design template.",
             techUsed: [0, 1, 2, 3, 4],
             sourceCodeLink: 'https://github.com/krevindev/UI-Design-Kit---Landing-Page',
@@ -184,7 +165,7 @@ export default function Portfolio() {
         },
         {
             title: 'IDK - Anonymous Posting',
-            thumbNailSrc: '',
+            thumbnailFile: 'idk-ss.PNG',
             details: `Simple anonymous posting website.`,
             techUsed: [0, 1, 2, 3, 4, 5, 7],
             sourceCodeLink: 'https://github.com/krevindev/IDK---Posting',
@@ -193,7 +174,7 @@ export default function Portfolio() {
             noticeColor: 'orange'
         }, {
             title: 'TrailWise',
-            thumbNailSrc: '',
+            thumbnailFile: 'trailwise-ss.PNG',
             details: `Find passenger vehicles to get to a target destination. (Prototype)`,
             techUsed: [0, 1, 2, 3, 4, 11, 12],
             sourceCodeLink: 'https://github.com/krevindev/TrailWise',
@@ -202,7 +183,7 @@ export default function Portfolio() {
             noticeColor: 'orange'
         }, {
             title: 'KR React Components Kit',
-            thumbNailSrc: '',
+            thumbnailFile: 'kr-ui-ss.PNG',
             details: `A planned open-source React UI Components Kit website created as part of my TypeScript practice.`,
             techUsed: [0, 1, 2, 3, 4, 11],
             sourceCodeLink: 'https://github.com/krevindev/KR-UI-Kit',
@@ -212,7 +193,7 @@ export default function Portfolio() {
         },
         {
             title: 'Unit Converter',
-            thumbNailSrc: '',
+            thumbnailFile: 'converter-ss.PNG',
             details: "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
             techUsed: [0, 1, 2],
             sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
@@ -221,7 +202,7 @@ export default function Portfolio() {
         },
         {
             title: 'E-Commerce Front-End',
-            thumbNailSrc: '',
+            thumbnailFile: 'e-commerce-ss.PNG',
             details: "I developed a one-page E-commerce website for a school activy using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
             techUsed: [0, 1, 2],
             sourceCodeLink: null,
@@ -231,7 +212,7 @@ export default function Portfolio() {
         },
         {
             title: 'Personal Vocabulary Builder',
-            thumbNailSrc: '',
+            thumbnailFile: 'vocab-ss.PNG',
             details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
             techUsed: [8],
             sourceCodeLink: 'https://drive.google.com/drive/folders/1n5Df_B8cvR9VorFfR-u-7orrvQ5W0WkQ',
@@ -239,7 +220,7 @@ export default function Portfolio() {
             notice: ''
         }, {
             title: 'Personal Voice Assistant',
-            thumbNailSrc: '',
+            thumbnailFile: 'voice-ss.PNG',
             details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
             techUsed: [8],
             sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
@@ -254,7 +235,7 @@ export default function Portfolio() {
             <PortfolioItem
                 i={index}
                 title={port.title}
-                thumbNailSrc={port.thumbNailSrc}
+                thumbnailFile={port.thumbnailFile}
                 details={port.details}
                 techUsed={port.techUsed}
                 sourceCodeLink={port.sourceCodeLink}
@@ -278,105 +259,5 @@ export default function Portfolio() {
                 (isVisible || hasLoaded) && <div id='projects-container' >{portfolioItems}</div>
             }
         </div >
-    )
-}
-
-function PortfolioItem(props) {
-
-    const isSourceLinkValid = !['', null, undefined].includes(props.sourceCodeLink);
-    const isPreviewLinkValid = !['', null, undefined].includes(props.previewLink);
-    const isNoticeValid = !['', null, undefined].includes(props.notice);
-
-    const colorValue = {
-        orange: '#CD5A07',
-        red: '#E3031E'
-    }
-
-    const noticeColor = colorValue[props.noticeColor];
-
-    const handleBtnClick = passedLink => {
-        window.open(passedLink, '_blank');
-    };
-
-    return (
-        <motion.div
-            key={props.index}
-            className={isNoticeValid ? 'portfolio-item glitching-portfolio' : 'portfolio-item'}
-            style={{ animationDelay: props.i * 0.2 + 1 + 's', backdropFilter: !props.isMobile && 'blur(10px)' }}
-        >
-            <div className='portfolio-upper-container'>
-
-                <div className='portfolio-img-container'
-                    style={{
-                        backgroundImage: `url(${props.thumbNailSrc})`,
-                    }}
-                >
-                    <div className='cover' />
-                </div>
-
-                <div className='portfolio-name-container'>
-                    <h3>{props.title}</h3>
-                </div>
-                <div className='portfolio-notice-container'>
-                    {
-                        isNoticeValid && <>
-                            <h5 className='portfolio-notice'>Notice:</h5>
-                            <p style={{
-                                background: noticeColor,
-                                borderRadius: '5px',
-                                padding: '2px 5px',
-                                color: 'white',
-                                fontSize: '10px'
-                            }} className='portfolio-notice'>{props.notice}</p>
-                        </>
-                    }
-                </div>
-
-                <div className='portfolio-details-container'>
-                    <p>{props.details}</p>
-                </div>
-                <div className='portfolio-stack-container'>
-                    {
-                        props.techUsed.map(techIndex => {
-                            return (
-                                <PortfolioTechUsed src={techSkills[techIndex].imgSrc} name={techSkills[techIndex].techName} />
-                            )
-                        })
-                    }
-                </div>
-            </div>
-
-
-            <div className='portfolio-btns-container'>
-
-                <button
-                    className={!isSourceLinkValid && 'invalid-link'}
-                    onClick={() => isSourceLinkValid && handleBtnClick(props.sourceCodeLink)}
-                >
-                    Source Code
-                </button>
-
-                <button
-                    className={!isPreviewLinkValid && 'invalid-link'}
-                    onClick={() => isPreviewLinkValid && handleBtnClick(props.previewLink)}
-                >
-                    Live Demo
-                </button>
-
-            </div>
-
-        </motion.div >
-    )
-}
-
-function PortfolioTechUsed({ src, name }) {
-
-    return (
-        <div
-            className='tech-used'
-        >
-            <img src={src} />
-            <p >{name}</p>
-        </div>
     )
 }
