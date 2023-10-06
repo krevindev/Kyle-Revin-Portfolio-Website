@@ -4,90 +4,6 @@ import useIsElementVisible from '../../hooks/useIsElementVisible';
 import useWindowSize from '../../hooks/useWindowSize';
 import PortfolioItem from './PortfolioItem';
 
-
-// import reactLogo from '../../../src/res/images/svg/tech_stack/react-logo.svg';
-// import nodeJsLogo from '../../../src/res/images/svg/tech_stack/nodejs-logo.svg';
-// import html5Logo from '../../../src/res/images/svg/tech_stack/html5-logo.svg';
-// import firebaseLogo from '../../../src/res/images/svg/tech_stack/firebase-logo.svg';
-// import expressJsLogo from '../../../src/res/images/svg/tech_stack/expressjs-logo.svg';
-// import javascriptLogo from '../../../src/res/images/svg/tech_stack/javascript-logo.svg';
-// import css3Logo from '../../../src/res/images/svg/tech_stack/css-logo.svg';
-// import pythonLogo from '../../../src/res/images/svg/tech_stack/python-logo.svg';
-// import jQueryLogo from '../../../src/res/images/svg/tech_stack/jquery-logo.svg';
-// import mongoDB from '../../../src/res/images/svg/tech_stack/mongoDB-logo.svg';
-// import nextJs from '../../../src/res/images/svg/tech_stack/nextjs-logo.svg';
-// import typescriptLogo from '../../../src/res/images/svg/tech_stack/typescript-logo.svg';
-// import tailwindLogo from '../../../src/res/images/svg/tech_stack/tailwind-logo.svg';
-
-// import anonySS from '../../../src/res/images/screenshots/anony-ss.PNG';
-// import censorshipSS from '../../../src/res/images/screenshots/censorship-ss.PNG';
-// import eCommerceSS from '../../../src/res/images/screenshots/e-commerce-ss.PNG';
-// import converterSS from '../../../src/res/images/screenshots/converter-ss.PNG';
-// import noteyFiSS from '../../../src/res/images/screenshots/notey-fi-ss.PNG';
-// import fbGPTSS from '../../../src/res/images/screenshots/fb-gpt-ss.PNG';
-// import vocabSS from '../../../src/res/images/screenshots/vocab-ss.PNG';
-// import voiceSS from '../../../src/res/images/screenshots/voice-ss.PNG';
-// import idkSS from '../../../src/res/images/screenshots/idk-ss.PNG';
-// import uiKitSS from '../../../src/res/images/screenshots/ui-kit-ss.PNG';
-// import mntnSS from '../../../src/res/images/screenshots/mntn-ss.PNG';
-// import krUISS from '../../../src/res/images/screenshots/kr-ui-ss.PNG';
-// import trailwiseSS from '../../../src/res/images/screenshots/trailwise-ss.PNG';
-
-// const techSkills = [
-//     {
-//         techName: 'HTML5',
-//         imgSrc: html5Logo
-//     },
-//     {
-//         techName: 'CSS3',
-//         imgSrc: css3Logo
-//     },
-//     {
-//         techName: 'JavaScript',
-//         imgSrc: javascriptLogo
-//     },
-//     {
-//         techName: 'ReactJS',
-//         imgSrc: reactLogo
-//     },
-//     {
-//         techName: 'NodeJS',
-//         imgSrc: nodeJsLogo
-//     },
-//     {
-//         techName: 'MongoDB',
-//         imgSrc: mongoDB
-//     },
-//     {
-//         techName: 'Firebase',
-//         imgSrc: firebaseLogo
-//     },
-//     {
-//         techName: 'ExpressJS',
-//         imgSrc: expressJsLogo
-//     },
-//     {
-//         techName: 'Python',
-//         imgSrc: pythonLogo
-//     },
-//     {
-//         techName: 'JQuery',
-//         imgSrc: jQueryLogo
-//     }
-//     ,
-//     {
-//         techName: 'NextJS',
-//         imgSrc: nextJs
-//     }, {
-//         techName: 'TypeScript',
-//         imgSrc: typescriptLogo
-//     }, {
-//         techName: 'Tailwind CSS',
-//         imgSrc: tailwindLogo
-//     }
-
-// ]
-
 export default function Portfolio() {
 
     const portRef = useRef(null);
@@ -111,7 +27,7 @@ export default function Portfolio() {
             title: 'Notey-Fi',
             thumbnailFile: 'notey-fi-ss.PNG',
             details: "A Facebook Chatbot: Get Google Classroom updates, activity alerts, assignments, and set task reminders effortlessly.",
-            techUsed: [2, 4, 5, 7],
+            techUsed: ['javascript', 'node', 'mongodb', 'express'],
             sourceCodeLink: 'https://github.com/krevindev/NOTEY-FI',
             previewLink: null,
             notice: 'Private',
@@ -121,7 +37,7 @@ export default function Portfolio() {
             title: 'Anony - Anonymous Messaging App',
             thumbnailFile: 'anony-ss.PNG',
             details: 'A simple anonymous messaging web app for creating chat channels, sharing, and discussing without revealing identities',
-            techUsed: [0, 1, 2, 3, 4, 6],
+            techUsed: ['html', 'css', 'javascript', 'react', 'node', 'firebase'],
             sourceCodeLink: 'https://github.com/krevindev/Anony',
             previewLink: 'https://anony-post.netlify.app',
             notice: '',
@@ -131,7 +47,7 @@ export default function Portfolio() {
             title: 'Live Video Text Censorship',
             thumbnailFile: 'censorship-ss.PNG',
             details: 'My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.',
-            techUsed: [8],
+            techUsed: ['python'],
             sourceCodeLink: 'https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract',
             previewLink: null,
             notice: ''
@@ -140,7 +56,7 @@ export default function Portfolio() {
             title: 'FB GPT',
             thumbnailFile: 'fb-gpt-ss.PNG',
             details: "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
-            techUsed: [2, 4, 7],
+            techUsed: ['javascript', 'node', 'express'],
             sourceCodeLink: 'https://github.com/krevindev/FB-GPT',
             previewLink: null,
             notice: 'Request Limit Reached',
@@ -149,7 +65,7 @@ export default function Portfolio() {
             title: 'MNTN',
             thumbnailFile: 'mntn-ss.PNG',
             details: "A hiking guide website from a web design template",
-            techUsed: [0, 1, 2, 3, 4],
+            techUsed: ['html', 'css', 'javascript', 'react', 'node'],
             sourceCodeLink: 'https://github.com/krevindev/MNTN---Website',
             previewLink: 'https://mntn-website.vercel.app/',
             notice: 'Unfinished',
@@ -159,7 +75,7 @@ export default function Portfolio() {
             title: 'UI Design Kit Store',
             thumbnailFile: 'ui-kit-ss.PNG',
             details: "A simple landing page from a Ari Shakur's website design template.",
-            techUsed: [0, 1, 2, 3, 4],
+            techUsed: ['html', 'css', 'javascript', 'react', 'node'],
             sourceCodeLink: 'https://github.com/krevindev/UI-Design-Kit---Landing-Page',
             previewLink: 'https://ui-design-kit.vercel.app/',
         },
@@ -167,7 +83,7 @@ export default function Portfolio() {
             title: 'IDK - Anonymous Posting',
             thumbnailFile: 'idk-ss.PNG',
             details: `Simple anonymous posting website.`,
-            techUsed: [0, 1, 2, 3, 4, 5, 7],
+            techUsed: ['html', 'css', 'javascript', 'react', 'node', 'mongodb', 'express'],
             sourceCodeLink: 'https://github.com/krevindev/IDK---Posting',
             previewLink: 'https://idk-posting.netlify.app/',
             notice: 'Unfinished',
@@ -176,7 +92,7 @@ export default function Portfolio() {
             title: 'TrailWise',
             thumbnailFile: 'trailwise-ss.PNG',
             details: `Find passenger vehicles to get to a target destination. (Prototype)`,
-            techUsed: [0, 1, 2, 3, 4, 11, 12],
+            techUsed: ['html', 'css', 'javascript', 'react', 'node', 'typescript', 'tailwind'],
             sourceCodeLink: 'https://github.com/krevindev/TrailWise',
             previewLink: 'https://trail-wise.vercel.app',
             notice: 'Prototype',
@@ -185,7 +101,7 @@ export default function Portfolio() {
             title: 'KR React Components Kit',
             thumbnailFile: 'kr-ui-ss.PNG',
             details: `A planned open-source React UI Components Kit website created as part of my TypeScript practice.`,
-            techUsed: [0, 1, 2, 3, 4, 11],
+            techUsed: ['html', 'css', 'javascript', 'react', 'node', 'typescript'],
             sourceCodeLink: 'https://github.com/krevindev/KR-UI-Kit',
             previewLink: 'https://kr-ui.vercel.app/',
             notice: 'Unfinished',
@@ -195,7 +111,7 @@ export default function Portfolio() {
             title: 'Unit Converter',
             thumbnailFile: 'converter-ss.PNG',
             details: "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
-            techUsed: [0, 1, 2],
+            techUsed: ['html', 'css', 'javascript'],
             sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
             previewLink: 'https://batchy-bot.github.io/unitconverter1/',
             notice: ''
@@ -204,7 +120,7 @@ export default function Portfolio() {
             title: 'E-Commerce Front-End',
             thumbnailFile: 'e-commerce-ss.PNG',
             details: "I developed a one-page E-commerce website for a school activy using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
-            techUsed: [0, 1, 2],
+            techUsed: ['html', 'css', 'javascript'],
             sourceCodeLink: null,
             previewLink: 'https://batchy-bot.github.io/REV-Game-Store/',
             notice: 'Non-Responsive',
@@ -214,7 +130,7 @@ export default function Portfolio() {
             title: 'Personal Vocabulary Builder',
             thumbnailFile: 'vocab-ss.PNG',
             details: `Using Python and the "Pickle" library as a micro-database, I developed a personal program to remember newly encountered words.`,
-            techUsed: [8],
+            techUsed: ['python'],
             sourceCodeLink: 'https://drive.google.com/drive/folders/1n5Df_B8cvR9VorFfR-u-7orrvQ5W0WkQ',
             previewLink: null,
             notice: ''
@@ -222,7 +138,7 @@ export default function Portfolio() {
             title: 'Personal Voice Assistant',
             thumbnailFile: 'voice-ss.PNG',
             details: `Created a Python voice assistant using "pyttsx3" for text-to-speech, "speech_recognition" for voice-to-text, and "BeautifulSoup" for web scraping. It can check weather, time, play videos, open websites, terminate processes, and define words.`,
-            techUsed: [8],
+            techUsed: ['python'],
             sourceCodeLink: 'https://github.com/krevindev/Voice-Assistant',
             previewLink: null,
             notice: ''

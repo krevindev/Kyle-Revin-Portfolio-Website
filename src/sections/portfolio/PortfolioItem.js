@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion';
 
 const techSkills = [
-    { imgSrc: 'react-logo.svg', techName: 'ReactJS' },
-    { imgSrc: 'nodejs-logo.svg', techName: 'NodeJS' },
-    { imgSrc: 'html5-logo.svg', techName: 'HTML5' },
-    { imgSrc: 'firebase-logo.svg', techName: 'Firebase' },
-    { imgSrc: 'expressjs-logo.svg', techName: 'ExpressJS' },
-    { imgSrc: 'javascript-logo.svg', techName: 'JavaScript' },
-    { imgSrc: 'css-logo.svg', techName: 'CSS3' },
-    { imgSrc: 'python-logo.svg', techName: 'Python' },
-    { imgSrc: 'jquery-logo.svg', techName: 'JQuery' },
-    { imgSrc: 'mongoDB-logo.svg', techName: 'MongoDB' },
-    { imgSrc: 'nextjs-logo.svg', techName: 'NextJS' },
-    { imgSrc: 'typescript-logo.svg', techName: 'TypeScript' },
-    { imgSrc: 'tailwind-logo.svg', techName: 'Tailwind CSS' },
+    { key: 'react', imgSrc: 'react-logo.svg', techName: 'ReactJS' },
+    { key: 'node', imgSrc: 'nodejs-logo.svg', techName: 'NodeJS' },
+    { key: 'html', imgSrc: 'html5-logo.svg', techName: 'HTML5' },
+    { key: 'firebase', imgSrc: 'firebase-logo.svg', techName: 'Firebase' },
+    { key: 'express', imgSrc: 'expressjs-logo.svg', techName: 'ExpressJS' },
+    { key: 'javascript', imgSrc: 'javascript-logo.svg', techName: 'JavaScript' },
+    { key: 'css', imgSrc: 'css-logo.svg', techName: 'CSS3' },
+    { key: 'python', imgSrc: 'python-logo.svg', techName: 'Python' },
+    { key: 'jquery', imgSrc: 'jquery-logo.svg', techName: 'JQuery' },
+    { key: 'mongodb', imgSrc: 'mongoDB-logo.svg', techName: 'MongoDB' },
+    { key: 'next', imgSrc: 'nextjs-logo.svg', techName: 'NextJS' },
+    { key: 'typescript', imgSrc: 'typescript-logo.svg', techName: 'TypeScript' },
+    { key: 'tailwind', imgSrc: 'tailwind-logo.svg', techName: 'Tailwind CSS' },
 ];
 
 const ssPath = '/res/images/screenshots/';
@@ -72,11 +72,12 @@ export default function PortfolioItem(props) {
                     <p>{props.details}</p>
                 </div>
                 <div className='portfolio-stack-container'>
+                
                     {
-                        props.techUsed.map(techIndex => {
-                            return (
-                                <PortfolioTechUsed src={techSkills[techIndex].imgSrc} name={techSkills[techIndex].techName} />
-                            )
+                        props.techUsed && props.techUsed.map(techKey => {
+                            const filteredTech = techSkills.find(skill => skill.key === techKey);
+                            return filteredTech ? <PortfolioTechUsed src={filteredTech.imgSrc} name={filteredTech.techName} />
+                                : null;
                         })
                     }
                 </div>
