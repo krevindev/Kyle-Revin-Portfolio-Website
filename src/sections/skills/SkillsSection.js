@@ -61,7 +61,7 @@ export default function Skills() {
             },
             {
                 skillName: 'ExpressJS',
-                imgFilename: 'expressJS-logo.svg',
+                imgFilename: 'expressjs-logo.svg',
                 level: 60,
                 description: " Minimalist web application framework for Node.js, simplifying the creation of server-side applications."
             },
@@ -80,7 +80,7 @@ export default function Skills() {
             ,
             {
                 skillName: 'NextJS',
-                imgFilename: 'nextJS-logo.svg',
+                imgFilename: 'nextjs-logo.svg',
                 level: 20,
                 description: "React framework for building server-rendered and optimized web applications."
             }
