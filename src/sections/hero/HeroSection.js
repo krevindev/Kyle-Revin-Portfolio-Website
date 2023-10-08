@@ -26,10 +26,10 @@ export default function Hero({ setIsContactVisible }) {
             imgSrc: 'behance-logo.svg',
             link: 'https://www.behance.net/kylerealimpua1/projects'
         },
-        {
-            imgSrc: 'facebook-logo.svg',
-            link: 'https://www.facebook.com/kylerevin.alimpuangon'
-        },
+        // {
+        //     imgSrc: 'facebook-logo.svg',
+        //     link: 'https://www.facebook.com/kylerevin.alimpuangon'
+        // },
         {
             imgSrc: 'dribble-logo.svg',
             link: 'https://dribbble.com/revin-dev'

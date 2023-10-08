@@ -44,6 +44,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
                 style={{
                     transform: !hasSlammed ? "translateY(-50%) scale(1.2)" : "translateY(0) scale(1)",
                 }}
+                loading="lazy"
             />
 
             {
