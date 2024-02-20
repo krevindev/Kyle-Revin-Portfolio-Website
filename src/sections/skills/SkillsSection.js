@@ -114,6 +114,12 @@ export default function Skills() {
                 description: " Industry-standard software for image editing and graphic design."
             },
             {
+                skillName: 'Adobe Illustrator',
+                imgFilename: 'illustrator-logo.svg',
+                level: 20,
+                description: 'Graphic designers use Illustrator to create vector graphics.'
+            },
+            {
                 skillName: 'Figma',
                 imgFilename: 'figma-logo.svg',
                 level: 70,
@@ -194,10 +200,11 @@ export default function Skills() {
         'Front-End Web Development',
         'Back-End Web Development',
         'UI / UX Design and Prototype',
-        'Web Scraping',
-        // 'Digital Art',
-        'Chatbot Development',
-        'API Utilization'
+        // 'Web Scraping',
+        'Digital Art',
+        'Graphic Design'
+        // 'Chatbot Development',
+        // 'API Utilization'
     ];
     const generalSkills = generalSkillsData.map((skill, index) => {
         return (
