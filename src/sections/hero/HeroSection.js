@@ -22,22 +22,22 @@ export default function Hero({ setIsContactVisible }) {
             imgSrc: 'linked-in-logo.svg',
             link: 'https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/'
         },
-        {
-            imgSrc: 'behance-logo.svg',
-            link: 'https://www.behance.net/kylerealimpua1/projects'
-        },
+        // {
+        //     imgSrc: 'behance-logo.svg',
+        //     link: 'https://www.behance.net/kylerealimpua1/projects'
+        // },
         // {
         //     imgSrc: 'facebook-logo.svg',
         //     link: 'https://www.facebook.com/kylerevin.alimpuangon'
         // },
-        {
-            imgSrc: 'dribble-logo.svg',
-            link: 'https://dribbble.com/revin-dev'
-        },
         // {
-        //     imgSrc: instagramLogo,
-        //     link: 'https://www.facebook.com'
+        //     imgSrc: 'dribble-logo.svg',
+        //     link: 'https://dribbble.com/revin-dev'
         // },
+        {
+            imgSrc: 'instagram-logo.svg',
+            link: 'https://www.instagram.com/revinkyle'
+        },
     ]
     const socials = socialsData.map(social => {
         return (
