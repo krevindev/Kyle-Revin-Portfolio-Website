@@ -46,7 +46,7 @@ export default function About() {
                             data-tilt-axis="x"
                             ref={tiltRef}
                             id='about-me-img-container'
-                            style={{ backgroundImage: 'url(' + `/res/images/screenshots/my-picture2.png` + ')' }}
+                            style={{ backgroundImage: 'url(' + `/res/images/screenshots/my-picture2.jpg` + ')' }}
                         >
                             <div className='cover' />
                             <div className='half-border' />
