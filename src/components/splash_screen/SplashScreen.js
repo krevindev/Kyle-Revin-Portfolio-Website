@@ -125,6 +125,9 @@ export default function SplashScreen() {
     //     // 'https://i.pinimg.com/736x/6f/0a/3b/6f0a3b527f0e7612b2f8299f5c8d08b1.jpg'
     // ];
 
+
+    // PRELOADING IMAGES IS DISABLED
+
     const [isLoading, setIsLoading] = useState(false);
     const [showLoadingText, setShowLoadingText] = useState(false);
     const percentageLoaded = useImagePreloader(imagesToPreload, isLoading);
@@ -166,13 +169,13 @@ export default function SplashScreen() {
                         {
                             showLoadingText &&
                             <span id='splash-loading-text'>
-                                <h5>Loading Essential Images...</h5>
+                                {/* <h5>Loading Essential Images...</h5>
                                 <div id='splash-loading-bar'>
                                     <div id='splash-loading-bar-fill'
                                         style={{ width: percentageLoaded + '%' }}
                                     />
                                 </div>
-                                <p>{percentageLoaded}%</p>
+                                <p>{percentageLoaded}%</p> */}
                             </span>
                         }
                     </div>
