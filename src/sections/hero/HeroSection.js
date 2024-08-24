@@ -1,95 +1,90 @@
-import useWindowSize from '../../hooks/useWindowSize';
-import './HeroSection.css';
+import useWindowSize from "../../hooks/useWindowSize";
+import "./HeroSection.css";
 
-import { useEffect } from 'react';
-import FeaturedWorks from '../../components/featured_works/FeaturedWorks';
-import { Parallax } from '@react-spring/parallax';
-import VantaBackground from '../../components/VantaBackground';
-import BorderedPolygon from '../../components/BorderedPolygon';
+import { useEffect } from "react";
+import FeaturedWorks from "../../components/featured_works/FeaturedWorks";
+import { Parallax } from "@react-spring/parallax";
+import VantaBackground from "../../components/VantaBackground";
+import BorderedPolygon from "../../components/BorderedPolygon";
 
-const socialsPath = '/res/images/svg/socials/';
+const socialsPath = "/res/images/svg/socials/";
 
 export default function Hero({ setIsContactVisible }) {
+  let isMobile = useWindowSize().width <= 650;
 
-    let isMobile = useWindowSize().width <= 650;
-
-    const socialsData = [
-        {
-            imgSrc: 'github-logo.svg',
-            link: 'https://github.com/krevindev'
-        },
-        {
-            imgSrc: 'linked-in-logo.svg',
-            link: 'https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/'
-        },
-        // {
-        //     imgSrc: 'behance-logo.svg',
-        //     link: 'https://www.behance.net/kylerealimpua1/projects'
-        // },
-        // {
-        //     imgSrc: 'facebook-logo.svg',
-        //     link: 'https://www.facebook.com/kylerevin.alimpuangon'
-        // },
-        // {
-        //     imgSrc: 'dribble-logo.svg',
-        //     link: 'https://dribbble.com/revin-dev'
-        // },
-        {
-            imgSrc: 'instagram-logo.svg',
-            link: 'https://www.instagram.com/revinkyle'
-        },
-    ]
-    const socials = socialsData.map(social => {
-        return (
-            <div className='social' onClick={() => window.open(social.link, '_blank')}>
-                <img src={socialsPath + social.imgSrc} />
-            </div >
-        )
-    })
-
+  const socialsData = [
+    {
+      imgSrc: "github-logo.svg",
+      link: "https://github.com/krevindev",
+    },
+    {
+      imgSrc: "linked-in-logo.svg",
+      link: "https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/",
+    },
+    // {
+    //     imgSrc: 'behance-logo.svg',
+    //     link: 'https://www.behance.net/kylerealimpua1/projects'
+    // },
+    // {
+    //     imgSrc: 'facebook-logo.svg',
+    //     link: 'https://www.facebook.com/kylerevin.alimpuangon'
+    // },
+    // {
+    //     imgSrc: 'dribble-logo.svg',
+    //     link: 'https://dribbble.com/revin-dev'
+    // },
+    {
+      imgSrc: "instagram-logo.svg",
+      link: "https://www.instagram.com/revinkyle",
+    },
+  ];
+  const socials = socialsData.map((social) => {
     return (
-        <div id="hero-section" className='main-section' >
-            <div className='section-indicator'></div>
+      <div
+        className="social"
+        onClick={() => window.open(social.link, "_blank")}
+      >
+        <img src={socialsPath + social.imgSrc} />
+      </div>
+    );
+  });
 
-            {/* Social Logos Container */}
-            {
-                !isMobile && <div id='socials-container'>
-                    {
-                        socials
-                    }
-                </div>
-            }
+  return (
+    <div id="hero-section" className="main-section">
+      <div className="section-indicator"></div>
 
+      {/* Social Logos Container */}
+      {!isMobile && <div id="socials-container">{socials}</div>}
 
-            {/* Main Content Container */}
-            <div id='hero-main-content-container'>
-                <div id='hero-name-container'>
-                    <h1>Kyle Revin</h1>
-                    <h1>Alimpuangon</h1>
-                </div>
-                <div id='hero-p-container'>
-                    <p>Passionate and innovative developer with a flair for creating captivating digital experiences.</p>
-                </div>
-                <div id='hero-cta-container'>
-                    <button onClick={() => setIsContactVisible(true)} id='hero-cta-btn' className='my-default-btn'>
-                        Hire Me
-                    </button>
-                </div>
-                {
-                    isMobile && <div id='hero-center-socials-container'>
-                        {
-                            socials
-                        }
-                    </div>
-                }
-            </div>
+      {/* Main Content Container */}
+      <div id="hero-main-content-container">
+        <div id="hero-name-container">
+          <h1>
+            Kyle Revin <br></br>Alimpuangon
+          </h1>
+        </div>
+        <div id="hero-p-container">
+          <p>
+            Passionate and innovative developer with a flair for creating
+            captivating digital experiences.
+          </p>
+        </div>
+        <div id="hero-cta-container">
+          <button
+            onClick={() => setIsContactVisible(true)}
+            id="hero-cta-btn"
+            className="my-default-btn"
+          >
+            Hire Me
+          </button>
+        </div>
+        {isMobile && <div id="hero-center-socials-container">{socials}</div>}
+      </div>
 
-
-
-            {/* Featured Projects Container */}
-            <div id='hero-featured-container'>
-                <FeaturedWorks />
-            </div>
-        </div >
-    )
+      {/* Featured Projects Container */}
+      <div id="hero-featured-container">
+        <FeaturedWorks />
+      </div>
+    </div>
+  );
 }
