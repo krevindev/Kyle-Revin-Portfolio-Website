@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import DOTS from 'vanta/dist/vanta.dots.min'; // Import the "Dots" effect
-import WAVES from 'vanta/dist/vanta.waves.min';
-import NET from 'vanta/dist/vanta.net.min';
+import React, { useRef, useEffect } from "react";
+import DOTS from "vanta/dist/vanta.dots.min"; // Import the "Dots" effect
+import WAVES from "vanta/dist/vanta.waves.min";
+import NET from "vanta/dist/vanta.net.min";
+import TOPOLOGY from "vanta/dist/vanta.topology.min";
 
 const VantaDotsBackground = () => {
   const vantaRef = useRef(null);
@@ -25,6 +26,7 @@ const VantaDotsBackground = () => {
       //   spacing: 20.00
       // })
 
+      /* Last official */
       const effect = WAVES({
         el: vantaRef.current,
         mouseControls: true,
@@ -37,12 +39,30 @@ const VantaDotsBackground = () => {
         color: 0xe0e0e,
         shininess: 10.00,
         waveHeight: 10.00,
-        waveSpeed: 0.30,
-        zoom: 0.65
+        waveSpeed: .5,
+        zoom: 0.9
       })
 
-      
-      
+      // NEW
+      // const effect = WAVES({
+      //   el: vantaRef.current,
+      //   mouseControls: true,
+      //   touchControls: true,
+      //   gyroControls: false,
+      //   minHeight: 200.00,
+      //   minWidth: 200.00,
+      //   scale: 1.00,
+      //   scaleMobile: 1.00,
+      //   color: 0x141414,
+      //   shininess: 0.00,
+      //   waveHeight: 40.00,
+      //   waveSpeed: 0.35,
+      //   zoom: 1.01
+      // });
+
+      // NEW Topology Test
+      // const effect = TOPOLOGY({
+      // })
 
       // const effect = DOTS({
       //   el: vantaRef.current,
@@ -69,7 +89,7 @@ const VantaDotsBackground = () => {
     }
   }, []);
 
-  return <div ref={vantaRef} className="vanta-container" />
+  return <div ref={vantaRef} className="vanta-container" />;
 };
 
 export default VantaDotsBackground;
