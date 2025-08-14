@@ -143,6 +143,7 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     transition: all .5s ease-in;
 
 }
@@ -198,9 +199,11 @@
 }
 
 @keyframes noticeAnim {
-    from{
+    from {
         filter: brightness(50%);
-    }to{
+    }
+
+    to {
         filter: brightness(150%);
     }
 }
@@ -234,11 +237,14 @@
 
     max-width: 100%;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .portfolio-details-container p {
     max-width: 100%;
+    text-align: center;
     font-size: calc(1vh + 3px);
+    text-justify: auto;
 }
 
 .portfolio-stack-container {
@@ -334,7 +340,7 @@
     filter: saturate(0%);
     cursor: not-allowed;
     text-decoration: line-through;
-    color: black;
+    color: gray;
 }
 
 .portfolio-item.glitching-portfolio {
