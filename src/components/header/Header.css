@@ -46,7 +46,7 @@
 #header-logo-container img {
     width: 70%;
     max-width: 30px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 /* Header Navigation Bar */
@@ -60,7 +60,7 @@
 }
 
 #header-nav-container a li {
-    cursor: pointer;
+    /* cursor: pointer; */
 
     transition: all .2s ease-out;
 

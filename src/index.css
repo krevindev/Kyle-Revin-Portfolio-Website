@@ -17,6 +17,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   overflow-x: hidden;
+  cursor: none;
 }
 
 body {
@@ -45,6 +46,8 @@ p {
 }
 
 * {
+  cursor: none !important;
+
   margin: 0;
   padding: 0;
   outline: none;
@@ -95,7 +98,8 @@ p {
 
   color: white;
 
-  cursor: pointer;
+  /* cursor: pointer; */
+
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
 
   transition: all .2s ease-out;
