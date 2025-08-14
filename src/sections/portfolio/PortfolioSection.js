@@ -46,7 +46,7 @@ export default function Portfolio() {
         },
         {
             title: 'Live Video Text Censorship',
-            thumbnailFile: 'censorship-ss.PNG',
+            thumbnailFile: 'censorship-ss.jpg',
             details: 'My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.',
             techUsed: ['python'],
             sourceCodeLink: 'https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract',
@@ -112,7 +112,7 @@ export default function Portfolio() {
         },
         {
             title: 'Unit Converter',
-            thumbnailFile: 'converter-ss.PNG',
+            thumbnailFile: 'converter-ss.jpg',
             details: "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
             techUsed: ['html', 'css', 'javascript'],
             sourceCodeLink: 'https://github.com/batchy-bot/unitconverter1',
