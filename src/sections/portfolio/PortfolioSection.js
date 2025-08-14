@@ -144,7 +144,7 @@ export default function Portfolio() {
       techUsed: ["html", "css", "javascript", "react", "node", "typescript"],
       sourceCodeLink: "https://github.com/krevindev/KR-UI-Kit",
       previewLink: "https://kr-ui.vercel.app/",
-      notice: "Unfinished",
+    //   notice: "Unfinished",
       noticeColor: "orange",
     },
     {
