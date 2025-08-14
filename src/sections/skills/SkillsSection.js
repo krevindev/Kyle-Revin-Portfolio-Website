@@ -215,7 +215,7 @@ export default function Skills() {
           index={i}
           skillName={techSkill.skillName}
           imgSrc={
-            (skillKey == "tools" ? toolPath : techPath) + techSkill.imgFilename
+            (skillKey === "tools" ? toolPath : techPath) + techSkill.imgFilename
           }
           overallStop={skillsData[skillKey].length * delAdd}
           delay={i * delAdd}
