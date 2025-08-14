@@ -119,16 +119,16 @@ export default function Portfolio() {
             previewLink: 'https://batchy-bot.github.io/unitconverter1/',
             notice: ''
         },
-        {
-            title: 'E-Commerce Front-End',
-            thumbnailFile: 'e-commerce-ss.PNG',
-            details: "I developed a one-page E-commerce website for a school activy using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
-            techUsed: ['html', 'css', 'javascript'],
-            sourceCodeLink: null,
-            previewLink: 'https://batchy-bot.github.io/REV-Game-Store/',
-            notice: 'Non-Responsive',
-            noticeColor: 'orange'
-        },
+        // {
+        //     title: 'E-Commerce Front-End',
+        //     thumbnailFile: 'e-commerce-ss.PNG',
+        //     details: "I developed a one-page E-commerce website for a school activy using HTML, CSS, and Vanilla Javascript. The design was inspired by EPIC Games' website.",
+        //     techUsed: ['html', 'css', 'javascript'],
+        //     sourceCodeLink: null,
+        //     previewLink: 'https://batchy-bot.github.io/REV-Game-Store/',
+        //     notice: 'Non-Responsive',
+        //     noticeColor: 'orange'
+        // },
         // {
         //     title: 'Personal Vocabulary Builder',
         //     thumbnailFile: 'vocab-ss.PNG',
