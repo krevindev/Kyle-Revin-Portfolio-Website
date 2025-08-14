@@ -242,9 +242,13 @@
 
 .portfolio-details-container p {
     max-width: 100%;
+    width: 100%;
     text-align: center;
-    font-size: calc(1vh + 3px);
+    font-size: calc(1vh + 4px);
     text-justify: auto;
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: .5px;
 }
 
 .portfolio-stack-container {
