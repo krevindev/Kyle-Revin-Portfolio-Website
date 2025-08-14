@@ -1,4 +1,4 @@
-import './Header.css'
+import './Header.css';
 
 import useWindowSize from '../../hooks/useWindowSize';
 import ContactModal from '../../sections/contact/ContactModal';
@@ -19,7 +19,7 @@ export default function Header() {
     const [isContactVisible, setIsContactVisible] = useState(false);
 
     useEffect(() => {
-        if(!isMobile) setIsModalNavVisible(false);
+        if (!isMobile) setIsModalNavVisible(false);
     }, [isMobile]);
 
     // Checks if a section is visible in the viewport and set the section as the active section
@@ -28,7 +28,7 @@ export default function Header() {
             root: null,
             rootMargin: '100px',
             threshold: 0.5
-        }
+        };
 
         const handleIntersection = entries => {
             entries.forEach(entry => {
@@ -42,42 +42,39 @@ export default function Header() {
         const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
         sections.forEach(sectionId => {
-            const element = document.getElementById(sectionId).querySelector('.section-indicator');
-
-            if (element) {
-                observer.observe(element);
-            };
+            const element = document.getElementById(sectionId)?.querySelector('.section-indicator');
+            if (element) observer.observe(element);
         });
 
-        return () => sections.map(sectionId => {
-            const element = document.getElementById(sectionId);
-            if (element) { observer.unobserve(element) };
-        })
-
+        return () => {
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element) observer.unobserve(element);
+            });
+        };
     });
 
     // Hide the header on scroll down and reappear on scroll up
-    const handleScroll = () => {
-        const currentScrollPos = window.pageYOffset;
-
-        if (prevScrollPos > currentScrollPos) {
-            setIsHeaderVisible(true);
-        }
-        else {
-            if (!isModalNavVisible && !isModalNavVisible) {
-                setIsHeaderVisible(false);
-            };
-        }
-
-        setPrevScrollPos(currentScrollPos);
-    };
-
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
+        const onScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                setIsHeaderVisible(true);
+            } else {
+                if (!isModalNavVisible) {
+                    setIsHeaderVisible(false);
+                }
+            }
+
+            setPrevScrollPos(currentScrollPos);
         };
-    }, [prevScrollPos]);
+
+        window.addEventListener("scroll", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        };
+    }, [prevScrollPos, isModalNavVisible]);
 
     // Navlinks Data
     const navlinksData = [
@@ -86,6 +83,7 @@ export default function Header() {
         { name: 'Portfolio', targetID: 'portfolio-section' },
         { name: 'About Me', targetID: 'about-section' },
     ];
+
     const navlinks = navlinksData.map((nLink, index) => (
         <NavLink
             key={index}
@@ -104,50 +102,44 @@ export default function Header() {
                 backdropFilter: !isMobile && 'blur(10px)',
                 background: 'rgba(17,17,17,.8)',
                 borderBottom: '1px solid rgba(70, 70, 70, .5)'
-            } : {
-            }}
+            } : {}}
         >
-            {
-                !isMobile ? <>
+            {!isMobile ? (
+                <>
                     <div id='header-logo-container'>
-                        <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} alt='KR Logo'/>
+                        <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} alt='KR Logo' />
                     </div>
                     <nav id='header-nav-container'>
-                        {
-                            navlinks
-                        }
+                        {navlinks}
                     </nav>
                     <div id='header-contact-container'>
                         <button id='header-contact-btn' className='my-default-btn' onClick={() => setIsContactVisible(true)}>Contact</button>
-                    </div></> :
-                    <div id='mobile-header-container'>
-                        <div id='header-logo-container'>
-                            <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} alt='KR Logo'/>
-                        </div>
-                        <div id='header-nav-btn-container'>
-                            <img src='/res/images/svg/nav-btn.svg' onClick={() => setIsModalNavVisible(!isModalNavVisible)} alt='Nav Button'/>
-                        </div>
                     </div>
-            }
+                </>
+            ) : (
+                <div id='mobile-header-container'>
+                    <div id='header-logo-container'>
+                        <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} alt='KR Logo' />
+                    </div>
+                    <div id='header-nav-btn-container'>
+                        <img src='/res/images/svg/nav-btn.svg' onClick={() => setIsModalNavVisible(!isModalNavVisible)} alt='Nav Button' />
+                    </div>
+                </div>
+            )}
 
-            {
-                isMobile && isModalNavVisible && <div id='mobile-modal-nav-container' onClick={e => { if (e.target.id === 'mobile-modal-nav-container') setIsModalNavVisible(false) }}>
+            {isMobile && isModalNavVisible && (
+                <div id='mobile-modal-nav-container' onClick={e => { if (e.target.id === 'mobile-modal-nav-container') setIsModalNavVisible(false) }}>
                     <nav id='mobile-modal-nav-content'>
-                        {
-                            navlinks
-                        }
+                        {navlinks}
                         <button id='header-contact-btn' className='my-default-btn' onClick={() => setIsContactVisible(true)}>Contact</button>
                     </nav>
                 </div>
-            }
+            )}
 
-            {
-                isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
-            }
+            {isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />}
         </header>
-    )
+    );
 }
-
 
 // Helper function to scroll to sections
 function scrollToSection(sectionId, isMobile, setIsModalNavVisible) {
@@ -168,24 +160,20 @@ function scrollToSection(sectionId, isMobile, setIsModalNavVisible) {
     if (isMobile) setIsModalNavVisible(false);
 }
 
-
-function NavLink({ key, index, name, isMobile, targetID, setIsModalNavVisible, activeSection }) {
+function NavLink({ index, name, isMobile, targetID, setIsModalNavVisible, activeSection }) {
     return (
         <div
-            key={key}
             onClick={() => scrollToSection(targetID, isMobile, setIsModalNavVisible)}
             className={activeSection === targetID ? 'active' : ''}
         >
             <li
-                style={
-                    {
-                        animation: !isMobile ? 'headerLiAnim .5s forwards' : 'portfolioAnim .5s forwards',
-                        animationDelay: index * 0.1 + 's',
-                    }
-                }
+                style={{
+                    animation: !isMobile ? 'headerLiAnim .5s forwards' : 'portfolioAnim .5s forwards',
+                    animationDelay: index * 0.1 + 's',
+                }}
             >
                 {name}
             </li>
         </div>
-    )
+    );
 }

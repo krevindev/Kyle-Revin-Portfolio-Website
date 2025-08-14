@@ -112,7 +112,7 @@ function PortfolioTechUsed({ src, name }) {
         <div
             className='tech-used'
         >
-            <img src={'/res/images/svg/tech_stack/' + src} />
+            <img src={'/res/images/svg/tech_stack/' + src} alt={src}/>
             <p >{name}</p>
         </div>
     )
