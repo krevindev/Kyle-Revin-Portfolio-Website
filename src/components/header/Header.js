@@ -100,7 +100,7 @@ export default function Header() {
 
     return (
         <header id="header" className={isHeaderVisible ? "" : 'scroll-hide'}
-            style={activeSection != 'hero-section' ? {
+            style={activeSection !== 'hero-section' ? {
                 backdropFilter: !isMobile && 'blur(10px)',
                 background: 'rgba(17,17,17,.8)',
                 borderBottom: '1px solid rgba(70, 70, 70, .5)'
@@ -131,7 +131,7 @@ export default function Header() {
             }
 
             {
-                isMobile && isModalNavVisible && <div id='mobile-modal-nav-container' onClick={e => { if (e.target.id == 'mobile-modal-nav-container') setIsModalNavVisible(false) }}>
+                isMobile && isModalNavVisible && <div id='mobile-modal-nav-container' onClick={e => { if (e.target.id === 'mobile-modal-nav-container') setIsModalNavVisible(false) }}>
                     <nav id='mobile-modal-nav-content'>
                         {
                             navlinks
@@ -171,7 +171,7 @@ function scrollToSection(sectionId, isMobile, setIsModalNavVisible) {
 
 function NavLink({ key, index, name, isMobile, targetID, setIsModalNavVisible, activeSection }) {
     return (
-        <a
+        <div
             key={key}
             onClick={() => scrollToSection(targetID, isMobile, setIsModalNavVisible)}
             className={activeSection === targetID ? 'active' : ''}
@@ -186,6 +186,6 @@ function NavLink({ key, index, name, isMobile, targetID, setIsModalNavVisible, a
             >
                 {name}
             </li>
-        </a>
+        </div>
     )
 }
