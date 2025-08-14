@@ -110,7 +110,7 @@ export default function Header() {
             {
                 !isMobile ? <>
                     <div id='header-logo-container'>
-                        <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} />
+                        <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} alt='KR Logo'/>
                     </div>
                     <nav id='header-nav-container'>
                         {
@@ -122,10 +122,10 @@ export default function Header() {
                     </div></> :
                     <div id='mobile-header-container'>
                         <div id='header-logo-container'>
-                            <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} />
+                            <img src='/res/images/svg/kr-logo.svg' onClick={() => window.location.assign('/')} alt='KR Logo'/>
                         </div>
                         <div id='header-nav-btn-container'>
-                            <img src='/res/images/svg/nav-btn.svg' onClick={() => setIsModalNavVisible(!isModalNavVisible)} />
+                            <img src='/res/images/svg/nav-btn.svg' onClick={() => setIsModalNavVisible(!isModalNavVisible)} alt='Nav Button'/>
                         </div>
                     </div>
             }
