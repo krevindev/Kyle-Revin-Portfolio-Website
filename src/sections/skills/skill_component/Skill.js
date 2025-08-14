@@ -45,6 +45,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
                     transform: !hasSlammed ? "translateY(-50%) scale(1.2)" : "translateY(0) scale(1)",
                 }}
                 loading="lazy"
+                alt={imgSrc}
             />
 
             {
@@ -55,7 +56,7 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
             <div className={isHovered ? prevClass + " in" : prevClass + " out"}>
                 <div className="skill-preview-header">
                     <h3>{skillName}</h3>
-                    <img src={imgSrc} />
+                    <img src={imgSrc} alt={imgSrc}/>
                 </div>
                 <div className="skill-preview-body">
                     <p>
