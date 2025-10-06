@@ -70,6 +70,7 @@ export default function Hero({ setIsContactVisible }) {
           </p>
         </div>
         <div id="hero-cta-container">
+          {/*
           <button
             onClick={() => setIsContactVisible(true)}
             id="hero-cta-btn"
@@ -77,6 +78,7 @@ export default function Hero({ setIsContactVisible }) {
           >
             Hire Me
           </button>
+          */}
         </div>
         {isMobile && <div id="hero-center-socials-container">{socials}</div>}
       </div>
