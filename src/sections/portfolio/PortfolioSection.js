@@ -23,6 +23,16 @@ export default function Portfolio() {
 
   const portfolioData = [
     {
+      title: "Daily News Scraper",
+      thumbnailFile: "dailynews-ss.jpg",
+      details:
+      "A web scraper that collects and displays latest local news updates.",
+      techUsed: ["react", "html", "css", "javascript", "node", "express"],
+      sourceCodeLink: "",
+      previewLink: "https://daily-news-scraper.onrender.com/",
+
+    },
+    {
       title: "Notey-Fi",
       thumbnailFile: "notey-fi-ss.PNG",
       details:
