@@ -10,7 +10,7 @@ export default function FeaturedWorks() {
     const featuredWorksData = [
         'Anony - Anonymous Messaging Web App',
         'Notey-Fi - Google Classroom to Facebook Notification Chatbot',
-        'Live Video Text Censorship',
+        'Redactor: OCR-based Media Censorship',
         'FB-GPT - ChatGPT to Facebook Chatbot'
     ]
 
