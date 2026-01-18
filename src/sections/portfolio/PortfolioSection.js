@@ -23,14 +23,22 @@ export default function Portfolio() {
 
   const portfolioData = [
     {
+      title: "Redactor: OCR-based Media Censorship",
+      thumbnailFile: "redactor-ss.png",
+      details:
+        "A desktop application made with PySide6 that auto-censors text in images and videos using OCR.",
+      techUsed: ["python"],
+      sourceCodeLink: "",
+      previewLink: null,
+    },
+    {
       title: "Daily News Scraper",
       thumbnailFile: "dailynews-ss.jpg",
       details:
-      "A web scraper that collects and displays latest local news updates.",
+        "A web scraper that collects and displays latest local news updates.",
       techUsed: ["react", "html", "css", "javascript", "node", "express"],
       sourceCodeLink: "",
       previewLink: "https://daily-news-scraper.onrender.com/",
-
     },
     {
       title: "Notey-Fi",
@@ -41,7 +49,7 @@ export default function Portfolio() {
       // sourceCodeLink: 'https://github.com/krevindev/NOTEY-FI',
       sourceCodeLink: "",
       previewLink: null,
-    //   notice: "Private",
+      //   notice: "Private",
       noticeColor: "orange",
     },
     {
@@ -52,7 +60,7 @@ export default function Portfolio() {
       techUsed: ["html", "css", "javascript", "react", "node", "firebase"],
       sourceCodeLink: "https://github.com/krevindev/Anony",
       previewLink: "https://anony-post.netlify.app",
-    //   notice: "",
+      //   notice: "",
       noticeColor: "",
     },
     {
@@ -64,7 +72,7 @@ export default function Portfolio() {
       sourceCodeLink:
         "https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract",
       previewLink: null,
-    //   notice: "",
+      //   notice: "",
     },
     {
       title: "Facebook OCR Translator",
@@ -72,9 +80,9 @@ export default function Portfolio() {
       details:
         "A Facebook chatbot capable of translating languages from text or image attachments using PyTesseract, using the GPT-4o-mini model from the OpenRouter API for translation.",
       techUsed: ["python"],
-    //   sourceCodeLink: "https://github.com/krevindev/FB-GPT",
-    //   previewLink: null,
-    //   notice: "Early stage",
+      //   sourceCodeLink: "https://github.com/krevindev/FB-GPT",
+      //   previewLink: null,
+      //   notice: "Early stage",
       noticeColor: "orange",
     },
     {
@@ -83,9 +91,9 @@ export default function Portfolio() {
       details:
         "An AI-powered Facebook chatbot capable of creating short quizzes from a PDF, DOCX, or TXT file, generating random quizzes, or allowing users to choose their own topic, using the Mistral model from the OpenRouter API.",
       techUsed: ["python"],
-    //   sourceCodeLink: "https://github.com/krevindev/FB-GPT",
-    //   previewLink: null,
-    //   notice: "Early stage",
+      //   sourceCodeLink: "https://github.com/krevindev/FB-GPT",
+      //   previewLink: null,
+      //   notice: "Early stage",
       noticeColor: "orange",
     },
     {
@@ -96,7 +104,7 @@ export default function Portfolio() {
       techUsed: ["javascript", "node", "express"],
       sourceCodeLink: "https://github.com/krevindev/FB-GPT",
       previewLink: null,
-    //   notice: "Request Limit Reached",
+      //   notice: "Request Limit Reached",
       noticeColor: "red",
     },
     {
@@ -106,7 +114,7 @@ export default function Portfolio() {
       techUsed: ["html", "css", "javascript", "react", "node"],
       sourceCodeLink: "https://github.com/krevindev/MNTN---Website",
       previewLink: "https://mntn-website.vercel.app/",
-    //   notice: "Unfinished",
+      //   notice: "Unfinished",
       noticeColor: "orange",
     },
     {
@@ -134,7 +142,7 @@ export default function Portfolio() {
       ],
       sourceCodeLink: "https://github.com/krevindev/IDK---Posting",
       previewLink: "https://idk-posting.netlify.app/",
-    //   notice: "Unfinished",
+      //   notice: "Unfinished",
       noticeColor: "orange",
     },
     // {
@@ -154,7 +162,7 @@ export default function Portfolio() {
       techUsed: ["html", "css", "javascript", "react", "node", "typescript"],
       sourceCodeLink: "https://github.com/krevindev/KR-UI-Kit",
       previewLink: "https://kr-ui.vercel.app/",
-    //   notice: "Unfinished",
+      //   notice: "Unfinished",
       noticeColor: "orange",
     },
     {
