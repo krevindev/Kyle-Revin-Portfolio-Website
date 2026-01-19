@@ -63,17 +63,17 @@ export default function Portfolio() {
       //   notice: "",
       noticeColor: "",
     },
-    {
-      title: "Live Video Text Censorship",
-      thumbnailFile: "censorship-ss.jpg",
-      details:
-        "My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.",
-      techUsed: ["python"],
-      sourceCodeLink:
-        "https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract",
-      previewLink: null,
-      //   notice: "",
-    },
+    // {
+    //   title: "Live Video Text Censorship",
+    //   thumbnailFile: "censorship-ss.jpg",
+    //   details:
+    //     "My Python program utilizes Optical Character Recognition (OCR) to automatically censor inappropriate words in real-time video feeds.",
+    //   techUsed: ["python"],
+    //   sourceCodeLink:
+    //     "https://github.com/krevindev/AutoTextCensor-OpenCV-Pytesseract",
+    //   previewLink: null,
+    //   //   notice: "",
+    // },
     {
       title: "Facebook OCR Translator",
       thumbnailFile: "fb-translator-ss.jpg",
@@ -127,24 +127,24 @@ export default function Portfolio() {
         "https://github.com/krevindev/UI-Design-Kit---Landing-Page",
       previewLink: "https://ui-design-kit.vercel.app/",
     },
-    {
-      title: "IDK - Anonymous Posting",
-      thumbnailFile: "idk-ss.PNG",
-      details: `Simple anonymous posting website.`,
-      techUsed: [
-        "html",
-        "css",
-        "javascript",
-        "react",
-        "node",
-        "mongodb",
-        "express",
-      ],
-      sourceCodeLink: "https://github.com/krevindev/IDK---Posting",
-      previewLink: "https://idk-posting.netlify.app/",
-      //   notice: "Unfinished",
-      noticeColor: "orange",
-    },
+    // {
+    //   title: "IDK - Anonymous Posting",
+    //   thumbnailFile: "idk-ss.PNG",
+    //   details: `Simple anonymous posting website.`,
+    //   techUsed: [
+    //     "html",
+    //     "css",
+    //     "javascript",
+    //     "react",
+    //     "node",
+    //     "mongodb",
+    //     "express",
+    //   ],
+    //   sourceCodeLink: "https://github.com/krevindev/IDK---Posting",
+    //   previewLink: "https://idk-posting.netlify.app/",
+    //   //   notice: "Unfinished",
+    //   noticeColor: "orange",
+    // },
     // {
     //     title: 'TrailWise',
     //     thumbnailFile: 'trailwise-ss.PNG',
