@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './FeaturedWorks.css';
-import { motion } from 'framer-motion';
 
 export default function FeaturedWorks() {
 
@@ -17,7 +16,7 @@ export default function FeaturedWorks() {
     const featuredWorks = featuredWorksData.map((work, index) => {
         return (
             <h5
-                className={index == currentFeaturedIndex ? 'in' : 'out'} key={index}>
+                className={index === currentFeaturedIndex ? 'in' : 'out'} key={index}>
                 {work}
             </h5>
         )
