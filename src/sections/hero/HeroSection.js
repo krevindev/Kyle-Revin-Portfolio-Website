@@ -65,7 +65,7 @@ export default function Hero({ setIsContactVisible }) {
         </div>
         <div id="hero-p-container">
           <p>
-            Developer who enjoys turning ideas into simple, useful, and engaging
+            A Software Developer who enjoys turning ideas into simple, useful, and engaging
             digital tools.
           </p>
         </div>
