@@ -18,7 +18,6 @@
   overflow-y: hidden;
 
   position: relative;
-
 }
 
 .section-indicator {
@@ -26,4 +25,25 @@
   top: 20%;
   width: 100%;
   height: 10px;
+}
+.main-glow:nth-child(1) {
+  background: black;
+  opacity: 1;
+  width: 500px;
+  height: 400px;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  filter: blur(400px);
+}
+
+.main-glow:nth-child(2) {
+  background: black;
+  opacity: 1;
+  width: 500px;
+  height: 400px;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  filter: blur(400px);
 }

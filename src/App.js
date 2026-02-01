@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import './App.css';
+import "./App.css";
 
 import About from "./sections/about/AboutSection";
 import Hero from "./sections/hero/HeroSection";
@@ -17,7 +17,6 @@ import Footer from "./components/footer/Footer";
 import AboutContactContainer from "./components/about_contact/AboutContactContainer";
 
 export default function App() {
-
   const [isSplashScreen, setisSplashScreen] = useState(true);
   const isMobile = useWindowSize().width <= 600;
 
@@ -30,6 +29,8 @@ export default function App() {
 
   return (
     <div id="app">
+      <div className="main-glow"></div>
+      <div className="main-glow"></div>
 
       {/* HERO SECTION*/}
       <Hero
@@ -45,18 +46,13 @@ export default function App() {
       <Portfolio ref={portfolioRef} />
 
       {/* ABOUT SECTION */}
-      <About
-        ref={aboutRef}
-        setIsContactVisible={setIsContactVisible}
-      />
+      <About ref={aboutRef} setIsContactVisible={setIsContactVisible} />
       <AboutContactContainer setIsContactVisible={setIsContactVisible} />
-      {
-        !isMobile && <CustomCursor />
-      }
-      {
-        isContactVisible && <ContactModal setIsContactVisible={setIsContactVisible} />
-      }
+      {!isMobile && <CustomCursor />}
+      {isContactVisible && (
+        <ContactModal setIsContactVisible={setIsContactVisible} />
+      )}
       <Footer />
     </div>
-  )
+  );
 }
