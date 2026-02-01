@@ -144,8 +144,8 @@
 #hero-p-container p {
   font-family: "Maria", sans-serif;
   font-weight: lighter;
+  line-height: 2;
   font-size: 0.3em;
-  line-height: 1;
 }
 
 #hero-cta-container {
