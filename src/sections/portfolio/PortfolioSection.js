@@ -119,7 +119,7 @@ export default function Portfolio() {
     {
       title: "MNTN",
       thumbnailFile: "mntn-ss.PNG",
-      details: "A hiking guide website from a web design template",
+      details: "A hiking guide website from a web design template with parallax effect.",
       techUsed: ["html", "css", "javascript", "react", "node"],
       sourceCodeLink: "https://github.com/krevindev/MNTN---Website",
       previewLink: "https://mntn-website.vercel.app/",
