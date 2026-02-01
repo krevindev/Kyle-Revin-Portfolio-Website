@@ -106,7 +106,7 @@ export default function Portfolio() {
       noticeColor: "orange",
     },
     {
-      title: "Facebook chatGPT",
+      title: "Facebook ChatGPT",
       thumbnailFile: "fb-gpt-ss.PNG",
       details:
         "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
@@ -167,7 +167,7 @@ export default function Portfolio() {
     {
       title: "KR React Components Kit",
       thumbnailFile: "kr-ui-ss.PNG",
-      details: `A planned open-source React UI Components Kit website created as part of my TypeScript practice.`,
+      details: `Open-source custom animated UI components with interactive and reusable designs.`,
       techUsed: ["html", "css", "javascript", "react", "node", "typescript"],
       sourceCodeLink: "https://github.com/krevindev/KR-UI-Kit",
       previewLink: "https://kr-ui.vercel.app/",
