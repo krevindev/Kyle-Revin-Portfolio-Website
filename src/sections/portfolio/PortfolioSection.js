@@ -31,6 +31,15 @@ export default function Portfolio() {
       sourceCodeLink: "",
       previewLink: null,
     },
+    {
+      title: "Lumina Dental",
+      thumbnailFile: "lumina-ss.png",
+      details:
+        "A landing page that presents dental services, clinic branches, and essential information through a clean interface with responsive layouts, interactive sections, and an embedded map for multiple branch locations.",
+      techUsed: ["html", "css", "javascript", "node", "react", "tailwind"],
+      sourceCodeLink: "",
+      previewLink: null,
+    },
     // {
     //   title: "Daily News Scraper",
     //   thumbnailFile: "dailynews-ss.jpg",
