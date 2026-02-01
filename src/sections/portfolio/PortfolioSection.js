@@ -35,7 +35,7 @@ export default function Portfolio() {
       title: "Lumina Dental",
       thumbnailFile: "lumina-ss.png",
       details:
-        "A landing page that presents dental services, clinic branches, and essential information through a clean interface with responsive layouts, interactive sections, and an embedded map for multiple branch locations.",
+        "A landing page showcasing dental services and clinic branches, featuring a clean, responsive design with interactive sections and an embedded map.",
       techUsed: ["html", "css", "javascript", "node", "react", "tailwind"],
       sourceCodeLink: "",
       previewLink: null,
@@ -98,7 +98,7 @@ export default function Portfolio() {
       title: "Facebook Quiz Maker Chatbot",
       thumbnailFile: "quiz-maker-ss.jpg",
       details:
-        "An AI-powered Facebook chatbot capable of creating short quizzes from a PDF, DOCX, or TXT file, generating random quizzes, or allowing users to choose their own topic, using the Mistral model from the OpenRouter API.",
+        "AI-powered Facebook chatbot that generates quizzes from PDF, DOCX, or TXT files, or lets users choose topics, using the Mistral model via the OpenRouter API.",
       techUsed: ["python"],
       //   sourceCodeLink: "https://github.com/krevindev/FB-GPT",
       //   previewLink: null,
@@ -109,7 +109,7 @@ export default function Portfolio() {
       title: "Facebook ChatGPT",
       thumbnailFile: "fb-gpt-ss.PNG",
       details:
-        "A Simple Q&A Facebook Chatbot that uses OpenAI's ChatGPT API to respond to questions.",
+        "A Q&A bot that uses OpenAI's ChatGPT API to respond to questions through Facebook Chatbot",
       techUsed: ["javascript", "node", "express"],
       sourceCodeLink: "https://github.com/krevindev/FB-GPT",
       previewLink: null,
