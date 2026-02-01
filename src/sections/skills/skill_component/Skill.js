@@ -29,14 +29,14 @@ function Skill({ skillName, imgSrc, overallStop, delay, level, description }) {
         >
             {isHovered && <div className="skill-projector-dot" />}
 
-            <div className='skill-level'>
+            {/* <div className='skill-level'>
                 <motion.div
                     className='skill-level-fill'
                     initial={{ width: 0 }}
                     animate={{ width: level + '%' }}
                     transition={{ delay: overallStop - 0.5, duration: 0.8 }}
                 />
-            </div>
+            </div> */}
 
             <img
                 src={imgSrc}
