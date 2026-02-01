@@ -22,8 +22,8 @@ export default function Hero({ setIsContactVisible }) {
       link: "https://www.linkedin.com/in/kyle-revin-alimpuangon-a92b01222/",
     },
     {
-        imgSrc: 'behance-logo.svg',
-        link: 'https://www.behance.net/kylerevin'
+      imgSrc: "behance-logo.svg",
+      link: "https://www.behance.net/kylerevin",
     },
     // {
     //     imgSrc: 'facebook-logo.svg',
@@ -65,8 +65,8 @@ export default function Hero({ setIsContactVisible }) {
         </div>
         <div id="hero-p-container">
           <p>
-            Passionate and innovative developer with a flair for creating
-            captivating digital experiences.
+            Developer who enjoys turning ideas into simple, useful, and engaging
+            digital tools.
           </p>
         </div>
         <div id="hero-cta-container">
