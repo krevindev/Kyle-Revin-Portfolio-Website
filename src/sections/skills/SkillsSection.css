@@ -63,10 +63,10 @@
 #skills-section .skills-container.text {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-
-    width: 70vw;
+    text-wrap: nowrap;
+    justify-content: center;
+    /* align-items: stretch; */
+    width: 80vw;
     height: fit-content;
 }
 
