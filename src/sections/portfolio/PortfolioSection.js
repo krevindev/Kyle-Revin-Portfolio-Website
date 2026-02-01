@@ -174,16 +174,16 @@ export default function Portfolio() {
       //   notice: "Unfinished",
       noticeColor: "orange",
     },
-    {
-      title: "Unit Converter",
-      thumbnailFile: "converter-ss.jpg",
-      details:
-        "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
-      techUsed: ["html", "css", "javascript"],
-      sourceCodeLink: "https://github.com/batchy-bot/unitconverter1",
-      previewLink: "https://batchy-bot.github.io/unitconverter1/",
-      notice: "",
-    },
+    // {
+    //   title: "Unit Converter",
+    //   thumbnailFile: "converter-ss.jpg",
+    //   details:
+    //     "In my early days of learning JavaScript, I built a Unit Converter web page to enhance my JavaScript DOM skills. It offers conversions for 5 units: weight, time, area, volume, and length.",
+    //   techUsed: ["html", "css", "javascript"],
+    //   sourceCodeLink: "https://github.com/batchy-bot/unitconverter1",
+    //   previewLink: "https://batchy-bot.github.io/unitconverter1/",
+    //   notice: "",
+    // },
     // {
     //     title: 'E-Commerce Front-End',
     //     thumbnailFile: 'e-commerce-ss.PNG',
