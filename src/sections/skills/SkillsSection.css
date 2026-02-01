@@ -64,9 +64,10 @@
     display: flex;
     flex-wrap: wrap;
     text-wrap: nowrap;
-    justify-content: center;
+    justify-content: start;
     /* align-items: stretch; */
     width: 80vw;
+    padding: 0 3%;
     height: fit-content;
 }
 
