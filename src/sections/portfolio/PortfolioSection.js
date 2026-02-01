@@ -237,7 +237,7 @@ export default function Portfolio() {
       <div className="page-title-container">
         <span>Portfolio Page</span>
       </div>
-      <h1 id="portfolio-header">WEB AND SOFTWARE DEVELOPMENT PORTFOLIO</h1>
+      <h1 id="portfolio-header">SOFTWARE DEVELOPMENT PORTFOLIO</h1>
       {(isVisible || hasLoaded) && (
         <div id="projects-container">{portfolioItems}</div>
       )}
