@@ -40,7 +40,7 @@ const VantaDotsBackground = () => {
         shininess: 10.00,
         waveHeight: 10.00,
         waveSpeed: .5,
-        zoom: 0.9
+        zoom: 1.5
       })
 
       // NEW
