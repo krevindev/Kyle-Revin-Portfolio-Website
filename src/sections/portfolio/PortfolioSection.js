@@ -38,7 +38,7 @@ export default function Portfolio() {
         "A landing page showcasing dental services and clinic branches, featuring a clean, responsive design with interactive sections and an embedded map.",
       techUsed: ["html", "css", "javascript", "node", "react", "tailwind"],
       sourceCodeLink: "",
-      previewLink: null,
+      previewLink: "https://lumina-dental-landing.vercel.app/",
     },
     // {
     //   title: "Daily News Scraper",
