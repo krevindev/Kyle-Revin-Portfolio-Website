@@ -323,7 +323,8 @@
   margin: 0 10px;
   padding: 0 10px;
   height: 100%;
-  width: fit-content;
+  width: 100%;
+  /* width: fit-content; */
   min-height: 30px;
 
   background: var(--color1);
@@ -337,7 +338,7 @@
 
   transition: all 0.5s ease-out;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .portfolio-btns-container button:hover {

@@ -118,7 +118,7 @@ export default function PortfolioItem(props) {
           Live Demo
           {isPreviewLinkValid && (
             <img
-              style={{ height: 12, marginLeft: 3 }}
+              style={{ height: 14, marginLeft: 5 }}
               src="/res/images/svg/newtab-icon.svg"
             />
           )}
