@@ -40,15 +40,15 @@ export default function Portfolio() {
       sourceCodeLink: "",
       previewLink: "https://lumina-dental-landing.vercel.app/",
     },
-    // {
-    //   title: "Daily News Scraper",
-    //   thumbnailFile: "dailynews-ss.jpg",
-    //   details:
-    //     "A web scraper that collects and displays latest local news updates.",
-    //   techUsed: ["react", "html", "css", "javascript", "node", "express"],
-    //   sourceCodeLink: "",
-    //   previewLink: "https://daily-news-scraper.onrender.com/",
-    // },
+    {
+      title: "Daily News Scraper",
+      thumbnailFile: "dailynews-ss.jpg",
+      details:
+        "A web scraper that collects and displays latest local news updates.",
+      techUsed: ["react", "html", "css", "javascript", "node", "express"],
+      sourceCodeLink: "",
+      previewLink: "https://daily-news-scraper.onrender.com/",
+    },
     {
       title: "Notey-Fi",
       thumbnailFile: "notey-fi-ss.PNG",
